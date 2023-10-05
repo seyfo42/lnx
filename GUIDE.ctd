@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1696095129"/>
   <node name="General" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="65" is_bold="0" foreground="" ts_creation="1695157186" ts_lastsave="1696093389">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
@@ -691,7 +690,7 @@ ACK ping (RST means live host)
 
 </rich_text>
       </node>
-      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1696097910">
+      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1696529315">
         <rich_text>Multiple Targets:
 </rich_text>
         <rich_text indent="1">10.11.12.15-20
@@ -723,28 +722,106 @@ scan with service detection
         <rich_text indent="1" weight="heavy">TARGET</rich_text>
         <rich_text>
 
+--top-ports </rich_text>
+        <rich_text weight="heavy">NR</rich_text>
+        <rich_text>
+
 -</rich_text>
         <rich_text indent="1">O: Enable OS detection</rich_text>
         <rich_text>
+
 -T&lt;0-5&gt;: Set timing template (higher is faster)
 
-SYN scan
-</rich_text>
-        <rich_text indent="1">sudo nmap -sS </rich_text>
-        <rich_text indent="1" weight="heavy">TARGET</rich_text>
+-sU: SUDO, UDP scan, very slow , best use with --top-ports </rich_text>
+        <rich_text weight="heavy">NR</rich_text>
         <rich_text>
 
-UDP scan
+-sT: TCP scan, full 3-way handshake
+
+-sS: SUDO, SYN scan, A bit more stealthy, no full 3-way handshake &lt;-SYN/ACK -&gt; RST
+
+-sN: SUDO, NULL scan,  more stealthy, no flag, open/filtered ports &lt;- RST 
+
+-sF: SUDO, FIN scan,  more stealthy, FIN flag, open/filtered ports &lt;- RST
+
+-sX: SUDO, XMAS scan,  more stealthy, PSH &amp; URG&amp; FIN flag, open/filtered ports &lt;- RST
+
+
+
+
+
+
+
+
+
 </rich_text>
-        <rich_text indent="1">sudo nmap -sU </rich_text>
-        <rich_text indent="1" weight="heavy">TARGET</rich_text>
+      </node>
+      <node name="NSE scripts" unique_id="48" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1696527444" ts_lastsave="1696528645">
+        <rich_text>Categories (</rich_text>
+        <rich_text indent="1" link="webs https://nmap.org/book/nse-usage.html">https://nmap.org/book/nse-usage.html</rich_text>
+        <rich_text>):
+</rich_text>
+        <rich_text indent="1">safe:- Won't affect the target
+intrusive:- Not safe: likely to affect the target
+vuln:- Scan for vulnerabilities
+exploit:- Attempt to exploit a vulnerability
+auth:- Attempt to bypass authentication for running services
+brute:- Attempt to bruteforce credentials for running services
+discovery:- Attempt to query running services for further information about the network</rich_text>
+        <rich_text>
+
+Script info: </rich_text>
+        <rich_text link="webs https://nmap.org/nsedoc/">https://nmap.org/nsedoc/</rich_text>
+        <rich_text> 
+
+Script location: /usr/share/nmap/scripts
+
+Add missing script:
+</rich_text>
+        <rich_text indent="1">sudo wget -O /usr/share/nmap/scripts/</rich_text>
+        <rich_text indent="1" weight="heavy">SCRIPTNAME</rich_text>
+        <rich_text indent="1">.nse </rich_text>
+        <rich_text>https://svn.nmap.org/nmap/scripts/SCRIPTNAME.nse
+</rich_text>
+        <rich_text indent="1">nmap --script-updatedb</rich_text>
         <rich_text>
 
 
 
+--script-help </rich_text>
+        <rich_text weight="heavy">SCRIPT</rich_text>
+        <rich_text>
 
+--script=</rich_text>
+        <rich_text weight="heavy">CATEGORY/NAME</rich_text>
+        <rich_text>
 
-</rich_text>
+--script=</rich_text>
+        <rich_text weight="heavy">SCRIPT1,SCRIPT2,....</rich_text>
+        <rich_text>
+
+--script-args </rich_text>
+        <rich_text weight="heavy">SCRIPT.ARG</rich_text>
+        <rich_text>=</rich_text>
+        <rich_text weight="heavy">VALUE</rich_text>
+      </node>
+      <node name="Evasion" unique_id="49" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1696528645" ts_lastsave="1696529072">
+        <rich_text link="webs https://nmap.org/book/man-bypass-firewalls-ids.html">https://nmap.org/book/man-bypass-firewalls-ids.html</rich_text>
+        <rich_text> 
+
+-Pn: no checking if host is alive (ping)
+
+-f: fragment packets
+
+--mtu </rich_text>
+        <rich_text weight="heavy">NR</rich_text>
+        <rich_text>: multiple of 8
+
+--scan-delay </rich_text>
+        <rich_text weight="heavy">MS</rich_text>
+        <rich_text>ms
+
+--badsum: to detect if FW is present &lt;- replies from FW</rich_text>
       </node>
     </node>
     <node name="ARP-Scan" unique_id="23" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1695331553">
@@ -1695,4 +1772,5 @@ unsetg</rich_text>
 </rich_text>
     </node>
   </node>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1696530140"/>
 </cherrytree>
