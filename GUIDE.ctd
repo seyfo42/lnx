@@ -1981,7 +1981,7 @@ set SUID-bit:
     <rich_text indent="2" weight="heavy">FILE </rich_text>
     <rich_text indent="2">-p</rich_text>
   </node>
-  <node name="Cracking" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1697104758">
+  <node name="Cracking" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1697138374">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 Hydra:
@@ -2017,5 +2017,59 @@ John The Ripper:
     <rich_text>
 </rich_text>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1697055990"/>
+  <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1697141883">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+
+</rich_text>
+    <node name="Basic info" unique_id="69" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697139099" ts_lastsave="1697142628">
+      <rich_text>Tools:
+</rich_text>
+      <rich_text indent="1" weight="heavy">Proxy</rich_text>
+      <rich_text indent="1">: Intercept and modify requests/responses when interacting with web applications.
+</rich_text>
+      <rich_text indent="1" weight="heavy">Repeater</rich_text>
+      <rich_text indent="1">: Capture, modify, then resend the same request numerous times. 
+</rich_text>
+      <rich_text indent="1" weight="heavy">Intruder</rich_text>
+      <rich_text indent="1">: Spray an endpoint with requests for bruteforce attacks or to fuzz endpoints.
+</rich_text>
+      <rich_text indent="1" weight="heavy">Decoder</rich_text>
+      <rich_text indent="1">: Decoding captured information, or encoding a payload prior to sending it to the target.
+</rich_text>
+      <rich_text indent="1" weight="heavy">Comparer</rich_text>
+      <rich_text indent="1">: Compare two pieces of data at either word or byte level.
+</rich_text>
+      <rich_text indent="1" weight="heavy">Sequencer</rich_text>
+      <rich_text indent="1">: Assess the randomness of tokens such as session cookie values or other supposedly random generated data. </rich_text>
+      <rich_text>
+
+Shortcuts:
+</rich_text>
+      <rich_text indent="1">Ctrl + Shift + D -&gt; Switch to the Dashboard
+Ctrl + Shift + T -&gt; Switch to the Target tab
+Ctrl + Shift + P -&gt; Switch to the Proxy tab
+Ctrl + Shift + I -&gt; Switch to the Intruder tab
+Ctrl + Shift + R -&gt; Switch to the Repeater tab</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Ctrl + U -&gt;</rich_text>
+      <rich_text>URL encode selected text
+
+
+
+</rich_text>
+    </node>
+    <node name="Finetune" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697141883" ts_lastsave="1697141967">
+      <rich_text>intercepting only relevant data:
+</rich_text>
+      <rich_text indent="1">go to target
+add to scope
+go to proxy setting
+adjust interception rule to include scope only</rich_text>
+    </node>
+  </node>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1697140346">
+    <rich_text>https://10-10-223-161.p.thmlabs.com</rich_text>
+  </node>
 </cherrytree>
