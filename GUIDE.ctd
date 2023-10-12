@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="General" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="65" is_bold="0" foreground="" ts_creation="1695157186" ts_lastsave="1696093389">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+  <node name="General" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="65" is_bold="0" foreground="" ts_creation="1695157186" ts_lastsave="1697102145">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 
-MD5 hash krijgen:
-</rich_text>
-    <rich_text indent="1">[input] | md5sum</rich_text>
-    <rich_text>
+
 
 </rich_text>
-    <node name="Passive Recon" unique_id="20" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695238541" ts_lastsave="1695331497">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Passive Recon" unique_id="20" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695238541" ts_lastsave="1697102226">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 whois </rich_text>
       <rich_text weight="heavy">DOMAIN</rich_text>
       <rich_text>
@@ -54,8 +51,8 @@ Online DNS tool
       <rich_text>
 </rich_text>
     </node>
-    <node name="Website" unique_id="7" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695157757" ts_lastsave="1695331529">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Website" unique_id="7" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695157757" ts_lastsave="1697102408">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Robots.txt:
 </rich_text>
       <rich_text indent="1">The robots.txt file is a document that tells search engines which pages they are and aren't allowed to show on their search engine results or ban specific search engines from crawling the website altogether. It can be common practice to restrict certain website areas so they aren't displayed in search engine results. These pages may be areas such as administration portals or files meant for the website's customers. This file gives us a great list of locations on the website that the owners don't want us to discover as penetration testers.</rich_text>
@@ -67,13 +64,13 @@ Sitemap.xml
       <rich_text>
 
 Favicon database:
-search with </rich_text>
-      <rich_text indent="1">MD5 hash of the favicon.img file
+</rich_text>
+      <rich_text indent="1">search with MD5 hash of the favicon.img file
 </rich_text>
       <rich_text indent="1" link="webs https://wiki.owasp.org/index.php/OWASP_favicon_database">https://wiki.owasp.org/index.php/OWASP_favicon_database</rich_text>
     </node>
-    <node name="Google Dorking" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158112" ts_lastsave="1695331533">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Google Dorking" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158112" ts_lastsave="1697102233">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 site
 </rich_text>
       <rich_text indent="1">returns results only from the specified website address
@@ -106,8 +103,8 @@ intitle:</rich_text>
 </rich_text>
       <rich_text link="webs https://en.wikipedia.org/wiki/Google_hacking">https://en.wikipedia.org/wiki/Google_hacking</rich_text>
     </node>
-    <node name="Find" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1695331536">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Find" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1697102234">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Search name case sensitive:
 </rich_text>
       <rich_text indent="1">find -name “</rich_text>
@@ -140,8 +137,8 @@ Search directories:
 
 </rich_text>
     </node>
-    <node name="Wordlist" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1695473348">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Wordlist" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1697102695">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Seclists:
 /usr/share/seclists</rich_text>
       <rich_text indent="1">
@@ -160,34 +157,51 @@ Seclists:
       <rich_text>
 
 Subdomains:
-/usr/share/seclists/Discovery/DNS/subdomains
+</rich_text>
+      <rich_text indent="1">/usr/share/seclists/Discovery/DNS/subdomains</rich_text>
+      <rich_text>
 
 Directory :
-/usr/share/seclists/Discovery/Web-Content/directory-list
+</rich_text>
+      <rich_text indent="1">/usr/share/seclists/Discovery/Web-Content/directory-list</rich_text>
+      <rich_text>
 
+Passwords:
+</rich_text>
+      <rich_text indent="1">/usr/share/wordlists/rockyou.txt</rich_text>
+      <rich_text>
 
 
 </rich_text>
     </node>
-    <node name="Linux basics" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695325614" ts_lastsave="1696622167">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Linux basics" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695325614" ts_lastsave="1697102419">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 list in tree view
-tree -L </rich_text>
-      <rich_text weight="heavy">LAYERS</rich_text>
+</rich_text>
+      <rich_text indent="1">tree -L </rich_text>
+      <rich_text indent="1" weight="heavy">LAYERS</rich_text>
       <rich_text>
 
 ssh:
-id_rsa file as ID needs chmod 600
+</rich_text>
+      <rich_text indent="1">id_rsa file as ID needs chmod 600</rich_text>
+      <rich_text>
+
+MD5 hash krijgen:
+</rich_text>
+      <rich_text indent="1" weight="heavy">INPUT</rich_text>
+      <rich_text indent="1"> | md5sum</rich_text>
+      <rich_text>
 
 </rich_text>
     </node>
   </node>
-  <node name="Recon" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980338" ts_lastsave="1695332084">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+  <node name="Recon" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980338" ts_lastsave="1697102173">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 </rich_text>
-    <node name="General Recon" unique_id="19" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1695235115" ts_lastsave="1696096571">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="General Recon" unique_id="19" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1695235115" ts_lastsave="1697102432">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ping -c </rich_text>
       <rich_text weight="heavy">COUNT </rich_text>
       <rich_text>-i </rich_text>
@@ -201,14 +215,20 @@ telnet </rich_text>
       <rich_text> </rich_text>
       <rich_text weight="heavy">PORT</rich_text>
       <rich_text>
-tcp connection. For example HTTP:
-GET / HTTP/1.1
-host: x
+</rich_text>
+      <rich_text indent="1">tcp connection. For example HTTP:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">GET / HTTP/1.1</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">host: x</rich_text>
+      <rich_text>
 
 </rich_text>
     </node>
-    <node name="Netcat" unique_id="21" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1695238677" ts_lastsave="1697056066">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Netcat" unique_id="21" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1695238677" ts_lastsave="1697102242">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Basic:
 </rich_text>
       <rich_text indent="1">-l 	Listen mode
@@ -253,19 +273,21 @@ port numbers can be individual or ranges: lo-hi [inclusive];
 hyphens in port names must be backslash escaped (e.g. 'ftp\-data').
 
 </rich_text>
-      <node name="Commands" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695238692" ts_lastsave="1695239258">
+      <node name="Commands" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695238692" ts_lastsave="1697102438">
         <rich_text>client connection:
-nc </rich_text>
-        <rich_text weight="heavy">IP PORT</rich_text>
+</rich_text>
+        <rich_text indent="1">nc </rich_text>
+        <rich_text indent="1" weight="heavy">IP PORT</rich_text>
         <rich_text>
 
 listen mode:
-nc -vlnp </rich_text>
-        <rich_text weight="heavy">PORT</rich_text>
+</rich_text>
+        <rich_text indent="1">nc -vlnp </rich_text>
+        <rich_text indent="1" weight="heavy">PORT</rich_text>
       </node>
     </node>
-    <node name="Recon-ng" unique_id="43" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1695467525" ts_lastsave="1695469378">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Recon-ng" unique_id="43" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1695467525" ts_lastsave="1697102244">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 </rich_text>
       <rich_text weight="heavy">Uses different modules to recon a target. Results will be neatly organised in a DB</rich_text>
       <rich_text>
@@ -407,8 +429,8 @@ execute a module:
 </rich_text>
       </node>
     </node>
-    <node name="NMAP" unique_id="2" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980362" ts_lastsave="1695331550">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="NMAP" unique_id="2" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980362" ts_lastsave="1697102246">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Usage: nmap [Scan Type(s)] [Options] {target specification}
 
 TARGET SPECIFICATION:
@@ -564,7 +586,7 @@ SEE THE MAN PAGE (</rich_text>
       <rich_text>) FOR MORE OPTIONS AND EXAMPLES
 
 Nmap 7.94 ( https://nmap.org )</rich_text>
-      <node name="Host discovery" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1694980811" ts_lastsave="1696097511">
+      <node name="Host discovery" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1694980811" ts_lastsave="1697102484">
         <rich_text style="italic">see also masscan -&gt; more aggressive -&gt; faster</rich_text>
         <rich_text>
 
@@ -587,11 +609,22 @@ List chosen targets without reverse-DNS
         <rich_text indent="1" weight="heavy">TARGET</rich_text>
         <rich_text>
 
-Disable portscan: -sn
-Disable reverse-DNS: -n
-Enable reverse-DNS also on offline hosts: -R
-Specify DNS server: --dns-servers </rich_text>
-        <rich_text weight="heavy">DNS_SERVER</rich_text>
+Disable portscan:
+</rich_text>
+        <rich_text indent="1">-sn</rich_text>
+        <rich_text>
+Disable reverse-DNS:
+</rich_text>
+        <rich_text indent="1">-n</rich_text>
+        <rich_text>
+Enable reverse-DNS also on offline hosts:
+</rich_text>
+        <rich_text indent="1">-R</rich_text>
+        <rich_text>
+Specify DNS server
+</rich_text>
+        <rich_text indent="1"> --dns-servers </rich_text>
+        <rich_text indent="1" weight="heavy">DNS_SERVER</rich_text>
         <rich_text>
 
 ARP:
@@ -663,7 +696,7 @@ ACK ping (RST means live host)
 
 </rich_text>
       </node>
-      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1696969385">
+      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1697102557">
         <rich_text>Multiple Targets:
 </rich_text>
         <rich_text indent="1">10.11.12.15-20
@@ -695,13 +728,22 @@ scan with service detection
         <rich_text indent="1" weight="heavy">TARGET</rich_text>
         <rich_text>
 
--p- all ports
--p </rich_text>
-        <rich_text weight="heavy">RANGE</rich_text>
+all ports:
+</rich_text>
+        <rich_text indent="1">-p- </rich_text>
         <rich_text>
 
---top-ports </rich_text>
-        <rich_text weight="heavy">NR</rich_text>
+specify ports:
+</rich_text>
+        <rich_text indent="1">-p </rich_text>
+        <rich_text indent="1" weight="heavy">RANGE</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">x,x,x-x,x-x</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="1">--top-ports </rich_text>
+        <rich_text indent="1" weight="heavy">NR</rich_text>
         <rich_text>
 
 -</rich_text>
@@ -802,8 +844,8 @@ Add missing script:
 --badsum: to detect if FW is present &lt;- replies from FW</rich_text>
       </node>
     </node>
-    <node name="ARP-Scan" unique_id="23" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1695331553">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="ARP-Scan" unique_id="23" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1697102247">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Usage: arp-scan [options] [hosts...]
 
 Target hosts must be specified on the command line unless the --file or --localnet option is used.
@@ -1104,20 +1146,25 @@ Misc Options:
 Report bugs or send suggestions at https://github.com/royhills/arp-scan
 See the arp-scan homepage at https://github.com/royhills/arp-scan
 </rich_text>
-      <node name="Commands" unique_id="24" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1695241014">
+      <node name="Commands" unique_id="24" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1697102591">
         <rich_text>Scan local network
-sudo arp-scan -l
+</rich_text>
+        <rich_text indent="1">sudo arp-scan -l</rich_text>
+        <rich_text>
 
 Specify interface
-sudo arp-scan -I </rich_text>
-        <rich_text weight="heavy">eth0</rich_text>
-        <rich_text> -l
+</rich_text>
+        <rich_text indent="1">sudo arp-scan -I </rich_text>
+        <rich_text indent="1" weight="heavy">eth0</rich_text>
+        <rich_text indent="1"> -l</rich_text>
+        <rich_text>
 
 Scan target network
-arp-scan </rich_text>
-        <rich_text weight="heavy">IP</rich_text>
-        <rich_text>/</rich_text>
-        <rich_text weight="heavy">MASK</rich_text>
+</rich_text>
+        <rich_text indent="1">arp-scan </rich_text>
+        <rich_text indent="1" weight="heavy">IP</rich_text>
+        <rich_text indent="1">/</rich_text>
+        <rich_text indent="1" weight="heavy">MASK</rich_text>
         <rich_text>
 
 
@@ -1129,8 +1176,8 @@ arp-scan </rich_text>
 </rich_text>
       </node>
     </node>
-    <node name="Masscan" unique_id="27" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695242334" ts_lastsave="1695331555">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Masscan" unique_id="27" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695242334" ts_lastsave="1697102249">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MASSCAN is a fast port scanner. The primary input parameters are the IP addresses/ranges you want to scan, and the port numbers.
 
 An example is the following, which scans the 10.x.x.x network for web servers:
@@ -1207,12 +1254,12 @@ masscan -p</rich_text>
       </node>
     </node>
   </node>
-  <node name="Enumeration" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695159816" ts_lastsave="1695467494">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+  <node name="Enumeration" unique_id="12" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695159816" ts_lastsave="1697102175">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 </rich_text>
-    <node name="FFUF" unique_id="11" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695159786" ts_lastsave="1696620461">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="FFUF" unique_id="11" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695159786" ts_lastsave="1697102270">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Fuzz Faster U Fool - v2.0.0-dev
 
 HTTP OPTIONS:
@@ -1340,8 +1387,8 @@ EXAMPLE USAGE:
         <rich_text indent="1">/FUZZ</rich_text>
       </node>
     </node>
-    <node name="Gobuster" unique_id="14" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160129" ts_lastsave="1695331563">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Gobuster" unique_id="14" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160129" ts_lastsave="1697102272">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Usage:
 </rich_text>
       <rich_text indent="1">  gobuster [command]</rich_text>
@@ -1396,8 +1443,8 @@ Standard subdomain enumeratrion
         <rich_text> -u http://DOMAIN/ --append-domain </rich_text>
       </node>
     </node>
-    <node name="Dirbuster" unique_id="17" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160372" ts_lastsave="1695331566">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Dirbuster" unique_id="17" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160372" ts_lastsave="1697102274">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 DIRB(1)                                                          General Commands Manual                                                          DIRB(1)
 
 NAME
@@ -1468,8 +1515,9 @@ The Dark Raver                                                          27/01/20
       </node>
     </node>
   </node>
-  <node name="FTP" unique_id="50" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696620461" ts_lastsave="1697056056">
-    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  <node name="FTP" unique_id="50" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696620461" ts_lastsave="1697102296">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
 ftp </rich_text>
     <rich_text weight="heavy">IP</rich_text>
     <rich_text> </rich_text>
@@ -1497,8 +1545,9 @@ exit connection:
 
 </rich_text>
   </node>
-  <node name="SMB" unique_id="58" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696693639" ts_lastsave="1697056047">
-    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  <node name="SMB" unique_id="58" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696693639" ts_lastsave="1697102298">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
 SMB enumeration:
 </rich_text>
     <rich_text indent="1">enum4linux </rich_text>
@@ -1533,8 +1582,9 @@ user Anonymous
 
 </rich_text>
   </node>
-  <node name="NFS" unique_id="60" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696969749" ts_lastsave="1697056036">
-    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  <node name="NFS" unique_id="60" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696969749" ts_lastsave="1697102299">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
 commands (/usr/sbin/):
 </rich_text>
     <rich_text indent="1">ockd
@@ -1581,8 +1631,9 @@ list NFS shares
 </rich_text>
     <rich_text indent="1">/usr/sbin/showmount -e IP</rich_text>
   </node>
-  <node name="SMTP" unique_id="64" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697052718" ts_lastsave="1697056028">
-    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  <node name="SMTP" unique_id="64" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697052718" ts_lastsave="1697102301">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
 SMTP commands:
 </rich_text>
     <rich_text indent="1">VRFY: confirming the names of valid users</rich_text>
@@ -1606,12 +1657,16 @@ enumerate:
 
 </rich_text>
   </node>
-  <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1697056020">
-    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-nmap's mysql-enum script
+  <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1697102654">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+scripts/tools:
+</rich_text>
+    <rich_text indent="1">nmap's mysql-enum script
 metasploit -&gt; mysql_sql
 metasploit -&gt; mysql_schemadump
-metasploit -&gt; mysql_hashdump
+metasploit -&gt; mysql_hashdump</rich_text>
+    <rich_text>
 
 connect to server:
 </rich_text>
@@ -1624,8 +1679,9 @@ connect to server:
 
 </rich_text>
   </node>
-  <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1697056008">
-    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1697102306">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
 
 telnet</rich_text>
     <rich_text indent="1"> </rich_text>
@@ -1685,45 +1741,48 @@ set SUID-bit:
     <rich_text indent="2" weight="heavy">FILE </rich_text>
     <rich_text indent="2">-p</rich_text>
   </node>
-  <node name="Brute-Force" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1696626166">
-    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  <node name="Brute-Force" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1697102188">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
 
 </rich_text>
-    <node name="Creds" unique_id="57" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1696626155" ts_lastsave="1697055060">
+    <node name="Creds" unique_id="57" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1696626155" ts_lastsave="1697102704">
       <rich_text>Hydra:
+</rich_text>
+      <rich_text indent="1">hydra -t </rich_text>
+      <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
+      <rich_text indent="1"> -l </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text indent="1"> -P </rich_text>
+      <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+      <rich_text indent="1"> -vV </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
+      <rich_text indent="1">
 hydra -t </rich_text>
-      <rich_text weight="heavy">#CONNECTIONS</rich_text>
-      <rich_text> -l </rich_text>
-      <rich_text weight="heavy">USERNAME</rich_text>
-      <rich_text> -P </rich_text>
-      <rich_text weight="heavy">WORDLIST</rich_text>
-      <rich_text> -vV </rich_text>
-      <rich_text weight="heavy">IP</rich_text>
-      <rich_text> </rich_text>
-      <rich_text weight="heavy">PROTOCOL</rich_text>
+      <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
+      <rich_text indent="1"> -l </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text indent="1"> -P </rich_text>
+      <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+      <rich_text indent="1"> -vV </rich_text>
+      <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
+      <rich_text indent="1">://</rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
       <rich_text>
-hydra -t </rich_text>
-      <rich_text weight="heavy">#CONNECTIONS</rich_text>
-      <rich_text> -l </rich_text>
-      <rich_text weight="heavy">USERNAME</rich_text>
-      <rich_text> -P </rich_text>
-      <rich_text weight="heavy">WORDLIST</rich_text>
-      <rich_text> -vV </rich_text>
-      <rich_text weight="heavy">PROTOCOL</rich_text>
-      <rich_text>://</rich_text>
-      <rich_text weight="heavy">IP</rich_text>
-      <rich_text>
-/usr/share/wordlists/rockyou.txt
+
 
 John The Ripper:
-john</rich_text>
+john </rich_text>
+      <rich_text weight="heavy">HASHFILE</rich_text>
     </node>
   </node>
-  <node name="Metasploit" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695324968" ts_lastsave="1697053285">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+  <node name="Metasploit" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695324968" ts_lastsave="1697102186">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Basics" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695324968" ts_lastsave="1695331571">
+    <node name="Basics" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695324968" ts_lastsave="1697102717">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Access:
 </rich_text>
@@ -1809,8 +1868,9 @@ view running sessions
       <rich_text>
 
 resume session
-session -i </rich_text>
-      <rich_text weight="heavy">ID</rich_text>
+</rich_text>
+      <rich_text indent="1">session -i </rich_text>
+      <rich_text indent="1" weight="heavy">ID</rich_text>
       <rich_text>
 
 
