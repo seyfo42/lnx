@@ -174,7 +174,7 @@ Passwords:
 
 </rich_text>
     </node>
-    <node name="Linux basics" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695325614" ts_lastsave="1697102419">
+    <node name="Linux basics" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695325614" ts_lastsave="1697987941">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 list in tree view
 </rich_text>
@@ -189,11 +189,32 @@ ssh:
 
 MD5 hash krijgen:
 </rich_text>
-      <rich_text indent="1" weight="heavy">INPUT</rich_text>
-      <rich_text indent="1"> | md5sum</rich_text>
+      <rich_text indent="1">md5sum</rich_text>
+      <rich_text> </rich_text>
+      <rich_text weight="heavy">FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">sha1sum</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">sha256sum</rich_text>
       <rich_text>
 
+whoami
+id
+ifconfig
+ip addr
+uname -a
+ps -ef
 </rich_text>
+    </node>
+    <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1697983106">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Execute bash commands:
+</rich_text>
+      <rich_text indent="1">import os; print(os.popen("</rich_text>
+      <rich_text indent="1" weight="heavy">COMMAND</rich_text>
+      <rich_text indent="1">").read())</rich_text>
     </node>
   </node>
   <node name="Recon" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980338" ts_lastsave="1697102173">
@@ -696,7 +717,7 @@ ACK ping (RST means live host)
 
 </rich_text>
       </node>
-      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1697102557">
+      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1697986215">
         <rich_text>Multiple Targets:
 </rich_text>
         <rich_text indent="1">10.11.12.15-20
@@ -741,10 +762,7 @@ specify ports:
 </rich_text>
         <rich_text indent="2">x,x,x-x,x-x</rich_text>
         <rich_text>
-</rich_text>
-        <rich_text indent="1">--top-ports </rich_text>
-        <rich_text indent="1" weight="heavy">NR</rich_text>
-        <rich_text>
+
 
 -</rich_text>
         <rich_text indent="1">O: Enable OS detection</rich_text>
@@ -1659,7 +1677,7 @@ enumerate:
 
 </rich_text>
     </node>
-    <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1697104580">
+    <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1697986137">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
 scripts/tools:
@@ -1981,9 +1999,14 @@ set SUID-bit:
     <rich_text indent="2" weight="heavy">FILE </rich_text>
     <rich_text indent="2">-p</rich_text>
   </node>
-  <node name="Cracking" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1697138374">
+  <node name="Cracking" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1697980627">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
+Online:
+</rich_text>
+    <rich_text indent="1">https://crackstation.net/ </rich_text>
+    <rich_text>
+
 Hydra:
 </rich_text>
     <rich_text indent="1">hydra -t </rich_text>
@@ -2015,6 +2038,47 @@ John The Ripper:
     <rich_text indent="1">john </rich_text>
     <rich_text indent="1" weight="heavy">HASHFILE</rich_text>
     <rich_text>
+</rich_text>
+  </node>
+  <node name="Flat DB files" unique_id="71" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697980166" ts_lastsave="1697980518">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+Working with flat DB files
+</rich_text>
+    <rich_text indent="1">example.db</rich_text>
+    <rich_text>
+
+Check which version:
+</rich_text>
+    <rich_text indent="1">file </rich_text>
+    <rich_text indent="1" weight="heavy">FILENAME.db</rich_text>
+    <rich_text>
+
+sqlite3:
+</rich_text>
+    <rich_text indent="1">Client:
+</rich_text>
+    <rich_text indent="2">sqlite3 </rich_text>
+    <rich_text indent="2" weight="heavy">FILENAME.db</rich_text>
+    <rich_text indent="1">
+show all tables:
+</rich_text>
+    <rich_text indent="2">.tables</rich_text>
+    <rich_text indent="1">
+Show columns of a table:
+</rich_text>
+    <rich_text indent="2">PRAGMA table_info(</rich_text>
+    <rich_text indent="2" weight="heavy">TABLENAME</rich_text>
+    <rich_text indent="2">);</rich_text>
+    <rich_text indent="1">
+Get all records:
+</rich_text>
+    <rich_text indent="2">SELECT * FROM </rich_text>
+    <rich_text indent="2" weight="heavy">TABLENAME</rich_text>
+    <rich_text indent="2">;</rich_text>
+    <rich_text>
+
+
 </rich_text>
   </node>
   <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1697141883">
@@ -2069,7 +2133,41 @@ go to proxy setting
 adjust interception rule to include scope only</rich_text>
     </node>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1697140346">
-    <rich_text>https://10-10-223-161.p.thmlabs.com</rich_text>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1697985848">
+    <rich_text>$()
+/template
+/database
+/models
+/functions
+/controllers
+/bootstrap
+10.10.73.126
+----------------------
+the sql for database is put in folder sql. 
+the database contains many tables. 
+
+To change the localhost, username, password for connecting to database, change it only one time in 
+www_project/functions/database_functions.php -&gt; db_connect() . Simple and fast
+The base is localhost , root , , www_project 
+
+to connect the admin section, click the name Nghi Le Thanh at the bottom. 
+the name and pass for log in is admin , admin. Just to make it simple. 
+----------------------
+
+
+-- phpMyAdmin SQL Dump
+-- version 4.4.12
+
+-- Server version: 5.6.25
+-- PHP Version: 5.6.11
+
+Database naam: `www_project`
+
+'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997'
+
+admin login = admin
+
+
+</rich_text>
   </node>
 </cherrytree>
