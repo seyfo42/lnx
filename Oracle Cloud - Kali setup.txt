@@ -1,0 +1,17 @@
+Default login = debian - debian
+=================================================================
+If SSH is not working:
+
+check status of the services:
+$systemctl status sshd.service
+$systemctl status ssh.service
+
+if error:
+$ /usr/sbin/sshd -T
+if output = sshd: no hostkeys available -- exiting.
+
+$ sudo ssh-keygen -A
+
+debian@kali-linux-oci:~$ sudo systemctl restart sshd.service
+debian@kali-linux-oci:~$ sudo systemctl restart ssh.service
+=================================================================
