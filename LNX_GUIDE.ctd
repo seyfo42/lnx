@@ -1677,7 +1677,7 @@ enumerate:
 
 </rich_text>
     </node>
-    <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1697986137">
+    <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1698615329">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
 scripts/tools:
@@ -1696,6 +1696,41 @@ connect to server:
       <rich_text indent="1" weight="heavy">USERNAME</rich_text>
       <rich_text indent="1"> -p</rich_text>
       <rich_text>
+
+</rich_text>
+    </node>
+    <node name="SQLite" unique_id="73" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698615329" ts_lastsave="1698615777">
+      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+      <rich_text>
+Injection:
+get all tables in the DB:
+</rich_text>
+      <rich_text indent="1">UNION ALL SELECT group_concat(table_name),null,null,null,null FROM information_schema.tables</rich_text>
+      <rich_text>
+
+get all columns in the DB:
+</rich_text>
+      <rich_text indent="1">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns</rich_text>
+      <rich_text>
+
+get all colums of a specific table:
+</rich_text>
+      <rich_text indent="1">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns WHERE table_name="</rich_text>
+      <rich_text indent="1" weight="heavy">TABLENAME</rich_text>
+      <rich_text indent="1">"</rich_text>
+      <rich_text>
+
+Base select statement:
+UNION ALL SELECT </rich_text>
+      <rich_text weight="heavy">XXXX</rich_text>
+      <rich_text>,null,null,null,null FROM </rich_text>
+      <rich_text weight="heavy">XXXX</rich_text>
+      <rich_text> WHERE </rich_text>
+      <rich_text weight="heavy">XXXX</rich_text>
+      <rich_text>=</rich_text>
+      <rich_text weight="heavy">XXXX</rich_text>
+      <rich_text>
+
 
 </rich_text>
     </node>
@@ -2133,41 +2168,5 @@ go to proxy setting
 adjust interception rule to include scope only</rich_text>
     </node>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1697985848">
-    <rich_text>$()
-/template
-/database
-/models
-/functions
-/controllers
-/bootstrap
-10.10.73.126
-----------------------
-the sql for database is put in folder sql. 
-the database contains many tables. 
-
-To change the localhost, username, password for connecting to database, change it only one time in 
-www_project/functions/database_functions.php -&gt; db_connect() . Simple and fast
-The base is localhost , root , , www_project 
-
-to connect the admin section, click the name Nghi Le Thanh at the bottom. 
-the name and pass for log in is admin , admin. Just to make it simple. 
-----------------------
-
-
--- phpMyAdmin SQL Dump
--- version 4.4.12
-
--- Server version: 5.6.25
--- PHP Version: 5.6.11
-
-Database naam: `www_project`
-
-'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997'
-
-admin login = admin
-
-
-</rich_text>
-  </node>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1698615908"/>
 </cherrytree>
