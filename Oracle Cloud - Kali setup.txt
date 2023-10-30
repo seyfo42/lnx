@@ -1,6 +1,6 @@
 Default login = debian - debian
 =================================================================
-If SSH is not working:
+SSH not working:
 
 check status of the services:
 $systemctl status sshd.service
@@ -14,4 +14,24 @@ $ sudo ssh-keygen -A
 
 debian@kali-linux-oci:~$ sudo systemctl restart sshd.service
 debian@kali-linux-oci:~$ sudo systemctl restart ssh.service
+=================================================================
+apt update not working:
+
+error:
+E: The repository 'http://security.debian.org stretch/updates Release' no longer has a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+E: The repository 'http://deb.debian.org/debian stretch Release' no longer has a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+E: The repository 'http://deb.debian.org/debian stretch-updates Release' no longer has a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://mirror.serverius.net/kali kali-rolling InRelease: The following signatures were invalid: EXPKEYSIG ED444FF07D8D0BF6 Kali Linux Repository <devel@kali.org>
+
+fix:
+open /etc/apt/sources.list
+comment out all stretch libraries
+
+update GPG key: wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
 =================================================================
