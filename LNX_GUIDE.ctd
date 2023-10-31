@@ -1,13 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="General" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="65" is_bold="0" foreground="" ts_creation="1695157186" ts_lastsave="1697102145">
+  <node name="General" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="65" is_bold="0" foreground="" ts_creation="1695157186" ts_lastsave="1698759322">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 
 
 
 </rich_text>
+    <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1698759935">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+list in tree view
+</rich_text>
+      <rich_text indent="1">tree -L </rich_text>
+      <rich_text indent="1" weight="heavy">LAYERS</rich_text>
+      <rich_text>
+
+ssh:
+</rich_text>
+      <rich_text indent="1">id_rsa file as ID needs chmod 600</rich_text>
+      <rich_text>
+
+MD5 hash krijgen:
+</rich_text>
+      <rich_text indent="1">md5sum</rich_text>
+      <rich_text> </rich_text>
+      <rich_text weight="heavy">FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">sha1sum</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">sha256sum</rich_text>
+      <rich_text>
+
+whoami
+id
+ifconfig
+ip addr
+uname -a
+ps -ef
+
+Kali:
+</rich_text>
+      <rich_text indent="1">setxkbmap -layout be</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">setxkbmap -layout us</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">apt install -y kali-linux-everything</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">apt install -y kali-linux-default</rich_text>
+      <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1698768153">
+        <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New user:
+</rich_text>
+        <rich_text indent="1">useradd </rich_text>
+        <rich_text indent="1" weight="heavy">OPTIONS</rich_text>
+        <rich_text indent="1"> </rich_text>
+        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">-m -&gt; create home</rich_text>
+        <rich_text> directory
+</rich_text>
+        <rich_text indent="2">-M -&gt; no home</rich_text>
+        <rich_text> directory
+
+Delete user:
+</rich_text>
+        <rich_text indent="1">userdel </rich_text>
+        <rich_text indent="1" weight="heavy">OPTIONS</rich_text>
+        <rich_text indent="1"> </rich_text>
+        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">-f -&gt; force</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">-r -&gt; remove home directory</rich_text>
+        <rich_text>
+
+Change password:
+</rich_text>
+        <rich_text indent="1">passwd </rich_text>
+        <rich_text weight="heavy">USERNAME</rich_text>
+        <rich_text>
+
+Change group:
+</rich_text>
+        <rich_text indent="1">usermod -aG </rich_text>
+        <rich_text indent="1" weight="heavy">GROUP</rich_text>
+        <rich_text indent="1"> </rich_text>
+        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+        <rich_text>
+
+Change shell:
+</rich_text>
+        <rich_text indent="1">chsh -s </rich_text>
+        <rich_text indent="1" weight="heavy">SHELL</rich_text>
+        <rich_text indent="1"> </rich_text>
+        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">/bin/bash</rich_text>
+        <rich_text>
+
+show info of a user:
+</rich_text>
+        <rich_text indent="1">id </rich_text>
+        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+        <rich_text>
+
+List all users:
+</rich_text>
+        <rich_text indent="1">cat /etc/passwd</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="1">getent passwd</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">username : encrypted password : userID : groupID : fullname : home directory : shell</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="1">getent </rich_text>
+        <rich_text>shadow
+</rich_text>
+        <rich_text indent="2">username : encrypted password  : last pw change : min pw change : max pw change : pw change warn : </rich_text>
+        <rich_text>days inactive : exp date
+</rich_text>
+        <rich_text indent="2">encrypted password = $id $ salt $ hashed</rich_text>
+        <rich_text indent="3">
+</rich_text>
+        <rich_text indent="5">$1$ is MD5
+$2a$ is Blowfish
+$2y$ is Blowfish
+$5$ is SHA-256
+$6$ is SHA-512
+$y$ is yescrypt
+ 
+</rich_text>
+        <rich_text>
+List normal users/groups:
+</rich_text>
+        <rich_text indent="1">first get the min and max UIDs for normal users/groups:
+</rich_text>
+        <rich_text indent="2">grep -E '^UID_MIN|^UID_MAX' /etc/login.defs</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">grep -E '^GID_MIN|^GID_MAX' /etc/login.defs</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="1">filter the passwd/group file:</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">getent passwd {</rich_text>
+        <rich_text indent="2" weight="heavy">MIN</rich_text>
+        <rich_text indent="2">..</rich_text>
+        <rich_text indent="2" weight="heavy">MAX</rich_text>
+        <rich_text indent="2">}</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">getent passwd {1000..60000}</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">getent passwd {1000..60000}</rich_text>
+      </node>
+      <node name="Find" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1698759416" ts_lastsave="1698759873">
+        <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Search name case sensitive:
+</rich_text>
+        <rich_text indent="1">find -name “</rich_text>
+        <rich_text indent="1" weight="heavy">NAME</rich_text>
+        <rich_text indent="1">"</rich_text>
+        <rich_text>
+
+Search name case insensitive:
+</rich_text>
+        <rich_text indent="1">find -iname “</rich_text>
+        <rich_text indent="1" weight="heavy">NAME</rich_text>
+        <rich_text indent="1">"</rich_text>
+        <rich_text>
+
+Wildcard for name:
+</rich_text>
+        <rich_text indent="1">*</rich_text>
+        <rich_text>
+
+Search files:
+</rich_text>
+        <rich_text indent="1">-type f</rich_text>
+        <rich_text>
+
+Search directories:
+</rich_text>
+        <rich_text indent="1">-type d</rich_text>
+        <rich_text>
+
+
+</rich_text>
+      </node>
+      <node name="Wordlist" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1698762168">
+        <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Seclists:
+git clone </rich_text>
+        <rich_text link="webs https://github.com/danielmiessler/SecLists.git">https://github.com/danielmiessler/SecLists.git</rich_text>
+        <rich_text>
+apt-get install seclists
+
+/usr/share/seclists</rich_text>
+        <rich_text indent="1">
+</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="1">├── Discovery
+├── Fuzzing
+├── IOCs
+├── Miscellaneous
+├── Passwords
+├── Pattern-Matching
+├── Payloads
+├── Usernames
+└── Web-Shells</rich_text>
+        <rich_text>
+
+Subdomains:
+</rich_text>
+        <rich_text indent="1">/usr/share/seclists/Discovery/DNS/subdomains</rich_text>
+        <rich_text>
+
+Directory :
+</rich_text>
+        <rich_text indent="1">/usr/share/seclists/Discovery/Web-Content/directory-list</rich_text>
+        <rich_text>
+
+Passwords:
+</rich_text>
+        <rich_text indent="1">/usr/share/wordlists/rockyou.txt</rich_text>
+        <rich_text>
+
+
+</rich_text>
+      </node>
+    </node>
+    <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1698759370">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Execute bash commands:
+</rich_text>
+      <rich_text indent="1">import os; print(os.popen("</rich_text>
+      <rich_text indent="1" weight="heavy">COMMAND</rich_text>
+      <rich_text indent="1">").read())</rich_text>
+    </node>
     <node name="Passive Recon" unique_id="20" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695238541" ts_lastsave="1697102226">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 whois </rich_text>
@@ -51,8 +296,13 @@ Online DNS tool
       <rich_text>
 </rich_text>
     </node>
-    <node name="Website" unique_id="7" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695157757" ts_lastsave="1697102408">
+    <node name="Website" unique_id="7" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695157757" ts_lastsave="1698762292">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+HTTP status codes:
+200 = OK
+401 = Unauthorized
+
 Robots.txt:
 </rich_text>
       <rich_text indent="1">The robots.txt file is a document that tells search engines which pages they are and aren't allowed to show on their search engine results or ban specific search engines from crawling the website altogether. It can be common practice to restrict certain website areas so they aren't displayed in search engine results. These pages may be areas such as administration portals or files meant for the website's customers. This file gives us a great list of locations on the website that the owners don't want us to discover as penetration testers.</rich_text>
@@ -68,6 +318,47 @@ Favicon database:
       <rich_text indent="1">search with MD5 hash of the favicon.img file
 </rich_text>
       <rich_text indent="1" link="webs https://wiki.owasp.org/index.php/OWASP_favicon_database">https://wiki.owasp.org/index.php/OWASP_favicon_database</rich_text>
+    </node>
+    <node name="Flat DB files" unique_id="71" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697980166" ts_lastsave="1698759829">
+      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+      <rich_text>
+Working with flat DB files
+</rich_text>
+      <rich_text indent="1">example.db</rich_text>
+      <rich_text>
+
+Check which version:
+</rich_text>
+      <rich_text indent="1">file </rich_text>
+      <rich_text indent="1" weight="heavy">FILENAME.db</rich_text>
+      <rich_text>
+
+sqlite3:
+</rich_text>
+      <rich_text indent="1">Client:
+</rich_text>
+      <rich_text indent="2">sqlite3 </rich_text>
+      <rich_text indent="2" weight="heavy">FILENAME.db</rich_text>
+      <rich_text indent="1">
+show all tables:
+</rich_text>
+      <rich_text indent="2">.tables</rich_text>
+      <rich_text indent="1">
+Show columns of a table:
+</rich_text>
+      <rich_text indent="2">PRAGMA table_info(</rich_text>
+      <rich_text indent="2" weight="heavy">TABLENAME</rich_text>
+      <rich_text indent="2">);</rich_text>
+      <rich_text indent="1">
+Get all records:
+</rich_text>
+      <rich_text indent="2">SELECT * FROM </rich_text>
+      <rich_text indent="2" weight="heavy">TABLENAME</rich_text>
+      <rich_text indent="2">;</rich_text>
+      <rich_text>
+
+
+</rich_text>
     </node>
     <node name="Google Dorking" unique_id="8" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158112" ts_lastsave="1697102233">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,119 +393,6 @@ intitle:</rich_text>
 
 </rich_text>
       <rich_text link="webs https://en.wikipedia.org/wiki/Google_hacking">https://en.wikipedia.org/wiki/Google_hacking</rich_text>
-    </node>
-    <node name="Find" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1697102234">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Search name case sensitive:
-</rich_text>
-      <rich_text indent="1">find -name “</rich_text>
-      <rich_text indent="1" weight="heavy">NAME</rich_text>
-      <rich_text indent="1">"</rich_text>
-      <rich_text>
-
-Search name case insensitive:
-</rich_text>
-      <rich_text indent="1">find -iname “</rich_text>
-      <rich_text indent="1" weight="heavy">NAME</rich_text>
-      <rich_text indent="1">"</rich_text>
-      <rich_text>
-
-Wildcard for name:
-</rich_text>
-      <rich_text indent="1">*</rich_text>
-      <rich_text>
-
-Search files:
-</rich_text>
-      <rich_text indent="1">-type f</rich_text>
-      <rich_text>
-
-Search directories:
-</rich_text>
-      <rich_text indent="1">-type d</rich_text>
-      <rich_text>
-
-
-</rich_text>
-    </node>
-    <node name="Wordlist" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1697102695">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Seclists:
-/usr/share/seclists</rich_text>
-      <rich_text indent="1">
-</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">├── Discovery
-├── Fuzzing
-├── IOCs
-├── Miscellaneous
-├── Passwords
-├── Pattern-Matching
-├── Payloads
-├── Usernames
-└── Web-Shells</rich_text>
-      <rich_text>
-
-Subdomains:
-</rich_text>
-      <rich_text indent="1">/usr/share/seclists/Discovery/DNS/subdomains</rich_text>
-      <rich_text>
-
-Directory :
-</rich_text>
-      <rich_text indent="1">/usr/share/seclists/Discovery/Web-Content/directory-list</rich_text>
-      <rich_text>
-
-Passwords:
-</rich_text>
-      <rich_text indent="1">/usr/share/wordlists/rockyou.txt</rich_text>
-      <rich_text>
-
-
-</rich_text>
-    </node>
-    <node name="Linux basics" unique_id="32" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695325614" ts_lastsave="1697987941">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-list in tree view
-</rich_text>
-      <rich_text indent="1">tree -L </rich_text>
-      <rich_text indent="1" weight="heavy">LAYERS</rich_text>
-      <rich_text>
-
-ssh:
-</rich_text>
-      <rich_text indent="1">id_rsa file as ID needs chmod 600</rich_text>
-      <rich_text>
-
-MD5 hash krijgen:
-</rich_text>
-      <rich_text indent="1">md5sum</rich_text>
-      <rich_text> </rich_text>
-      <rich_text weight="heavy">FILE</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">sha1sum</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">sha256sum</rich_text>
-      <rich_text>
-
-whoami
-id
-ifconfig
-ip addr
-uname -a
-ps -ef
-</rich_text>
-    </node>
-    <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1697983106">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Execute bash commands:
-</rich_text>
-      <rich_text indent="1">import os; print(os.popen("</rich_text>
-      <rich_text indent="1" weight="heavy">COMMAND</rich_text>
-      <rich_text indent="1">").read())</rich_text>
     </node>
   </node>
   <node name="Recon" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980338" ts_lastsave="1697102173">
@@ -1535,7 +1713,7 @@ The Dark Raver                                                          27/01/20
   </node>
   <node name="Services" unique_id="67" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697104557" ts_lastsave="1697104564">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-    <node name="FTP" unique_id="50" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696620461" ts_lastsave="1697104573">
+    <node name="FTP" unique_id="50" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696620461" ts_lastsave="1698759580">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
 ftp </rich_text>
@@ -1549,6 +1727,9 @@ user = anonymous
 list files:
 </rich_text>
       <rich_text indent="1">ls</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">dir</rich_text>
       <rich_text>
 
 download file:
@@ -1565,7 +1746,7 @@ exit connection:
 
 </rich_text>
     </node>
-    <node name="SMB" unique_id="58" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696693639" ts_lastsave="1697104575">
+    <node name="SMB" unique_id="58" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696693639" ts_lastsave="1698759555">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
 SMB enumeration:
@@ -1583,6 +1764,10 @@ SMB enumeration:
 -P             get password policy information
 -G             get group and member list
 -a             all of the above (full basic enumeration)</rich_text>
+      <rich_text>
+
+smbclient -L </rich_text>
+      <rich_text weight="heavy">IP</rich_text>
       <rich_text>
 
 smbclient //</rich_text>
@@ -1677,7 +1862,7 @@ enumerate:
 
 </rich_text>
     </node>
-    <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1698615329">
+    <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1698759511">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
 scripts/tools:
@@ -1697,42 +1882,22 @@ connect to server:
       <rich_text indent="1"> -p</rich_text>
       <rich_text>
 
-</rich_text>
+SHOW databases;
+USE {database_name};
+SHOW tables;</rich_text>
     </node>
-    <node name="SQLite" unique_id="73" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698615329" ts_lastsave="1698615777">
+    <node name="REDIS" unique_id="76" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698759580" ts_lastsave="1698759611">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
-Injection:
-get all tables in the DB:
-</rich_text>
-      <rich_text indent="1">UNION ALL SELECT group_concat(table_name),null,null,null,null FROM information_schema.tables</rich_text>
-      <rich_text>
+redis-cli -h [IP]
 
-get all columns in the DB:
-</rich_text>
-      <rich_text indent="1">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns</rich_text>
-      <rich_text>
+&gt;info
 
-get all colums of a specific table:
-</rich_text>
-      <rich_text indent="1">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns WHERE table_name="</rich_text>
-      <rich_text indent="1" weight="heavy">TABLENAME</rich_text>
-      <rich_text indent="1">"</rich_text>
-      <rich_text>
+check KEYSPACE
 
-Base select statement:
-UNION ALL SELECT </rich_text>
-      <rich_text weight="heavy">XXXX</rich_text>
-      <rich_text>,null,null,null,null FROM </rich_text>
-      <rich_text weight="heavy">XXXX</rich_text>
-      <rich_text> WHERE </rich_text>
-      <rich_text weight="heavy">XXXX</rich_text>
-      <rich_text>=</rich_text>
-      <rich_text weight="heavy">XXXX</rich_text>
-      <rich_text>
+select [dbnr.] -&gt; keys [key/*]
 
-
-</rich_text>
+get [key naam]</rich_text>
     </node>
   </node>
   <node name="Metasploit" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695324968" ts_lastsave="1697104766">
@@ -1972,6 +2137,47 @@ unsetg</rich_text>
 </rich_text>
     </node>
   </node>
+  <node name="Cracking" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1698763826">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+Online:
+</rich_text>
+    <rich_text indent="1">https://crackstation.net/ </rich_text>
+    <rich_text>
+
+Hydra:
+</rich_text>
+    <rich_text indent="1">hydra -t </rich_text>
+    <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
+    <rich_text indent="1"> -l </rich_text>
+    <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+    <rich_text indent="1"> -P </rich_text>
+    <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+    <rich_text indent="1"> -vV </rich_text>
+    <rich_text indent="1" weight="heavy">IP</rich_text>
+    <rich_text indent="1"> </rich_text>
+    <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
+    <rich_text indent="1">
+hydra -t </rich_text>
+    <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
+    <rich_text indent="1"> -l </rich_text>
+    <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+    <rich_text indent="1"> -P </rich_text>
+    <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+    <rich_text indent="1"> -vV </rich_text>
+    <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
+    <rich_text indent="1">://</rich_text>
+    <rich_text indent="1" weight="heavy">IP</rich_text>
+    <rich_text>
+
+
+John The Ripper:
+</rich_text>
+    <rich_text indent="1">john </rich_text>
+    <rich_text indent="1" weight="heavy">HASHFILE</rich_text>
+    <rich_text>
+</rich_text>
+  </node>
   <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1697102306">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
@@ -2033,87 +2239,105 @@ set SUID-bit:
     <rich_text indent="2">./</rich_text>
     <rich_text indent="2" weight="heavy">FILE </rich_text>
     <rich_text indent="2">-p</rich_text>
+    <node name="SQL Injection" unique_id="73" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698615329" ts_lastsave="1698764744">
+      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+      <rich_text>
+
+skip any sql statements:
+</rich_text>
+      <rich_text indent="1"> ' or 1=1--</rich_text>
+      <rich_text>
+ 
+ partially skip sql statements:
+</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text weight="heavy">INPUT</rich_text>
+      <rich_text>'--
+
+(SQLite):
+get all tables in the DB:
+</rich_text>
+      <rich_text indent="1">UNION ALL SELECT group_concat(table_name),null,null,null,null FROM information_schema.tables</rich_text>
+      <rich_text>
+
+get all columns in the DB:
+</rich_text>
+      <rich_text indent="1">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns</rich_text>
+      <rich_text>
+
+get all colums of a specific table:
+</rich_text>
+      <rich_text indent="1">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns WHERE table_name="</rich_text>
+      <rich_text indent="1" weight="heavy">TABLENAME</rich_text>
+      <rich_text indent="1">"</rich_text>
+      <rich_text>
+
+Base select statement:
+UNION ALL SELECT </rich_text>
+      <rich_text weight="heavy">XXXX</rich_text>
+      <rich_text>,null,null,null,null FROM </rich_text>
+      <rich_text weight="heavy">XXXX</rich_text>
+      <rich_text> WHERE </rich_text>
+      <rich_text weight="heavy">XXXX</rich_text>
+      <rich_text>=</rich_text>
+      <rich_text weight="heavy">XXXX</rich_text>
+      <rich_text>
+
+
+</rich_text>
+    </node>
+    <node name="XSS" unique_id="78" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698764744" ts_lastsave="1698765116">
+      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+      <rich_text>
+Types:
+DOM (Special)
+</rich_text>
+      <rich_text indent="1">DOM XSS (Document Object Model-based Cross-site Scripting) uses the HTML environment to execute malicious javascript. This type of attack commonly uses the &lt;script&gt;&lt;/script&gt; HTML tag.</rich_text>
+      <rich_text>
+Persistent (Server-side)
+</rich_text>
+      <rich_text indent="1">Persistent XSS is javascript that is run when the server loads the page containing it. These can occur when the server does not sanitise the user data when it is uploaded to a page. These are commonly found on blog posts. </rich_text>
+      <rich_text>
+Reflected (Client-side)
+</rich_text>
+      <rich_text indent="1">Reflected XSS is javascript that is run on the client-side end of the web application. These are most commonly found when the server doesn't sanitise search data.</rich_text>
+      <rich_text>
+
+
+
+
+</rich_text>
+      <node name="Commands" unique_id="79" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1698765112" ts_lastsave="1698765348">
+        <rich_text>test DOM:
+</rich_text>
+        <rich_text indent="1">create alert notification</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="1">&lt;iframe src="javascript:alert(`xss`)"&gt;</rich_text>
+        <rich_text>
+
+adding header in the HTTP request
+</rich_text>
+        <rich_text indent="1">for example if last login IP is being registered on the website:</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">True-Client-IP: &lt;iframe src="javascript:alert(`xss`)"&gt;</rich_text>
+        <rich_text>
+
+changing query parameter values</rich_text>
+      </node>
+    </node>
   </node>
-  <node name="Cracking" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1697980627">
+  <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1698764390">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
-Online:
+restrictions on downloading file because of extensions. 
 </rich_text>
-    <rich_text indent="1">https://crackstation.net/ </rich_text>
-    <rich_text>
-
-Hydra:
+    <rich_text indent="1">Example</rich_text>
+    <rich_text>: trying to download package.json.bak → 403 error: only .md and .pdf files can be downloaded
 </rich_text>
-    <rich_text indent="1">hydra -t </rich_text>
-    <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
-    <rich_text indent="1"> -l </rich_text>
-    <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-    <rich_text indent="1"> -P </rich_text>
-    <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
-    <rich_text indent="1"> -vV </rich_text>
-    <rich_text indent="1" weight="heavy">IP</rich_text>
-    <rich_text indent="1"> </rich_text>
-    <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
-    <rich_text indent="1">
-hydra -t </rich_text>
-    <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
-    <rich_text indent="1"> -l </rich_text>
-    <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-    <rich_text indent="1"> -P </rich_text>
-    <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
-    <rich_text indent="1"> -vV </rich_text>
-    <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
-    <rich_text indent="1">://</rich_text>
-    <rich_text indent="1" weight="heavy">IP</rich_text>
-    <rich_text>
-
-
-John The Ripper:
-</rich_text>
-    <rich_text indent="1">john </rich_text>
-    <rich_text indent="1" weight="heavy">HASHFILE</rich_text>
-    <rich_text>
-</rich_text>
-  </node>
-  <node name="Flat DB files" unique_id="71" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697980166" ts_lastsave="1697980518">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-    <rich_text>
-Working with flat DB files
-</rich_text>
-    <rich_text indent="1">example.db</rich_text>
-    <rich_text>
-
-Check which version:
-</rich_text>
-    <rich_text indent="1">file </rich_text>
-    <rich_text indent="1" weight="heavy">FILENAME.db</rich_text>
-    <rich_text>
-
-sqlite3:
-</rich_text>
-    <rich_text indent="1">Client:
-</rich_text>
-    <rich_text indent="2">sqlite3 </rich_text>
-    <rich_text indent="2" weight="heavy">FILENAME.db</rich_text>
-    <rich_text indent="1">
-show all tables:
-</rich_text>
-    <rich_text indent="2">.tables</rich_text>
-    <rich_text indent="1">
-Show columns of a table:
-</rich_text>
-    <rich_text indent="2">PRAGMA table_info(</rich_text>
-    <rich_text indent="2" weight="heavy">TABLENAME</rich_text>
-    <rich_text indent="2">);</rich_text>
-    <rich_text indent="1">
-Get all records:
-</rich_text>
-    <rich_text indent="2">SELECT * FROM </rich_text>
-    <rich_text indent="2" weight="heavy">TABLENAME</rich_text>
-    <rich_text indent="2">;</rich_text>
-    <rich_text>
-
-
+    <rich_text indent="1">Bypass: use Poisen Null Byte</rich_text>
+    <rich_text> (%00), URL ENCODED = %2500 → add %2500 at the end and also add one of the allowed extensions
 </rich_text>
   </node>
   <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1697141883">
@@ -2168,5 +2392,18 @@ go to proxy setting
 adjust interception rule to include scope only</rich_text>
     </node>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1698615908"/>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1698763647">
+    <rich_text>10.10.70.181
+
+accounts:
+test@test.com
+123456789
+
+admin@juice-sh.op
+admin123
+
+jim@juice-sh.op
+123456789
+169940f83378cc420ae4fdeb9c1f73631a2baee6</rich_text>
+  </node>
 </cherrytree>
