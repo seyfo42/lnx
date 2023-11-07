@@ -8,246 +8,6 @@
 
 
 </rich_text>
-    <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699287038">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-list in tree view
-</rich_text>
-      <rich_text indent="1">tree -L </rich_text>
-      <rich_text indent="1" weight="heavy">LAYERS</rich_text>
-      <rich_text>
-
-ssh:
-</rich_text>
-      <rich_text indent="1">id_rsa file as ID needs chmod 600</rich_text>
-      <rich_text>
-
-MD5 hash krijgen:
-</rich_text>
-      <rich_text indent="1">md5sum</rich_text>
-      <rich_text> </rich_text>
-      <rich_text weight="heavy">FILE</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">sha1sum</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">sha256sum</rich_text>
-      <rich_text>
-
-whoami
-id
-ifconfig
-ip addr
-uname -a
-ps -ef
-
-Kali:
-</rich_text>
-      <rich_text indent="1">setxkbmap -layout be</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">setxkbmap -layout us</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">apt install -y kali-linux-everything</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">apt install -y kali-linux-default</rich_text>
-      <rich_text>
-
-alternative to cat -&gt; less</rich_text>
-      <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1698768153">
-        <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-New user:
-</rich_text>
-        <rich_text indent="1">useradd </rich_text>
-        <rich_text indent="1" weight="heavy">OPTIONS</rich_text>
-        <rich_text indent="1"> </rich_text>
-        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">-m -&gt; create home</rich_text>
-        <rich_text> directory
-</rich_text>
-        <rich_text indent="2">-M -&gt; no home</rich_text>
-        <rich_text> directory
-
-Delete user:
-</rich_text>
-        <rich_text indent="1">userdel </rich_text>
-        <rich_text indent="1" weight="heavy">OPTIONS</rich_text>
-        <rich_text indent="1"> </rich_text>
-        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">-f -&gt; force</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">-r -&gt; remove home directory</rich_text>
-        <rich_text>
-
-Change password:
-</rich_text>
-        <rich_text indent="1">passwd </rich_text>
-        <rich_text weight="heavy">USERNAME</rich_text>
-        <rich_text>
-
-Change group:
-</rich_text>
-        <rich_text indent="1">usermod -aG </rich_text>
-        <rich_text indent="1" weight="heavy">GROUP</rich_text>
-        <rich_text indent="1"> </rich_text>
-        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-        <rich_text>
-
-Change shell:
-</rich_text>
-        <rich_text indent="1">chsh -s </rich_text>
-        <rich_text indent="1" weight="heavy">SHELL</rich_text>
-        <rich_text indent="1"> </rich_text>
-        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">/bin/bash</rich_text>
-        <rich_text>
-
-show info of a user:
-</rich_text>
-        <rich_text indent="1">id </rich_text>
-        <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-        <rich_text>
-
-List all users:
-</rich_text>
-        <rich_text indent="1">cat /etc/passwd</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="1">getent passwd</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">username : encrypted password : userID : groupID : fullname : home directory : shell</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="1">getent </rich_text>
-        <rich_text>shadow
-</rich_text>
-        <rich_text indent="2">username : encrypted password  : last pw change : min pw change : max pw change : pw change warn : </rich_text>
-        <rich_text>days inactive : exp date
-</rich_text>
-        <rich_text indent="2">encrypted password = $id $ salt $ hashed</rich_text>
-        <rich_text indent="3">
-</rich_text>
-        <rich_text indent="5">$1$ is MD5
-$2a$ is Blowfish
-$2y$ is Blowfish
-$5$ is SHA-256
-$6$ is SHA-512
-$y$ is yescrypt
- 
-</rich_text>
-        <rich_text>
-List normal users/groups:
-</rich_text>
-        <rich_text indent="1">first get the min and max UIDs for normal users/groups:
-</rich_text>
-        <rich_text indent="2">grep -E '^UID_MIN|^UID_MAX' /etc/login.defs</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">grep -E '^GID_MIN|^GID_MAX' /etc/login.defs</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="1">filter the passwd/group file:</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">getent passwd {</rich_text>
-        <rich_text indent="2" weight="heavy">MIN</rich_text>
-        <rich_text indent="2">..</rich_text>
-        <rich_text indent="2" weight="heavy">MAX</rich_text>
-        <rich_text indent="2">}</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">getent passwd {1000..60000}</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">getent passwd {1000..60000}</rich_text>
-      </node>
-      <node name="Find" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1698759416" ts_lastsave="1698759873">
-        <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Search name case sensitive:
-</rich_text>
-        <rich_text indent="1">find -name “</rich_text>
-        <rich_text indent="1" weight="heavy">NAME</rich_text>
-        <rich_text indent="1">"</rich_text>
-        <rich_text>
-
-Search name case insensitive:
-</rich_text>
-        <rich_text indent="1">find -iname “</rich_text>
-        <rich_text indent="1" weight="heavy">NAME</rich_text>
-        <rich_text indent="1">"</rich_text>
-        <rich_text>
-
-Wildcard for name:
-</rich_text>
-        <rich_text indent="1">*</rich_text>
-        <rich_text>
-
-Search files:
-</rich_text>
-        <rich_text indent="1">-type f</rich_text>
-        <rich_text>
-
-Search directories:
-</rich_text>
-        <rich_text indent="1">-type d</rich_text>
-        <rich_text>
-
-
-</rich_text>
-      </node>
-    </node>
-    <node name="Wordlist" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1699274173">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Seclists:
-git clone </rich_text>
-      <rich_text link="webs https://github.com/danielmiessler/SecLists.git">https://github.com/danielmiessler/SecLists.git</rich_text>
-      <rich_text>
-apt-get install seclists
-
-/usr/share/seclists</rich_text>
-      <rich_text indent="1">
-</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">├── Discovery
-├── Fuzzing
-├── IOCs
-├── Miscellaneous
-├── Passwords
-├── Pattern-Matching
-├── Payloads
-├── Usernames
-└── Web-Shells</rich_text>
-      <rich_text>
-
-Subdomains:
-</rich_text>
-      <rich_text indent="1">/usr/share/seclists/Discovery/DNS/subdomains</rich_text>
-      <rich_text>
-
-Directory :
-</rich_text>
-      <rich_text indent="1">/usr/share/seclists/Discovery/Web-Content/directory-list</rich_text>
-      <rich_text>
-
-Passwords:
-</rich_text>
-      <rich_text indent="1">/usr/share/wordlists/rockyou.txt</rich_text>
-      <rich_text>
-
-
-</rich_text>
-    </node>
     <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1698759370">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Execute bash commands:
@@ -396,6 +156,246 @@ intitle:</rich_text>
 
 </rich_text>
       <rich_text link="webs https://en.wikipedia.org/wiki/Google_hacking">https://en.wikipedia.org/wiki/Google_hacking</rich_text>
+    </node>
+  </node>
+  <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="115" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699358763">
+    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+list in tree view
+</rich_text>
+    <rich_text indent="1">tree -L </rich_text>
+    <rich_text indent="1" weight="heavy">LAYERS</rich_text>
+    <rich_text>
+
+ssh:
+</rich_text>
+    <rich_text indent="1">id_rsa file as ID needs chmod 600</rich_text>
+    <rich_text>
+
+hash krijgen:
+</rich_text>
+    <rich_text indent="1">md5sum</rich_text>
+    <rich_text> </rich_text>
+    <rich_text weight="heavy">FILE</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">sha1sum</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">sha256sum</rich_text>
+    <rich_text>
+
+whoami
+id
+ifconfig
+ip addr
+uname -a
+ps -ef
+
+Kali:
+</rich_text>
+    <rich_text indent="1">setxkbmap -layout be</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">setxkbmap -layout us</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">apt install -y kali-linux-everything</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">apt install -y kali-linux-default</rich_text>
+    <rich_text>
+
+alternative to cat -&gt; less</rich_text>
+    <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1698768153">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New user:
+</rich_text>
+      <rich_text indent="1">useradd </rich_text>
+      <rich_text indent="1" weight="heavy">OPTIONS</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">-m -&gt; create home</rich_text>
+      <rich_text> directory
+</rich_text>
+      <rich_text indent="2">-M -&gt; no home</rich_text>
+      <rich_text> directory
+
+Delete user:
+</rich_text>
+      <rich_text indent="1">userdel </rich_text>
+      <rich_text indent="1" weight="heavy">OPTIONS</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">-f -&gt; force</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">-r -&gt; remove home directory</rich_text>
+      <rich_text>
+
+Change password:
+</rich_text>
+      <rich_text indent="1">passwd </rich_text>
+      <rich_text weight="heavy">USERNAME</rich_text>
+      <rich_text>
+
+Change group:
+</rich_text>
+      <rich_text indent="1">usermod -aG </rich_text>
+      <rich_text indent="1" weight="heavy">GROUP</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text>
+
+Change shell:
+</rich_text>
+      <rich_text indent="1">chsh -s </rich_text>
+      <rich_text indent="1" weight="heavy">SHELL</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">/bin/bash</rich_text>
+      <rich_text>
+
+show info of a user:
+</rich_text>
+      <rich_text indent="1">id </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text>
+
+List all users:
+</rich_text>
+      <rich_text indent="1">cat /etc/passwd</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">getent passwd</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">username : encrypted password : userID : groupID : fullname : home directory : shell</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">getent </rich_text>
+      <rich_text>shadow
+</rich_text>
+      <rich_text indent="2">username : encrypted password  : last pw change : min pw change : max pw change : pw change warn : </rich_text>
+      <rich_text>days inactive : exp date
+</rich_text>
+      <rich_text indent="2">encrypted password = $id $ salt $ hashed</rich_text>
+      <rich_text indent="3">
+</rich_text>
+      <rich_text indent="5">$1$ is MD5
+$2a$ is Blowfish
+$2y$ is Blowfish
+$5$ is SHA-256
+$6$ is SHA-512
+$y$ is yescrypt
+ 
+</rich_text>
+      <rich_text>
+List normal users/groups:
+</rich_text>
+      <rich_text indent="1">first get the min and max UIDs for normal users/groups:
+</rich_text>
+      <rich_text indent="2">grep -E '^UID_MIN|^UID_MAX' /etc/login.defs</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">grep -E '^GID_MIN|^GID_MAX' /etc/login.defs</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">filter the passwd/group file:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">getent passwd {</rich_text>
+      <rich_text indent="2" weight="heavy">MIN</rich_text>
+      <rich_text indent="2">..</rich_text>
+      <rich_text indent="2" weight="heavy">MAX</rich_text>
+      <rich_text indent="2">}</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">getent passwd {1000..60000}</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">getent passwd {1000..60000}</rich_text>
+    </node>
+    <node name="Find" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1698759416" ts_lastsave="1698759873">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Search name case sensitive:
+</rich_text>
+      <rich_text indent="1">find -name “</rich_text>
+      <rich_text indent="1" weight="heavy">NAME</rich_text>
+      <rich_text indent="1">"</rich_text>
+      <rich_text>
+
+Search name case insensitive:
+</rich_text>
+      <rich_text indent="1">find -iname “</rich_text>
+      <rich_text indent="1" weight="heavy">NAME</rich_text>
+      <rich_text indent="1">"</rich_text>
+      <rich_text>
+
+Wildcard for name:
+</rich_text>
+      <rich_text indent="1">*</rich_text>
+      <rich_text>
+
+Search files:
+</rich_text>
+      <rich_text indent="1">-type f</rich_text>
+      <rich_text>
+
+Search directories:
+</rich_text>
+      <rich_text indent="1">-type d</rich_text>
+      <rich_text>
+
+
+</rich_text>
+    </node>
+    <node name="Wordlists" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1699358481">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Seclists:
+git clone </rich_text>
+      <rich_text link="webs https://github.com/danielmiessler/SecLists.git">https://github.com/danielmiessler/SecLists.git</rich_text>
+      <rich_text>
+apt-get install seclists
+
+/usr/share/seclists</rich_text>
+      <rich_text indent="1">
+</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">├── Discovery
+├── Fuzzing
+├── IOCs
+├── Miscellaneous
+├── Passwords
+├── Pattern-Matching
+├── Payloads
+├── Usernames
+└── Web-Shells</rich_text>
+      <rich_text>
+
+Subdomains:
+</rich_text>
+      <rich_text indent="1">/usr/share/seclists/Discovery/DNS/subdomains</rich_text>
+      <rich_text>
+
+Directory :
+</rich_text>
+      <rich_text indent="1">/usr/share/seclists/Discovery/Web-Content/directory-list</rich_text>
+      <rich_text>
+
+Passwords:
+</rich_text>
+      <rich_text indent="1">/usr/share/wordlists/rockyou.txt</rich_text>
+      <rich_text>
+
+
+</rich_text>
     </node>
   </node>
   <node name="Recon" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980338" ts_lastsave="1697102173">
@@ -2159,46 +2159,219 @@ unsetg</rich_text>
 </rich_text>
     </node>
   </node>
-  <node name="Cracking" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1698763826">
+  <node name="Credentials" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1699357823">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
-Online:
 </rich_text>
-    <rich_text indent="1">https://crackstation.net/ </rich_text>
-    <rich_text>
-
-Hydra:
+    <node name="Brute-Force" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357800" ts_lastsave="1699357819">
+      <rich_text>Hydra:
 </rich_text>
-    <rich_text indent="1">hydra -t </rich_text>
-    <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
-    <rich_text indent="1"> -l </rich_text>
-    <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-    <rich_text indent="1"> -P </rich_text>
-    <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
-    <rich_text indent="1"> -vV </rich_text>
-    <rich_text indent="1" weight="heavy">IP</rich_text>
-    <rich_text indent="1"> </rich_text>
-    <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
-    <rich_text indent="1">
+      <rich_text indent="1">hydra -t </rich_text>
+      <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
+      <rich_text indent="1"> -l </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text indent="1"> -P </rich_text>
+      <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+      <rich_text indent="1"> -vV </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
+      <rich_text indent="1">
 hydra -t </rich_text>
-    <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
-    <rich_text indent="1"> -l </rich_text>
-    <rich_text indent="1" weight="heavy">USERNAME</rich_text>
-    <rich_text indent="1"> -P </rich_text>
-    <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
-    <rich_text indent="1"> -vV </rich_text>
-    <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
-    <rich_text indent="1">://</rich_text>
-    <rich_text indent="1" weight="heavy">IP</rich_text>
-    <rich_text>
+      <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
+      <rich_text indent="1"> -l </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text indent="1"> -P </rich_text>
+      <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+      <rich_text indent="1"> -vV </rich_text>
+      <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
+      <rich_text indent="1">://</rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+    </node>
+    <node name="Hash Crack" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357803" ts_lastsave="1699364367">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Online cracking: </rich_text>
+      <rich_text indent="1" link="webs https://crackstation.net/">https://crackstation.net/</rich_text>
+      <rich_text indent="1">
+</rich_text>
+      <rich_text>
+Online Hash Identifier: </rich_text>
+      <rich_text link="webs https://hashes.com/en/tools/hash_identifier">https://hashes.com/en/tools/hash_identifier</rich_text>
+      <rich_text> 
+
+Offline Hash Identifier tool:
+</rich_text>
+      <rich_text indent="1">wget </rich_text>
+      <rich_text indent="1" link="webs https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py">https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">python3 hash-id.py</rich_text>
+      <rich_text>
 
 
 John The Ripper:
 </rich_text>
-    <rich_text indent="1">john </rich_text>
-    <rich_text indent="1" weight="heavy">HASHFILE</rich_text>
-    <rich_text>
+      <rich_text indent="1">john </rich_text>
+      <rich_text indent="1" weight="heavy">HASHFILE</rich_text>
+      <rich_text>
 </rich_text>
+      <rich_text indent="1">--wordlist=</rich_text>
+      <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">--format=</rich_text>
+      <rich_text weight="heavy">FORMAT</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">john --list=formats</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">NTLM -&gt; nt</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Cracking Linux logins:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">unshadow </rich_text>
+      <rich_text indent="2" weight="heavy">PASSWD_FILE</rich_text>
+      <rich_text indent="2"> </rich_text>
+      <rich_text indent="2" weight="heavy">SHADOW_FILE</rich_text>
+      <rich_text> &gt; </rich_text>
+      <rich_text weight="heavy">UNSHADOW_FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">john --wordlist=</rich_text>
+      <rich_text indent="2" weight="heavy">WORDLIST</rich_text>
+      <rich_text indent="2"> --format=sha512crypt </rich_text>
+      <rich_text weight="heavy">UNSHADOW_FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Single-Mode:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">Prepend </rich_text>
+      <rich_text indent="2" weight="heavy">USERNAME</rich_text>
+      <rich_text indent="2">: before the hash</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">john --single --format=</rich_text>
+      <rich_text indent="2" weight="heavy">FORMAT</rich_text>
+      <rich_text indent="2"> </rich_text>
+      <rich_text weight="heavy">HASHFILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Custom rules</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2">in the john.conf file</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">/etc/john/john.conf
+/opt/john/john.conf</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">Overview </rich_text>
+      <rich_text indent="2" link="webs https://www.openwall.com/john/doc/RULES.shtml">https://www.openwall.com/john/doc/RULES.shtml</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">[List.Rules:</rich_text>
+      <rich_text indent="2" weight="heavy">NAME</rich_text>
+      <rich_text indent="2">]</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">Regex expression</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">Example: cAz"[0-9] [!£$%@]" -&gt; capitalize first letter, append to the end a number and a symbol</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">john --rule=</rich_text>
+      <rich_text indent="2" weight="heavy">RULE</rich_text>
+      <rich_text indent="2"> HASHFILE</rich_text>
+      <rich_text> --wordlist=</rich_text>
+      <rich_text weight="heavy">WORDLIST</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">ZIP Files:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">zip2john </rich_text>
+      <rich_text indent="2" weight="heavy">ZIP_FILE</rich_text>
+      <rich_text indent="2"> &gt; </rich_text>
+      <rich_text indent="2" weight="heavy">ZIP_HASH_FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">john --wordlist=</rich_text>
+      <rich_text indent="2" weight="heavy">WORDLIST</rich_text>
+      <rich_text indent="2"> </rich_text>
+      <rich_text weight="heavy">ZIP_HASH_FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">RAR Files:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">rar2john </rich_text>
+      <rich_text indent="2" weight="heavy">RAR_FILE</rich_text>
+      <rich_text indent="2"> &gt; </rich_text>
+      <rich_text indent="2" weight="heavy">RAR_HASH_FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">john --wordlist=</rich_text>
+      <rich_text indent="2" weight="heavy">WORDLIST</rich_text>
+      <rich_text indent="2"> </rich_text>
+      <rich_text weight="heavy">RAR_HASH_FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">SSH Key</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2">ssh2john </rich_text>
+      <rich_text indent="2" weight="heavy">ID_RSA_PRIVATE_KEY_FILE</rich_text>
+      <rich_text indent="2"> &gt; </rich_text>
+      <rich_text weight="heavy">KEY_HASH_FILE</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">if not installed use -&gt; python3 /opt/ssh2john.py</rich_text>
+      <rich_text> or python /usr/share/john/ssh2john.py
+</rich_text>
+      <rich_text indent="2">john --wordlist=</rich_text>
+      <rich_text indent="2" weight="heavy">WORDLIST</rich_text>
+      <rich_text> </rich_text>
+      <rich_text weight="heavy">KEY_HASH_FILE</rich_text>
+      <rich_text>
+
+
+
+
+
+Hashcat:
+</rich_text>
+      <rich_text indent="1">hashcat -m </rich_text>
+      <rich_text indent="1" weight="heavy">HASH_MODE</rich_text>
+      <rich_text indent="1"> -a </rich_text>
+      <rich_text indent="1" weight="heavy">ATTACK_TYPE</rich_text>
+      <rich_text indent="1"> -o </rich_text>
+      <rich_text indent="1" weight="heavy">OUTPUT_FILE</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">HASH_FILE</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text indent="1">Hash_Modes -&gt; </rich_text>
+      <rich_text link="webs https://hashcat.net/wiki/doku.php?id=example_hashes">https://hashcat.net/wiki/doku.php?id=example_hashes</rich_text>
+      <rich_text> 
+</rich_text>
+      <rich_text indent="1">Attack_Types:</rich_text>
+      <rich_text> see </rich_text>
+      <rich_text link="webs https://hashcat.net/wiki/">https://hashcat.net/wiki/</rich_text>
+      <rich_text> 
+</rich_text>
+      <rich_text indent="2">0 = Wordlist</rich_text>
+      <rich_text>
+</rich_text>
+    </node>
   </node>
   <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699020019">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
@@ -2550,10 +2723,36 @@ go to proxy setting
 adjust interception rule to include scope only</rich_text>
     </node>
   </node>
-  <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699287298">
-    <rich_text>Check available command:
+  <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699366282">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+Check available sudo commands:
 </rich_text>
     <rich_text indent="1">sudo -l</rich_text>
+  </node>
+  <node name="Cryptography" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699366282" ts_lastsave="1699366435">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+Useful tools:
+</rich_text>
+    <rich_text indent="1" link="webs https://github.com/Ganapati/RsaCtfTool">https://github.com/Ganapati/RsaCtfTool</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="1" link="webs https://github.com/ius/rsatool">https://github.com/ius/rsatool</rich_text>
+    <rich_text>
+
+RSA:
+</rich_text>
+    <rich_text indent="1">Key variables:
+</rich_text>
+    <rich_text indent="2">p: large primenr
+q: large primenr
+m: plaintext message
+n: p * q
+e: +n= public key
+d: +n= private key
+c</rich_text>
+    <rich_text>: ciphertext</rich_text>
   </node>
   <node name="Web Exploitation basic method" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="31" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1699274102">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
