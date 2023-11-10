@@ -1,3 +1,4 @@
+//source: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
 (function(){
     var net = require("net"),
         cp = require("child_process"),
