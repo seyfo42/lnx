@@ -1,8 +1,5 @@
 <?php
-// THIS SCRIPT IS FROM PENTESTMONKEY: 
-// https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
-
-
+// SCRIPT SOURCE: https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 
 // php-reverse-shell - A Reverse Shell implementation in PHP
 // Copyright (C) 2007 pentestmonkey@pentestmonkey.net
