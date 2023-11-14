@@ -1,5 +1,7 @@
 <#
 
+SCRIPT SOURCE: https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1
+
 PowerUp aims to be a clearinghouse of common Windows privilege escalation
 vectors that rely on misconfigurations. See README.md for more information.
 
