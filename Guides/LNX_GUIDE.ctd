@@ -4121,13 +4121,6 @@ useful commands:
       </node>
     </node>
   </node>
-  <node name="AAO" unique_id="84" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699287281" ts_lastsave="1699550842">
-    <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
-    <rich_text>
-Check available sudo commands:
-</rich_text>
-    <rich_text indent="1">sudo -l</rich_text>
-  </node>
   <node name="Burp" unique_id="68" prog_lang="custom-colors" tags=" Directory Enumeration" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1697138374" ts_lastsave="1702910117">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
@@ -4257,7 +4250,7 @@ Gzip: Compresses data, reducing file and page sizes before browser transmission.
       <rich_text> for text</rich_text>
     </node>
   </node>
-  <node name="Cryptography" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699366282" ts_lastsave="1699441549">
+  <node name="Cryptography" unique_id="87" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1699366282" ts_lastsave="1711027644">
     <rich_text underline="single" weight="heavy">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</rich_text>
     <rich_text>
 Useful tools:
@@ -4267,31 +4260,163 @@ Useful tools:
 </rich_text>
     <rich_text indent="1" link="webs https://github.com/ius/rsatool">https://github.com/ius/rsatool</rich_text>
     <rich_text>
-
-RSA:
 </rich_text>
-    <rich_text indent="1">Key variables:
-</rich_text>
-    <rich_text indent="2">p: large primenr
-q: large primenr
-m: plaintext message
-n: p * q
-e: +n= public key
-d: +n= private key
-c</rich_text>
-    <rich_text>: ciphertext
+    <rich_text indent="1" link="webs https://www.quipqiup.com/">https://www.quipqiup.com/</rich_text>
+    <rich_text>
 
 GPG:
 </rich_text>
-    <rich_text indent="1">gpg --import</rich_text>
-    <rich_text indent="1" weight="heavy"> GPG_KEY_FILE</rich_text>
+    <rich_text indent="1">List ciphers</rich_text>
+    <rich_text>:
+</rich_text>
+    <rich_text indent="2">gpg --version</rich_text>
+    <rich_text>
+
+</rich_text>
+    <rich_text indent="1">Encrypt</rich_text>
+    <rich_text>:
+</rich_text>
+    <rich_text indent="2">gpg --symmetric --cipher-algo </rich_text>
+    <rich_text indent="2" weight="heavy">CIPHER</rich_text>
+    <rich_text indent="2"> </rich_text>
+    <rich_text weight="heavy">PLAINTEXT</rich_text>
+    <rich_text>
+
+</rich_text>
+    <rich_text indent="1">Decrypt</rich_text>
+    <rich_text>:
+</rich_text>
+    <rich_text indent="2">gpg --output </rich_text>
+    <rich_text indent="2" weight="heavy">PLAINTEXT</rich_text>
+    <rich_text indent="2"> --decrypt </rich_text>
+    <rich_text weight="heavy">CIPHER_TEXT</rich_text>
+    <rich_text>
+
+</rich_text>
+    <rich_text indent="2">gpg --import</rich_text>
+    <rich_text indent="2" weight="heavy"> GPG_KEY_FILE</rich_text>
+    <rich_text indent="2">
+gpg </rich_text>
+    <rich_text indent="2" weight="heavy">ENCRYPTED_FILE</rich_text>
+    <rich_text indent="2">
+New file will be created with the plaintext</rich_text>
+    <rich_text>
+
+OpenSSL:
+</rich_text>
+    <rich_text indent="1">AES:</rich_text>
     <rich_text>
 </rich_text>
-    <rich_text indent="1">gpg </rich_text>
-    <rich_text indent="1" weight="heavy">ENCRYPTED_FILE</rich_text>
+    <rich_text indent="2">Encrypt:
+</rich_text>
+    <rich_text indent="3">openssl aes-256-cbc -e -in </rich_text>
+    <rich_text indent="3" weight="heavy">PLAINTEXT</rich_text>
+    <rich_text indent="3"> -out </rich_text>
+    <rich_text indent="3" weight="heavy">CIPHER_TEXT</rich_text>
+    <rich_text indent="2">
+Decrypt:
+</rich_text>
+    <rich_text indent="3">openssl aes-256-cbc -d -in </rich_text>
+    <rich_text indent="3" weight="heavy">CIPHER_TEXT</rich_text>
+    <rich_text indent="3"> -out </rich_text>
+    <rich_text indent="3" weight="heavy">PLAINTEXT</rich_text>
     <rich_text>
 </rich_text>
-    <rich_text indent="1">New file will be created with the plaintext</rich_text>
+    <rich_text indent="1">RSA:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Private Key generate:
+</rich_text>
+    <rich_text indent="3">openssl genrsa -out </rich_text>
+    <rich_text indent="3" weight="heavy">PRIVATE_KEY</rich_text>
+    <rich_text indent="3">.pem </rich_text>
+    <rich_text indent="3" weight="heavy">KEY_SIZE</rich_text>
+    <rich_text indent="2">
+Public Key generate:
+</rich_text>
+    <rich_text indent="3">openssl rsa -in </rich_text>
+    <rich_text indent="3" weight="heavy">PRIVATE_KEY</rich_text>
+    <rich_text indent="3">.pem -pubout -out </rich_text>
+    <rich_text indent="3" weight="heavy">PUBLIC_KEY</rich_text>
+    <rich_text indent="3">.pem</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Analyze private key:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="3">openssl rsa -in </rich_text>
+    <rich_text indent="3" weight="heavy">PRIVATE_KEY</rich_text>
+    <rich_text indent="3">.pem -text -noout</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Encrypt:
+</rich_text>
+    <rich_text indent="3">openssl pkeyutl -encrypt -in </rich_text>
+    <rich_text indent="3" weight="heavy">PLAINTEXT</rich_text>
+    <rich_text indent="3"> -out </rich_text>
+    <rich_text indent="3" weight="heavy">CIPHER_TEXT</rich_text>
+    <rich_text indent="3"> -inkey </rich_text>
+    <rich_text indent="3" weight="heavy">PUBLIC_KEY</rich_text>
+    <rich_text indent="3">.pem -pubin</rich_text>
+    <rich_text indent="2">
+Decrypt:
+</rich_text>
+    <rich_text indent="3">o</rich_text>
+    <rich_text>penssl pkeyutl -decrypt -in </rich_text>
+    <rich_text weight="heavy">CIPHER_TEXT</rich_text>
+    <rich_text> -inkey </rich_text>
+    <rich_text weight="heavy">PRIVATE_KEY</rich_text>
+    <rich_text>.pem -out </rich_text>
+    <rich_text weight="heavy">PLAINTEXT</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">DH:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">Analyze</rich_text>
+    <rich_text> parameters:
+</rich_text>
+    <rich_text indent="3">openssl dhparam -in </rich_text>
+    <rich_text indent="3" weight="heavy">dhparams</rich_text>
+    <rich_text indent="3">.pem -text -noout</rich_text>
+    <rich_text>
+
+Hashing:
+</rich_text>
+    <rich_text indent="1">sha256sum </rich_text>
+    <rich_text indent="1" weight="heavy">FILE</rich_text>
+    <rich_text>
+
+Certificates:
+</rich_text>
+    <rich_text indent="1">Generate certificate signing request</rich_text>
+    <rich_text>:
+</rich_text>
+    <rich_text indent="2">openssl req -new -nodes -newkey rsa:4096 -keyout </rich_text>
+    <rich_text indent="2" weight="heavy">KEY</rich_text>
+    <rich_text indent="2">.pem -out </rich_text>
+    <rich_text indent="2" weight="heavy">CERT</rich_text>
+    <rich_text indent="2">.csr</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">Generate self-signed certificate</rich_text>
+    <rich_text>:
+</rich_text>
+    <rich_text indent="2">o</rich_text>
+    <rich_text>penssl req -x509 -newkey -nodes rsa:4096 -keyout </rich_text>
+    <rich_text weight="heavy">KEY</rich_text>
+    <rich_text>.pem -out </rich_text>
+    <rich_text weight="heavy">CERT</rich_text>
+    <rich_text>.pem -sha256 -days </rich_text>
+    <rich_text weight="heavy">365</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="1">View certificate:</rich_text>
+    <rich_text>
+</rich_text>
+    <rich_text indent="2">openssl x509 -in cert.pem -text</rich_text>
+    <rich_text>
+</rich_text>
   </node>
   <node name="Notes" unique_id="46" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="18" is_bold="0" foreground="" ts_creation="1696093389" ts_lastsave="1702904056">
     <rich_text>
